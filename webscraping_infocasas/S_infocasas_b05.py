@@ -112,7 +112,7 @@ for i in range(1):
                     "zona": str(lst_info[2].text),
                     "tipo": str(lst_info[1].text),
                     "depart": str(departamento_split[-1]),
-                    "long": "",
+                    "lon": "",
                     "lat": "",
                     "imagenes": img_urls 
                 }
