@@ -32,14 +32,17 @@ for _ in range(1):
         precio = driver.find_element(By.XPATH, '//*[@id="div_datosBasicos"]/div[2]/span')
         tipo = driver.find_element(By.XPATH, '//*[@id="div_datosOperacion"]/div[1]/p')
         zona = driver.find_element(By.XPATH, '//*[@id="div_datosOperacion"]/div[3]/p')
+        lst_imgs = driver.find_elements(By.XPATH, '//*[@id="divInner_Galeria"]/div[1]/a/picture/img')
+        img_urls = [img.get_attribute('src') for img in lst_imgs]
         try:
             dic_alquiler = {
                 'precio': str(precio.text),
                 'zona': str(zona.text),
-                'tipo' : str(tipo.text)
+                'tipo' : str(tipo.text),
+                'imagen': img_urls
             }
         except Exception as e:
-            pass
+            print("Hola putito")
         lst_data.append(dic_alquiler)
         
         

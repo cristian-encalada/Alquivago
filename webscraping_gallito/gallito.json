@@ -1,0 +1,322 @@
+[
+    {
+        "precio": "$U 17.500",
+        "zona": "La Blanqueada",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230906180225650.jpg"
+        ]
+    },
+    {
+        "precio": "$U 22.000",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230906185359820.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 3.000",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50763775.jpg"
+        ]
+    },
+    {
+        "precio": "$U 23.700",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230317175120250.jpg"
+        ]
+    },
+    {
+        "precio": "$U 25.000",
+        "zona": "Barrio Sur",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230828102933210.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 3.500",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230601122737890.jpg"
+        ]
+    },
+    {
+        "precio": "$U 48.000",
+        "zona": "Piedras Blancas",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230822135038880.jpg"
+        ]
+    },
+    {
+        "precio": "$U 34.900",
+        "zona": "Brazo Oriental",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/46887209.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 750",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50952593.jpg"
+        ]
+    },
+    {
+        "precio": "$U 17.500",
+        "zona": "Ciudad Vieja",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/49991059.jpg"
+        ]
+    },
+    {
+        "precio": "$U 25.500",
+        "zona": "Buceo",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230630150750070.jpg"
+        ]
+    },
+    {
+        "precio": "$U 24.000",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230823161806400.jpg"
+        ]
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Goes",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50922914.jpg"
+        ]
+    },
+    {
+        "precio": "$U 35.000",
+        "zona": "Puerto Buceo",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50900207.jpg"
+        ]
+    },
+    {
+        "precio": "$U 17.000",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230530132659080.jpg"
+        ]
+    },
+    {
+        "precio": "$U 23.500",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230118141754790.jpg"
+        ]
+    },
+    {
+        "precio": "$U 17.000",
+        "zona": "Malvin Norte",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50037628.jpg"
+        ]
+    },
+    {
+        "precio": "$U 21.000",
+        "zona": "Centro",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50924064.jpeg"
+        ]
+    },
+    {
+        "precio": "$U 15.900",
+        "zona": "Union",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230828150039150.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 3.500",
+        "zona": "Pinares",
+        "tipo": "Casa",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50332237.jpg"
+        ]
+    },
+    {
+        "precio": "$U 21.500",
+        "zona": "Cordon",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/49134139.jpg"
+        ]
+    },
+    {
+        "precio": "$U 100.000",
+        "zona": "Brazo Oriental",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50180277.jpg"
+        ]
+    },
+    {
+        "precio": "$U 23.500",
+        "zona": "Villa Biarritz",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/221122180253020.jpg"
+        ]
+    },
+    {
+        "precio": "$U 17.000",
+        "zona": "Parque Batlle",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230622152516840.jpg"
+        ]
+    },
+    {
+        "precio": "$U 35.500",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50754861.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 4.500",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230703163311020.jpg"
+        ]
+    },
+    {
+        "precio": "$U 37.000",
+        "zona": "Pocitos Nuevo",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230704145343700.jpg"
+        ]
+    },
+    {
+        "precio": "$U 19.000",
+        "zona": "Manga",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/221206095734280.jpg"
+        ]
+    },
+    {
+        "precio": "$U 34.400",
+        "zona": "Buceo",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/49721368.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 19.700",
+        "zona": "Pocitos",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230818121040030.jpg"
+        ]
+    },
+    {
+        "precio": "$U 23.500",
+        "zona": "Atahualpa",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50797746.jpg"
+        ]
+    },
+    {
+        "precio": "$U 21.500",
+        "zona": "Otros",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50797710.jpg"
+        ]
+    },
+    {
+        "precio": "$U 85.000",
+        "zona": "Centro",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50909874.jpg"
+        ]
+    },
+    {
+        "precio": "$U 29.500",
+        "zona": "Buceo",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50791397.jpg"
+        ]
+    },
+    {
+        "precio": "$U 16.000",
+        "zona": "Aguada",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230809163337610.jpg"
+        ]
+    },
+    {
+        "precio": "$U 16.900",
+        "zona": "Parque Batlle",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50825583.jpeg"
+        ]
+    },
+    {
+        "precio": "$U 60.000",
+        "zona": "Ciudad Vieja",
+        "tipo": "Local",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/49604092.jpg"
+        ]
+    },
+    {
+        "precio": "U$S 2.500",
+        "zona": "Centro",
+        "tipo": "Garage",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230904130441280.jpg"
+        ]
+    },
+    {
+        "precio": "$U 32.000",
+        "zona": "Punta Carretas",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230817131650020.jpg"
+        ]
+    },
+    {
+        "precio": "$U 23.000",
+        "zona": "La Blanqueada",
+        "tipo": "Casa",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230829134317350.jpg"
+        ]
+    }
+]
