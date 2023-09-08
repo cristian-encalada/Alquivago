@@ -1,322 +1,482 @@
 [
     {
-        "precio": "$U 17.500",
-        "zona": "La Blanqueada",
+        "precio": "$U 16.500",
+        "zona": "Pocitos",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230906180225650.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/211124161858010.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91078311426488,-56.14542046527099&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "40 Mts"
     },
     {
-        "precio": "$U 22.000",
-        "zona": "Punta Carretas",
+        "precio": "$U 3.200",
+        "zona": "Punta Del Este",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230906185359820.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/50994492.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.948252,-54.9384&zoom=15",
+        "number_of_bedrooms": "3 dormitorios",
+        "number_of_bathrooms": "3 Baños",
+        "area": "122 Mts"
     },
     {
-        "precio": "U$S 3.000",
-        "zona": "Punta Carretas",
+        "precio": "$U 26.000",
+        "zona": "Pocitos Nuevo",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/50763775.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230908151633220.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9026004553135,-56.13879004458617&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "45 Mts"
     },
     {
-        "precio": "$U 23.700",
-        "zona": "Cordon",
+        "precio": "$U 26.000",
+        "zona": "Pocitos",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230317175120250.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230908152826340.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.90265324927501,-56.13894024829101&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "45 Mts"
     },
     {
         "precio": "$U 25.000",
-        "zona": "Barrio Sur",
-        "tipo": "Apartamento",
+        "zona": "Atahualpa",
+        "tipo": "Casa",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230828102933210.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230908153124850.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.866252561174726,-56.190460119049064&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "1 Baños",
+        "area": "55 Mts"
     },
     {
-        "precio": "U$S 3.500",
+        "precio": "$U 25.000",
+        "zona": "La Blanqueada",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50674852.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8833183,-56.1527118&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "1 Baños",
+        "area": "60 Mts"
+    },
+    {
+        "precio": "$U 25.000",
+        "zona": "La Blanqueada",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50674852.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8833183,-56.1527118&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "1 Baños",
+        "area": "60 Mts"
+    },
+    {
+        "precio": "U$S 1.500",
         "zona": "Pocitos",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230601122737890.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230715003716530.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91219080133248,-56.151214036743156&zoom=15",
+        "number_of_bedrooms": "3 dormitorios",
+        "number_of_bathrooms": "2 Baños",
+        "area": "90 Mts"
     },
     {
-        "precio": "$U 48.000",
-        "zona": "Piedras Blancas",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230822135038880.jpg"
-        ]
-    },
-    {
-        "precio": "$U 34.900",
-        "zona": "Brazo Oriental",
+        "precio": "$U 25.000",
+        "zona": "Malvin",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/46887209.jpg"
-        ]
-    },
-    {
-        "precio": "U$S 750",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50952593.jpg"
-        ]
-    },
-    {
-        "precio": "$U 17.500",
-        "zona": "Ciudad Vieja",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/49991059.jpg"
-        ]
-    },
-    {
-        "precio": "$U 25.500",
-        "zona": "Buceo",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230630150750070.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/50517490.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8970564,-56.1135578&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "26 Mts"
     },
     {
         "precio": "$U 24.000",
         "zona": "Cordon",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230823161806400.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230715223513790.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.900101502314726,-56.165204438964835&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "2 Baños",
+        "area": "70 Mts"
     },
     {
-        "precio": "$U 16.500",
-        "zona": "Goes",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50922914.jpg"
-        ]
-    },
-    {
-        "precio": "$U 35.000",
-        "zona": "Puerto Buceo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50900207.jpg"
-        ]
-    },
-    {
-        "precio": "$U 17.000",
-        "zona": "Cordon",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230530132659080.jpg"
-        ]
-    },
-    {
-        "precio": "$U 23.500",
-        "zona": "Punta Carretas",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230118141754790.jpg"
-        ]
-    },
-    {
-        "precio": "$U 17.000",
-        "zona": "Malvin Norte",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50037628.jpg"
-        ]
-    },
-    {
-        "precio": "$U 21.000",
-        "zona": "Centro",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50924064.jpeg"
-        ]
-    },
-    {
-        "precio": "$U 15.900",
-        "zona": "Union",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230828150039150.jpg"
-        ]
-    },
-    {
-        "precio": "U$S 3.500",
-        "zona": "Pinares",
-        "tipo": "Casa",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50332237.jpg"
-        ]
-    },
-    {
-        "precio": "$U 21.500",
-        "zona": "Cordon",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/49134139.jpg"
-        ]
-    },
-    {
-        "precio": "$U 100.000",
-        "zona": "Brazo Oriental",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50180277.jpg"
-        ]
-    },
-    {
-        "precio": "$U 23.500",
-        "zona": "Villa Biarritz",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/221122180253020.jpg"
-        ]
-    },
-    {
-        "precio": "$U 17.000",
-        "zona": "Parque Batlle",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230622152516840.jpg"
-        ]
-    },
-    {
-        "precio": "$U 35.500",
-        "zona": "Punta Carretas",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50754861.jpg"
-        ]
-    },
-    {
-        "precio": "U$S 4.500",
-        "zona": "Punta Carretas",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230703163311020.jpg"
-        ]
-    },
-    {
-        "precio": "$U 37.000",
-        "zona": "Pocitos Nuevo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230704145343700.jpg"
-        ]
-    },
-    {
-        "precio": "$U 19.000",
-        "zona": "Manga",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/221206095734280.jpg"
-        ]
-    },
-    {
-        "precio": "$U 34.400",
-        "zona": "Buceo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/49721368.jpg"
-        ]
-    },
-    {
-        "precio": "U$S 19.700",
-        "zona": "Pocitos",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230818121040030.jpg"
-        ]
-    },
-    {
-        "precio": "$U 23.500",
-        "zona": "Atahualpa",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50797746.jpg"
-        ]
-    },
-    {
-        "precio": "$U 21.500",
-        "zona": "Otros",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50797710.jpg"
-        ]
-    },
-    {
-        "precio": "$U 85.000",
-        "zona": "Centro",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50909874.jpg"
-        ]
-    },
-    {
-        "precio": "$U 29.500",
-        "zona": "Buceo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50791397.jpg"
-        ]
-    },
-    {
-        "precio": "$U 16.000",
+        "precio": "$U 16.800",
         "zona": "Aguada",
         "tipo": "Apartamento",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230809163337610.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230703123541870.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.89510301157821,-56.1824743779362&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "30 Mts"
     },
     {
-        "precio": "$U 16.900",
-        "zona": "Parque Batlle",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50825583.jpeg"
-        ]
-    },
-    {
-        "precio": "$U 60.000",
-        "zona": "Ciudad Vieja",
-        "tipo": "Local",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/49604092.jpg"
-        ]
-    },
-    {
-        "precio": "U$S 2.500",
-        "zona": "Centro",
-        "tipo": "Garage",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230904130441280.jpg"
-        ]
-    },
-    {
-        "precio": "$U 32.000",
-        "zona": "Punta Carretas",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230817131650020.jpg"
-        ]
-    },
-    {
-        "precio": "$U 23.000",
-        "zona": "La Blanqueada",
+        "precio": "$U 19.900",
+        "zona": "Buceo",
         "tipo": "Casa",
         "imagen": [
-            "https://imagenes.gallito.com/1024x768/230829134317350.jpg"
-        ]
+            "https://imagenes.gallito.com/1024x768/230709194335310.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.890773752719646,-56.13730946520995&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "1 Baños",
+        "area": "1 Mts"
+    },
+    {
+        "precio": "$U 21.000",
+        "zona": "Malvin",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230815173301210.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.88649671340234,-56.106303128997794&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "34 Mts"
+    },
+    {
+        "precio": "$U 21.000",
+        "zona": "Malvin",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230815173301210.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.88649671340234,-56.106303128997794&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "34 Mts"
+    },
+    {
+        "precio": "U$S 5.500",
+        "zona": "Punta Carretas",
+        "tipo": "Casa",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50738656.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9157128,-56.1517849&zoom=15",
+        "number_of_bedrooms": "más de 4 dormitorios",
+        "number_of_bathrooms": "3 Baños",
+        "area": "431 Mts"
+    },
+    {
+        "precio": "$U 28.000",
+        "zona": "Malvin",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50984948.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8970672,-56.1217518&zoom=15",
+        "number_of_bedrooms": "2 dormitorios",
+        "number_of_bathrooms": "1 Baños",
+        "area": "55 Mts"
+    },
+    {
+        "precio": "$U 30.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "35 Mts"
+    },
+    {
+        "precio": "$U 30.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "35 Mts"
+    },
+    {
+        "precio": "$U 30.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "35 Mts"
+    },
+    {
+        "precio": "$U 30.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "35 Mts"
+    },
+    {
+        "precio": "$U 30.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "35 Mts"
+    },
+    {
+        "precio": "$U 24.500",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50358790.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9047617,-56.1810803&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "47 Mts"
+    },
+    {
+        "precio": "$U 18.000",
+        "zona": "Ciudad Vieja",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50634530.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9104609,-56.208118&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "48 Mts"
+    },
+    {
+        "precio": "$U 18.000",
+        "zona": "Ciudad Vieja",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50634530.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9104609,-56.208118&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "48 Mts"
+    },
+    {
+        "precio": "U$S 2.800",
+        "zona": "Carrasco",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50155948.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.881709,-56.0356427&zoom=15",
+        "number_of_bedrooms": "4 dormitorios",
+        "number_of_bathrooms": "Más de 3 baños",
+        "area": "170 Mts"
+    },
+    {
+        "precio": "U$S 1.200",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230125181753120.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.913510486036635,-56.14984074572753&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "58 Mts"
+    },
+    {
+        "precio": "$U 21.000",
+        "zona": "Buceo",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230815171642470.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.907211,-56.190267&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "45 Mts"
+    },
+    {
+        "precio": "$U 28.000",
+        "zona": "Aguada",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50867807.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "42 Mts"
+    },
+    {
+        "precio": "$U 34.800",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50598464.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.901243,-56.131650&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "45 Mts"
+    },
+    {
+        "precio": "$U 34.800",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50598464.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.901243,-56.131650&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "45 Mts"
+    },
+    {
+        "precio": "$U 45.000",
+        "zona": "Pocitos",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/230824192507200.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.90907626131979,-56.14033499697875&zoom=15",
+        "number_of_bedrooms": "3 dormitorios",
+        "number_of_bathrooms": "2 Baños",
+        "area": "129 Mts"
+    },
+    {
+        "precio": "$U 27.800",
+        "zona": "Centro",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50998936.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "41 Mts"
+    },
+    {
+        "precio": "$U 27.800",
+        "zona": "Centro",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50998936.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "41 Mts"
+    },
+    {
+        "precio": "$U 27.800",
+        "zona": "Centro",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50998936.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "41 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Tres Cruces",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50973818.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "21 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Tres Cruces",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50973818.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "21 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Tres Cruces",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50973818.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "21 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Tres Cruces",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50973818.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
+        "number_of_bedrooms": "Monoambiente",
+        "number_of_bathrooms": "1 Baños",
+        "area": "21 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50889978.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8962839,-56.1799844&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "42 Mts"
+    },
+    {
+        "precio": "$U 16.500",
+        "zona": "Cordon",
+        "tipo": "Apartamento",
+        "imagen": [
+            "https://imagenes.gallito.com/1024x768/50889978.jpg"
+        ],
+        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8962839,-56.1799844&zoom=15",
+        "number_of_bedrooms": "1 dormitorio",
+        "number_of_bathrooms": "1 Baños",
+        "area": "42 Mts"
     }
 ]
