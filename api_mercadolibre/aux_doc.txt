@@ -1,0 +1,206 @@
+API MercadoLibre | Python & Postman | Uso de Refresh token
+
+
+# 1. Obtener datos de la aplicación creada en DevCenter de Mercado Libre Client ID and Secret Key
+# https://developers.mercadolibre.com.uy/devcenter/
+https://developers.mercadolibre.com.uy/es_ar/autenticacion-y-autorizacion
+
+App_Id = '2891021824389532'
+Client_Secret = 'iajMXPsG6rtxfGLGqcYzcYYu3Ne1yy5j'
+redirectURI = 'https://cristian-encalada.github.io/holberton-final-project/'
+code='TG-6500fab5cdf5140001d0065a-1296801692'
+
+# 2. Autenticación y Autorización usando Postman
+https://auth.mercadolibre.com.uy/authorization?response_type=code&client_id=$APP_ID&redirect_uri=$YOUR_URL&code_challenge=$CODE_CHALLENGE&code_challenge_method=$CODE_METHOD
+
+https://auth.mercadolibre.com.uy/authorization?response_type=code&client_id=2891021824389532&redirect_uri=https://cristian-encalada.github.io/holberton-final-project/
+
+code=TG-6500fab5cdf5140001d0065a-1296801692
+TG-6500ffc86633ec0001c5b732-1296801692
+
+# 3. Obtener Access Token y Refresh Token con Postman
+
+curl -X POST \
+-H 'accept: application/json' \
+-H 'content-type: application/x-www-form-urlencoded' \
+'https://api.mercadolibre.com/oauth/token' \
+-d 'grant_type=authorization_code' \
+-d 'client_id=$APP_ID' \
+-d 'client_secret=$SECRET_KEY' \
+-d 'code=$SERVER_GENERATED_AUTHORIZATION_CODE' \
+-d 'redirect_uri=$REDIRECT_URI' \
+-d 'code_verifier=$CODE_VERIFIER' 
+
+
+{
+    "access_token": "APP_USR-2891021824389532-091220-aa195c4f8c58aed344d78b1c8e6add61-1296801692",
+    "token_type": "Bearer",
+    "expires_in": 21600,
+    "scope": "offline_access read write",
+    "user_id": 1296801692,
+    "refresh_token": "TG-6500fb9ed2606700015e3d05-1296801692"
+}
+
+# 4. Obtener código Python (Requests) a partir de Postman
+
+import requests
+
+url = "https://api.mercadolibre.com/oauth/token"
+
+payload = 'grant_type=authorization_code&client_id=2891021824389532&client_secret=iajMXPsG6rtxfGLGqcYzcYYu3Ne1yy5j&code=TG-6500fab5cdf5140001d0065a-1296801692&redirect_uri=https%3A%2F%2Fcristian-encalada.github.io%2Fholberton-final-project%2F&code_verifier=%24CODE_VERIFIER'
+headers = {
+  'accept': 'application/json',
+  'content-type': 'application/x-www-form-urlencoded'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
+
+# 5. Obtener de Access Token y Refresh Token con Python  - Python - Requests
+ok
+
+Refresh Token
+curl -X POST \
+-H 'accept: application/json' \
+-H 'content-type: application/x-www-form-urlencoded' \
+'https://api.mercadolibre.com/oauth/token' \
+-d 'grant_type=refresh_token' \
+-d 'client_id=$APP_ID' \
+-d 'client_secret=$SECRET_KEY' \
+-d 'refresh_token=$REFRESH_TOKEN'
+
+
+import requests
+
+url = "https://api.mercadolibre.com/oauth/token"
+
+payload = 'grant_type=authorization_code&client_id=2891021824389532&client_secret=iajMXPsG6rtxfGLGqcYzcYYu3Ne1yy5j&code=TG-6500ffc86633ec0001c5b732-1296801692&redirect_uri=https%3A%2F%2Fcristian-encalada.github.io%2Fholberton-final-project%2F&code_verifier=%24CODE_VERIFIER'
+headers = {
+  'accept': 'application/json',
+  'content-type': 'application/x-www-form-urlencoded'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
+
+
+# 6. Actualizar Access Token usando Refresh Token con Postman
+
+# 7. Actualizar Access Token usando Refresh Token con Python
+
+import requests
+
+url = "https://api.mercadolibre.com/oauth/token"
+
+payload = 'grant_type=refresh_token&client_id=2891021824389532&client_secret=iajMXPsG6rtxfGLGqcYzcYYu3Ne1yy5j&refresh_token=TG-6501015a6633ec0001c5e124-1296801692'
+headers = {
+  'accept': 'application/json',
+  'content-type': 'application/x-www-form-urlencoded'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+print(response.text)
+
+
+# 8. Consulta sites de Mercado Libre para conocer codigos de cada pais
+
+Devuelve información sobre los sitios donde Mercado Libre está disponible.
+
+curl -X GET -H 'Authorization: Bearer $ACCESS_TOKEN' https://api.mercadolibre.com/sites
+
+https://api.mercadolibre.com/sites
+
+  {
+    "default_currency_id": "UYU",
+    "id": "MLU",
+    "name": "Uruguay"
+  },
+
+
+# 9. Consulta de Categorias y Subcategorias
+
+Devuelve las categorías disponibles en el sitio. 	 
+
+curl -X GET -H 'Authorization: Bearer $ACCESS_TOKEN'   https://api.mercadolibre.com/sites/MLA/categories
+
+https://api.mercadolibre.com/sites/MLU/categories
+
+   {
+        "id": "MLU1459",
+        "name": "Inmuebles"
+    },
+
+https://api.mercadolibre.com/categories/MLU1459
+
+
+  "children_categories": [
+    {
+      "id": "MLU1472",
+      "name": "Apartamentos",
+      "total_items_in_this_category": 113264
+    },
+    {
+      "id": "MLU1496",
+      "name": "Campos",
+      "total_items_in_this_category": 3724
+    },
+    {
+      "id": "MLU1466",
+      "name": "Casas",
+      "total_items_in_this_category": 56229
+    },
+    {
+      "id": "MLU50547",
+      "name": "Chacras",
+      "total_items_in_this_category": 3687
+    },
+    {
+      "id": "MLU50636",
+      "name": "Cocheras",
+      "total_items_in_this_category": 386
+    },
+    {
+      "id": "MLU455466",
+      "name": "Depósitos y Galpones",
+      "total_items_in_this_category": 1029
+    },
+    {
+      "id": "MLU211280",
+      "name": "Habitaciones",
+      "total_items_in_this_category": 173
+    },
+    {
+      "id": "MLU50630",
+      "name": "Llave de Negocio",
+      "total_items_in_this_category": 332
+    },
+    {
+      "id": "MLU1478",
+      "name": "Locales",
+      "total_items_in_this_category": 6124
+    },
+    {
+      "id": "MLU50633",
+      "name": "Oficinas",
+      "total_items_in_this_category": 3160
+    },
+    {
+      "id": "MLU1892",
+      "name": "Otros Inmuebles",
+      "total_items_in_this_category": 1852
+    },
+    {
+      "id": "MLU1493",
+      "name": "Terrenos y Lotes",
+      "total_items_in_this_category": 15867
+    }
+  ],
+
+# 10. Buscar Categoria Inmuebles
+
+curl --location 'https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=5'

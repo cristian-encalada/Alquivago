@@ -1,0 +1,72 @@
+[
+    {
+        "price": 35000,
+        "state_name": "Montevideo",
+        "city_name": "La Blanqueada",
+        "PROPERTY_TYPE": "Sí",
+        "TOTAL_AREA": "80 m²",
+        "FULL_BATHROOMS": "2",
+        "BEDROOMS": "3",
+        "thumbnail": "http://http2.mlstatic.com/D_933008-MLA71567298385_092023-I.jpg",
+        "location": {
+            "latitude": -34.875334,
+            "longitude": -56.159832
+        }
+    },
+    {
+        "price": 17000,
+        "state_name": "Montevideo",
+        "city_name": "Jacinto Vera",
+        "PROPERTY_TYPE": "No",
+        "TOTAL_AREA": "61 m²",
+        "FULL_BATHROOMS": "1",
+        "BEDROOMS": "2",
+        "thumbnail": "http://http2.mlstatic.com/D_844743-MLU71495907118_092023-I.jpg",
+        "location": {
+            "latitude": -34.8738945,
+            "longitude": -56.1755093
+        }
+    },
+    {
+        "price": 15500,
+        "state_name": "Montevideo",
+        "city_name": "Centro",
+        "PROPERTY_TYPE": "Sí",
+        "TOTAL_AREA": "41 m²",
+        "FULL_BATHROOMS": "1",
+        "BEDROOMS": "0",
+        "thumbnail": "http://http2.mlstatic.com/D_631298-MLU71504661140_092023-I.jpg",
+        "location": {
+            "latitude": -34.9057767,
+            "longitude": -56.1891022
+        }
+    },
+    {
+        "price": 128000,
+        "state_name": "Canelones",
+        "city_name": "Atlántida",
+        "PROPERTY_TYPE": "Sí",
+        "TOTAL_AREA": "49 m²",
+        "FULL_BATHROOMS": "1",
+        "BEDROOMS": "2",
+        "thumbnail": "http://http2.mlstatic.com/D_883343-MLU71505263540_092023-I.jpg",
+        "location": {
+            "latitude": -34.7717159,
+            "longitude": -55.7714442
+        }
+    },
+    {
+        "price": 22000,
+        "state_name": "Montevideo",
+        "city_name": "Cordón",
+        "PROPERTY_TYPE": "Sí",
+        "TOTAL_AREA": "54 m²",
+        "FULL_BATHROOMS": "1",
+        "BEDROOMS": "1",
+        "thumbnail": "http://http2.mlstatic.com/D_675214-MLU71550180467_092023-I.jpg",
+        "location": {
+            "latitude": -34.9017649,
+            "longitude": -56.1752964
+        }
+    }
+]
