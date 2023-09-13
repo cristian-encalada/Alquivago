@@ -16,11 +16,20 @@ if response.status_code == 200:
     
     # Loop through the results and extract the required fields
     for result in data.get("results", []):
+        # Initialize property type as None
+        property_type = None
+        
+        # Loop through attributes to find the PROPERTY_TYPE
+        for attribute in result.get("attributes", []):
+            if attribute.get("id") == "PROPERTY_TYPE":
+                property_type = attribute.get("value_name")
+                break
+
         item_data = {
             "price": result.get("price"),
             "state_name": result.get("address", {}).get("state_name"),
             "city_name": result.get("address", {}).get("city_name"),
-            "PROPERTY_TYPE": result.get("attributes", [{}])[0].get("value_name"),
+            "PROPERTY_TYPE": property_type,
             "TOTAL_AREA": result.get("attributes", [{}])[4].get("value_name"),
             "FULL_BATHROOMS": result.get("attributes", [{}])[5].get("value_name"),
             "BEDROOMS": result.get("attributes", [{}])[3].get("value_name"),
