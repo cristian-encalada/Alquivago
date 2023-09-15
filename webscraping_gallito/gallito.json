@@ -1,482 +1,461 @@
 [
     {
-        "precio": "$U 16.500",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/211124161858010.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91078311426488,-56.14542046527099&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "40 Mts"
+        "id": "gallito_24113998",
+        "url_link": "https://www.gallito.com.uy/blandengues-esquina-rocha-inmuebles-24113998",
+        "price": 25000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Aguada",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "53 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.8826381,
+            "longitude": -56.184957
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 3.200",
-        "zona": "Punta Del Este",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50994492.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.948252,-54.9384&zoom=15",
-        "number_of_bedrooms": "3 dormitorios",
-        "number_of_bathrooms": "3 Baños",
-        "area": "122 Mts"
+        "id": "gallito_24344350",
+        "url_link": "https://www.gallito.com.uy/alquilo-cochera-inmuebles-24344350",
+        "price": 4200.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Pocitos Nuevo",
+        "PROPERTY_TYPE": "Garage",
+        "TOTAL_AREA": "53 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9030875,
+            "longitude": -56.1523879
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 26.000",
-        "zona": "Pocitos Nuevo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230908151633220.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9026004553135,-56.13879004458617&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "45 Mts"
+        "id": "gallito_21437473",
+        "url_link": "https://www.gallito.com.uy/alquiler-local-comercial-sobre-avenida-gral-paz-punta-gorda-inmuebles-21437473",
+        "price": 120000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Punta Gorda",
+        "PROPERTY_TYPE": "Local",
+        "TOTAL_AREA": "66 Mts",
+        "FULL_BATHROOMS": "484 Mts",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.8911267,
+            "longitude": -56.0797518
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 26.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230908152826340.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.90265324927501,-56.13894024829101&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "45 Mts"
+        "id": "gallito_24240652",
+        "url_link": "https://www.gallito.com.uy/apartamento-en-alquiler-1-dormitorio-1-ba%C3%A3%C2%B1o-1er-piso-inmuebles-24240652",
+        "price": 18000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Ciudad Vieja",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "40 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.9103199,
+            "longitude": -56.2075877
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 25.000",
-        "zona": "Atahualpa",
-        "tipo": "Casa",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230908153124850.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.866252561174726,-56.190460119049064&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "1 Baños",
-        "area": "55 Mts"
+        "id": "gallito_24341135",
+        "url_link": "https://www.gallito.com.uy/due%C3%B1o-alquila-apto-nuevo-de-2-dorm-gge-y-barbacoa-en-cordon-inmuebles-24341135",
+        "price": 35000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Cordon",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "60 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9040786,
+            "longitude": -56.1776928
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 25.000",
-        "zona": "La Blanqueada",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50674852.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8833183,-56.1527118&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "1 Baños",
-        "area": "60 Mts"
+        "id": "gallito_24263762",
+        "url_link": "https://www.gallito.com.uy/apartamento-alquiler-parque-rodo-montevideo-imasuy-fc-inmuebles-24263762",
+        "price": 20000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Parque Rodo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "35 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.9168077,
+            "longitude": -56.1649465
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 25.000",
-        "zona": "La Blanqueada",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50674852.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8833183,-56.1527118&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "1 Baños",
-        "area": "60 Mts"
+        "id": "gallito_23465570",
+        "url_link": "https://www.gallito.com.uy/alquiler-anual-hermoso-chalet-clasico-de-3-dormitorios-de-inmuebles-23465570",
+        "price": 1400.0,
+        "exchange": "U$S",
+        "state_name": "Maldonado",
+        "city_name": "Punta Del Este",
+        "PROPERTY_TYPE": "Casa",
+        "TOTAL_AREA": "600 Mts",
+        "FULL_BATHROOMS": "3 Baños",
+        "BEDROOMS": "4 dormitorios",
+        "location": {
+            "latitude": -34.9373146,
+            "longitude": -54.9379444
+        },
+        "imagenes": []
     },
     {
-        "precio": "U$S 1.500",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230715003716530.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91219080133248,-56.151214036743156&zoom=15",
-        "number_of_bedrooms": "3 dormitorios",
-        "number_of_bathrooms": "2 Baños",
-        "area": "90 Mts"
+        "id": "gallito_24146361",
+        "url_link": "https://www.gallito.com.uy/oficina-sosa-maciel-y-piedras-casa-reciclada-al-frente-si-inmuebles-24146361",
+        "price": 22500.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Ciudad Vieja",
+        "PROPERTY_TYPE": "Casa",
+        "TOTAL_AREA": "63 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9066293,
+            "longitude": -56.2120442
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 25.000",
-        "zona": "Malvin",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50517490.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8970564,-56.1135578&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "26 Mts"
+        "id": "gallito_24236292",
+        "url_link": "https://www.gallito.com.uy/local-en-alquiler-las-acacias-inmuebles-24236292",
+        "price": 48000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Las Acacias",
+        "PROPERTY_TYPE": "Local",
+        "TOTAL_AREA": "63 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9066293,
+            "longitude": -56.2120442
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 24.000",
-        "zona": "Cordon",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230715223513790.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.900101502314726,-56.165204438964835&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "2 Baños",
-        "area": "70 Mts"
+        "id": "gallito_24324065",
+        "url_link": "https://www.gallito.com.uy/estrene-hoy-zona-dise%C3%B1o-inmuebles-24324065",
+        "price": 24000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Parque Rodo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "48 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.9084339,
+            "longitude": -56.1737124
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 16.800",
-        "zona": "Aguada",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230703123541870.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.89510301157821,-56.1824743779362&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "30 Mts"
+        "id": "gallito_23442350",
+        "url_link": "https://www.gallito.com.uy/alquiler-anual-hermosa-casa-en-playa-mansa-3-dormitorios-inmuebles-23442350",
+        "price": 1700.0,
+        "exchange": "U$S",
+        "state_name": "Maldonado",
+        "city_name": "Punta Del Este",
+        "PROPERTY_TYPE": "Casa",
+        "TOTAL_AREA": "800 Mts",
+        "FULL_BATHROOMS": "3 Baños",
+        "BEDROOMS": "4 dormitorios",
+        "location": {
+            "latitude": -34.9411404,
+            "longitude": -54.9428904
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 19.900",
-        "zona": "Buceo",
-        "tipo": "Casa",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230709194335310.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.890773752719646,-56.13730946520995&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "1 Baños",
-        "area": "1 Mts"
+        "id": "gallito_24272062",
+        "url_link": "https://www.gallito.com.uy/apartamento-en-alquiler-1-dormitorio-aguada-inmuebles-24272062",
+        "price": 16500.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Aguada",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "38 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.9411404,
+            "longitude": -54.9428904
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 21.000",
-        "zona": "Malvin",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230815173301210.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.88649671340234,-56.106303128997794&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "34 Mts"
+        "id": "gallito_23644802",
+        "url_link": "https://www.gallito.com.uy/venta-de-apartamento-penthouse-a-estrenar-2-dormitorios-inmuebles-23644802",
+        "price": 4500.0,
+        "exchange": "U$S",
+        "state_name": "Montevideo",
+        "city_name": "Punta Carretas",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "1 Mts",
+        "FULL_BATHROOMS": "3 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9154199,
+            "longitude": -56.1617714
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 21.000",
-        "zona": "Malvin",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230815173301210.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.88649671340234,-56.106303128997794&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "34 Mts"
+        "id": "gallito_19156107",
+        "url_link": "https://www.gallito.com.uy/hermoso-monoambiente-muy-amplio-de-53-m2-en-villa-biarritz-inmuebles-19156107",
+        "price": 24700.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Villa Biarritz",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "53 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "Monoambiente",
+        "location": {
+            "latitude": -34.9154199,
+            "longitude": -56.1617714
+        },
+        "imagenes": []
     },
     {
-        "precio": "U$S 5.500",
-        "zona": "Punta Carretas",
-        "tipo": "Casa",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50738656.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9157128,-56.1517849&zoom=15",
-        "number_of_bedrooms": "más de 4 dormitorios",
-        "number_of_bathrooms": "3 Baños",
-        "area": "431 Mts"
+        "id": "gallito_23424778",
+        "url_link": "https://www.gallito.com.uy/pent-house-en-pinares-alquiler-edificio-laguna-3-dormit-inmuebles-23424778",
+        "price": 1000.0,
+        "exchange": "U$S",
+        "state_name": "Maldonado",
+        "city_name": "Pinares",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "160 Mts",
+        "FULL_BATHROOMS": "3 Baños",
+        "BEDROOMS": "3 dormitorios",
+        "location": {
+            "latitude": -34.9086206,
+            "longitude": -55.0043802
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 28.000",
-        "zona": "Malvin",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50984948.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8970672,-56.1217518&zoom=15",
-        "number_of_bedrooms": "2 dormitorios",
-        "number_of_bathrooms": "1 Baños",
-        "area": "55 Mts"
+        "id": "gallito_23540306",
+        "url_link": "https://www.gallito.com.uy/alquiler-de-apartamento-1-dormitorio-en-forum-inmuebles-23540306",
+        "price": 2500.0,
+        "exchange": "U$S",
+        "state_name": "Montevideo",
+        "city_name": "Puerto Buceo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "105 Mts",
+        "FULL_BATHROOMS": "2 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.9096411,
+            "longitude": -56.1340168
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 30.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "35 Mts"
+        "id": "gallito_23759509",
+        "url_link": "https://www.gallito.com.uy/mono-ambiente-a-estrenar-en-rambla-inmuebles-23759509",
+        "price": 24500.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Malvin",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "35 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "Monoambiente",
+        "location": {
+            "latitude": -34.8959833,
+            "longitude": -56.1046079
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 30.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "35 Mts"
+        "id": "gallito_24355303",
+        "url_link": "https://www.gallito.com.uy/alquiler-monoambiente-a-estrenar-punta-carretas-inmuebles-24355303",
+        "price": 23000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Punta Carretas",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "30 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "Monoambiente",
+        "location": {
+            "latitude": -34.9180703,
+            "longitude": -56.1609037
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 30.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "35 Mts"
+        "id": "gallito_24008553",
+        "url_link": "https://www.gallito.com.uy/apartamento-en-alquiler-3-dormitorios-1-ba%C3%A3%C2%B1o-terraza-inmuebles-24008553",
+        "price": 34400.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Buceo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "60 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "3 dormitorios",
+        "location": {
+            "latitude": -34.9180703,
+            "longitude": -56.1609037
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 30.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "35 Mts"
+        "id": "gallito_23675046",
+        "url_link": "https://www.gallito.com.uy/alquiler-apartamento-centro-montevideo-imasuy-fc-inmuebles-23675046",
+        "price": 18000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Centro",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "42 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "Monoambiente",
+        "location": {
+            "latitude": -34.9054016,
+            "longitude": -56.1965994
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 30.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/220503130750670.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.91058955540549,-56.15932503680419&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "35 Mts"
+        "id": "gallito_24340482",
+        "url_link": "https://www.gallito.com.uy/apartamento-un-dormitorio-buceo-proximo-rambla-inmuebles-24340482",
+        "price": 20000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Buceo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "37 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.8961153,
+            "longitude": -56.1201433
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 24.500",
-        "zona": "Cordon",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50358790.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9047617,-56.1810803&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "47 Mts"
+        "id": "gallito_24272038",
+        "url_link": "https://www.gallito.com.uy/apartamento-1-dormitorio-2do-piso-por-escalera-cocina-def-inmuebles-24272038",
+        "price": 23900.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Punta Carretas",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "40 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.8961153,
+            "longitude": -56.1201433
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 18.000",
-        "zona": "Ciudad Vieja",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50634530.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9104609,-56.208118&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "48 Mts"
+        "id": "gallito_24101408",
+        "url_link": "https://www.gallito.com.uy/apartamento-2-dormitorios-en-suitie-ba%C3%B16o-social-garage-inmuebles-24101408",
+        "price": 50000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Pocitos",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "80 Mts",
+        "FULL_BATHROOMS": "2 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.8961153,
+            "longitude": -56.1201433
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 18.000",
-        "zona": "Ciudad Vieja",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50634530.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.9104609,-56.208118&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "48 Mts"
+        "id": "gallito_23837184",
+        "url_link": "https://www.gallito.com.uy/1-dormitorio-con-opcion-a-dosexoneracion-irpf-10-anos-alqui-inmuebles-23837184",
+        "price": 75000.0,
+        "exchange": "U$S",
+        "state_name": "Montevideo",
+        "city_name": "Cordon",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "55 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "1 dormitorio",
+        "location": {
+            "latitude": -34.8961153,
+            "longitude": -56.1201433
+        },
+        "imagenes": []
     },
     {
-        "precio": "U$S 2.800",
-        "zona": "Carrasco",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50155948.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.881709,-56.0356427&zoom=15",
-        "number_of_bedrooms": "4 dormitorios",
-        "number_of_bathrooms": "Más de 3 baños",
-        "area": "170 Mts"
+        "id": "gallito_23743928",
+        "url_link": "https://www.gallito.com.uy/lindo-interior-s-15000-se-estudian-todas-las-garantias-50m2-inmuebles-23743928",
+        "price": 15000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Capurro",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "50 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.8961153,
+            "longitude": -56.1201433
+        },
+        "imagenes": []
     },
     {
-        "precio": "U$S 1.200",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230125181753120.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.913510486036635,-56.14984074572753&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "58 Mts"
+        "id": "gallito_24109591",
+        "url_link": "https://www.gallito.com.uy/apartamento-alquiler-punta-carretas-montevideo-imasuy-fc-inmuebles-24109591",
+        "price": 45000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Punta Carretas",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "77 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9209665,
+            "longitude": -56.1507576
+        },
+        "imagenes": []
     },
     {
-        "precio": "$U 21.000",
-        "zona": "Buceo",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230815171642470.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.907211,-56.190267&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "45 Mts"
-    },
-    {
-        "precio": "$U 28.000",
-        "zona": "Aguada",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50867807.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "42 Mts"
-    },
-    {
-        "precio": "$U 34.800",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50598464.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.901243,-56.131650&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "45 Mts"
-    },
-    {
-        "precio": "$U 34.800",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50598464.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.901243,-56.131650&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "45 Mts"
-    },
-    {
-        "precio": "$U 45.000",
-        "zona": "Pocitos",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/230824192507200.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.90907626131979,-56.14033499697875&zoom=15",
-        "number_of_bedrooms": "3 dormitorios",
-        "number_of_bathrooms": "2 Baños",
-        "area": "129 Mts"
-    },
-    {
-        "precio": "$U 27.800",
-        "zona": "Centro",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50998936.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "41 Mts"
-    },
-    {
-        "precio": "$U 27.800",
-        "zona": "Centro",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50998936.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "41 Mts"
-    },
-    {
-        "precio": "$U 27.800",
-        "zona": "Centro",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50998936.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8977802,-56.1902213&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "41 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Tres Cruces",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50973818.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "21 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Tres Cruces",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50973818.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "21 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Tres Cruces",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50973818.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "21 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Tres Cruces",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50973818.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8927567,-56.1658044&zoom=15",
-        "number_of_bedrooms": "Monoambiente",
-        "number_of_bathrooms": "1 Baños",
-        "area": "21 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Cordon",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50889978.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8962839,-56.1799844&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "42 Mts"
-    },
-    {
-        "precio": "$U 16.500",
-        "zona": "Cordon",
-        "tipo": "Apartamento",
-        "imagen": [
-            "https://imagenes.gallito.com/1024x768/50889978.jpg"
-        ],
-        "url_map": "https://www.google.com/maps/embed/v1/place?key=AIzaSyA5zBnZ-PrN5yyPQH_ivQgoB-Ue_-OMiq0&q=-34.8962839,-56.1799844&zoom=15",
-        "number_of_bedrooms": "1 dormitorio",
-        "number_of_bathrooms": "1 Baños",
-        "area": "42 Mts"
+        "id": "gallito_23872096",
+        "url_link": "https://www.gallito.com.uy/apartamento-de-2-dormitorios-en-pocitos-inmuebles-23872096",
+        "price": 30000.0,
+        "exchange": "$U",
+        "state_name": "Montevideo",
+        "city_name": "Pocitos Nuevo",
+        "PROPERTY_TYPE": "Apartamento",
+        "TOTAL_AREA": "58 Mts",
+        "FULL_BATHROOMS": "1 Baños",
+        "BEDROOMS": "2 dormitorios",
+        "location": {
+            "latitude": -34.9067107,
+            "longitude": -56.1426925
+        },
+        "imagenes": []
     }
 ]
