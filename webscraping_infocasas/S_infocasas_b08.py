@@ -145,6 +145,8 @@ for i in range(5):
 
             except Exception:
                 url_map = ""
+                lat = 0
+                lon = 0
                 pass
             try:
                 # cerrar galeria
@@ -290,6 +292,8 @@ for i in range(5):
                 lon = parts[1]
             except Exception:
                 url_map = ""
+                lat = 0
+                lon = 0
                 pass
             try:
                 # cerrar galeria
