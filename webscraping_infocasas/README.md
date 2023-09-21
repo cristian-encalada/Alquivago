@@ -1,8 +1,8 @@
-# scraping de infocasas
+# Web scraping de infocasas
 
-# antes que nada iniciar docker desktop
-# docker-compose es un archivo .yml para correr selenium-chrome:
-# por ejemplo tengo un archivo docker-compose.yml en mi escritorio (que tiene el codigo que se ve abajo)
+* antes que nada iniciar docker desktop
+* docker-compose es un archivo .yml para correr selenium-chrome.
+* por ejemplo tengo un archivo docker-compose.yml en mi escritorio (que tiene el codigo que se ve abajo)
 
 ```
 version: '3.3'
@@ -20,9 +20,9 @@ services:
         - "4444:4444"
 ```
 
-# para crear la imagen tengo que ejecutar este comando: docker-compose up -d --build
-# (docker-compose sin la extension .yml)
-# usar -d para modo demonio
+* para crear la imagen tengo que ejecutar este comando: docker-compose up -d --build
+* (docker-compose sin la extension .yml)
+* usar -d para modo demonio
 
 ```
 PS C:\Users\martin\Desktop> docker-compose up -d --build
@@ -33,5 +33,4 @@ PS C:\Users\martin\Desktop> docker-compose up -d --build
  ✔ Container selenium-chrome  Started                                                                              1.4s
 ```
 
-# una vez creado el container veo que el servicio esta arriba en la ruta " http://localhost:4444/ "
-# ahora puedo ejecutar mi script de automatizacion (usar a partir de la version "S_infocasas_d00.py")
+* una vez creado el container veo que el servicio esta arriba en la ruta " http://localhost:4444/ " ahora puedo ejecutar mi script de automatizacion (usar a partir de la version "S_infocasas_d00.py")
