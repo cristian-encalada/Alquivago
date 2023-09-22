@@ -5,8 +5,8 @@ import "./index.css"
 function App({propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyImage}) {
   return (
     <section className='flex'>
-    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl g">
-      <img className="w-full" src={propertyImage} alt="Property Image" />
+    <div className="max-w-sm rounded overflow-hidden shadow-lg hover:shadow-xl g flex flex-wrap">
+      <img className="w-full h-1/2" src={propertyImage} alt="Property Image" />
       <div className="px-6 py-4">
         <div className="mb-2">
           <h2 className="text-xl font-bold text-gray-900 text-center">{propertyType} en {propertyZone}</h2>

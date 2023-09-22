@@ -15,7 +15,7 @@ const MyComponent = () => {
         return response.json(); // Parsea la respuesta como JSON
       })
       .then((apiData) => {
-        setData(apiData); // Almacena los datos en el estado
+        setData(apiData); // Almacena lcleaos datos en el estado
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -23,7 +23,7 @@ const MyComponent = () => {
   }, []); // El segundo argumento [] significa que este efecto se ejecutará solo una vez, al montar el componente
 
   return (
-    <div>
+    <div className="flex flex-wrap gap-2 justify-center">
       {data.map((alquiler) => (
         <App
           propertyArea={alquiler.TOTAL_AREA}
