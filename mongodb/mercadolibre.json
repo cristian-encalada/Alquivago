@@ -1,72 +1,107 @@
 [
     {
-        "price": 35000,
+        "id": "MLU_MLU656974814",
+        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-656974814-departamento-en-venta-1-dormitorio-y-medio-reciclado-a-nuevo-cordon-_JM",
+        "operation_type": "Venta",
+        "price_uyu": 0,
+        "price_usd": 99000,
+        "currency": "USD",
         "state_name": "Montevideo",
-        "city_name": "La Blanqueada",
-        "PROPERTY_TYPE": "Casa",
-        "TOTAL_AREA": "80 m²",
-        "FULL_BATHROOMS": "2",
-        "BEDROOMS": "3",
-        "thumbnail": "http://http2.mlstatic.com/D_933008-MLA71567298385_092023-I.jpg",
+        "zone_name": "Cordón",
+        "property_type": "Apartamento",
+        "total_area": "67 m²",
+        "bathrooms": "1",
+        "bedrooms": "1",
         "location": {
-            "latitude": -34.875334,
-            "longitude": -56.159832
-        }
+            "latitude": -34.8970155,
+            "longitude": -56.183175
+        },
+        "images": [
+            "http://http2.mlstatic.com/D_968239-MLU71721297623_092023-I.jpg"
+        ]
     },
     {
-        "price": 17000,
+        "id": "MLU_MLU633509397",
+        "url_link": "https://casa.mercadolibre.com.uy/MLU-633509397-venta-permuta-muy-linda-casa-de-solida-construccion-que-invita-a-conocerla-descubri-sus-cualidades-y-beneficios-_JM",
+        "operation_type": "Venta",
+        "price_uyu": 0,
+        "price_usd": 175000,
+        "currency": "USD",
         "state_name": "Montevideo",
-        "city_name": "Jacinto Vera",
-        "PROPERTY_TYPE": "Apartamento",
-        "TOTAL_AREA": "61 m²",
-        "FULL_BATHROOMS": "1",
-        "BEDROOMS": "2",
-        "thumbnail": "http://http2.mlstatic.com/D_844743-MLU71495907118_092023-I.jpg",
+        "zone_name": "Buceo",
+        "property_type": "Casa",
+        "total_area": "Venta",
+        "bathrooms": "Casa",
+        "bedrooms": "1",
         "location": {
-            "latitude": -34.8738945,
-            "longitude": -56.1755093
-        }
+            "latitude": -34.8864682,
+            "longitude": -56.1260307
+        },
+        "images": [
+            "http://http2.mlstatic.com/D_687475-MLU71751391111_092023-I.jpg"
+        ]
     },
     {
-        "price": 15500,
+        "id": "MLU_MLU656966154",
+        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-656966154-alquile-monoambiente-a-estrenar-01-libertador-_JM",
+        "operation_type": "Alquiler",
+        "price_uyu": 17000,
+        "price_usd": 0,
+        "currency": "UYU",
         "state_name": "Montevideo",
-        "city_name": "Centro",
-        "PROPERTY_TYPE": "Apartamento",
-        "TOTAL_AREA": "41 m²",
-        "FULL_BATHROOMS": "1",
-        "BEDROOMS": "0",
-        "thumbnail": "http://http2.mlstatic.com/D_631298-MLU71504661140_092023-I.jpg",
+        "zone_name": "Aguada",
+        "property_type": "Apartamento",
+        "total_area": "32 m²",
+        "bathrooms": "1",
+        "bedrooms": "0",
         "location": {
-            "latitude": -34.9057767,
-            "longitude": -56.1891022
-        }
+            "latitude": -34.895418,
+            "longitude": -56.182269
+        },
+        "images": [
+            "http://http2.mlstatic.com/D_768191-MLU71730963915_092023-I.jpg"
+        ]
     },
     {
-        "price": 128000,
-        "state_name": "Canelones",
-        "city_name": "Atlántida",
-        "PROPERTY_TYPE": "Casa",
-        "TOTAL_AREA": "49 m²",
-        "FULL_BATHROOMS": "1",
-        "BEDROOMS": "2",
-        "thumbnail": "http://http2.mlstatic.com/D_883343-MLU71505263540_092023-I.jpg",
+        "id": "MLU_MLU656963288",
+        "url_link": "https://casa.mercadolibre.com.uy/MLU-656963288-casa-en-alquiler-de-3-dormitorios-en-pocitos-ref-vld-3836-_JM",
+        "operation_type": "Alquiler",
+        "price_uyu": 50000,
+        "price_usd": 0,
+        "currency": "UYU",
+        "state_name": "Montevideo",
+        "zone_name": "Pocitos",
+        "property_type": "Casa",
+        "total_area": "100 m²",
+        "bathrooms": "2",
+        "bedrooms": "3",
         "location": {
-            "latitude": -34.7717159,
-            "longitude": -55.7714442
-        }
+            "latitude": -34.9085301,
+            "longitude": -56.1504057
+        },
+        "images": [
+            "http://http2.mlstatic.com/D_663516-MLU71798756246_092023-I.jpg"
+        ]
     },
     {
-        "price": 22000,
+        "id": "MLU_MLU656924406",
+        "url_link": "https://casa.mercadolibre.com.uy/MLU-656924406-casa-en-ph-1er-piso-3-dormitorios-azotea-con-parrillero-_JM",
+        "operation_type": "Alquiler",
+        "price_uyu": 39000,
+        "price_usd": 0,
+        "currency": "UYU",
         "state_name": "Montevideo",
-        "city_name": "Cordón",
-        "PROPERTY_TYPE": "Apartamento",
-        "TOTAL_AREA": "54 m²",
-        "FULL_BATHROOMS": "1",
-        "BEDROOMS": "1",
-        "thumbnail": "http://http2.mlstatic.com/D_675214-MLU71550180467_092023-I.jpg",
+        "zone_name": "Pocitos",
+        "property_type": "Casa",
+        "total_area": "Alquiler",
+        "bathrooms": "Casa",
+        "bedrooms": "1",
         "location": {
-            "latitude": -34.9017649,
-            "longitude": -56.1752964
-        }
+            "latitude": -34.9024949,
+            "longitude": -56.1430027
+        },
+        "images": [
+            "http://http2.mlstatic.com/D_742081-MLU71725065121_092023-I.jpg"
+        ]
     }
 ]
