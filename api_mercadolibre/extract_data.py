@@ -24,7 +24,17 @@ if response.status_code == 200:
             if attribute.get("id") == "PROPERTY_TYPE":
                 property_type = attribute.get("value_name")
                 break
-        
+
+        # Extracting total_area, bathrooms and bedrooms
+        total_area_str = result.get("attributes", [{}])[4].get("value_name")
+        bathrooms_str = result.get("attributes", [{}])[5].get("value_name")
+        bedrooms_str = result.get("attributes", [{}])[3].get("value_name")
+
+        # Convert strings to integers (if not empty)
+        total_area = int(total_area_str.split()[0]) if total_area_str and total_area_str.split()[0].isdigit() else 0
+        bathrooms = int(bathrooms_str) if bathrooms_str.isdigit() else 0
+        bedrooms = int(bedrooms_str) if bedrooms_str.isdigit() else 0
+
         # Extract the "OPERATION" value_name
         operation_type = None
         for attribute in result.get("attributes", []):
@@ -61,9 +71,9 @@ if response.status_code == 200:
             "state_name": result.get("address", {}).get("state_name"),
             "zone_name": result.get("address", {}).get("city_name"),
             "property_type": property_type,
-            "total_area": result.get("attributes", [{}])[4].get("value_name"),
-            "bathrooms": result.get("attributes", [{}])[5].get("value_name"),
-            "bedrooms": result.get("attributes", [{}])[3].get("value_name"),
+            "total_area": total_area,
+            "bathrooms": bathrooms,
+            "bedrooms": bedrooms,
             "location": {
                 "latitude": result.get("location", {}).get("latitude"),
                 "longitude": result.get("location", {}).get("longitude")
