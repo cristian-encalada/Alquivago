@@ -51,10 +51,10 @@ def get_rents(filters, page, rents_per_page):
     else:
         cursor = db.movies.find(query).sort(sort)
     """
-    cursor = db.coll_gallito.find()
+    cursor = db.propertys.find()
     total_num_rents = 0
     if page == 0:
-        total_num_rents = db.coll_gallito.count_documents({})
+        total_num_rents = db.propertys.count_documents({})
  
     rents = cursor.limit(rents_per_page)
 
