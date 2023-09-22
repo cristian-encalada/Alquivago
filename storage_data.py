@@ -2,15 +2,15 @@ import json
 import pymongo
 
 # Connect to the MongoDB database
-client = pymongo.MongoClient("mongodb://localhost:27017")
-db = client["mydb"]
+client = pymongo.MongoClient("mongodb+srv://alice:CheshireCat@prueba.emolc4y.mongodb.net/?retryWrites=true&w=majority")
+db = client["alquivago_test"]
 
-coll_gallito = db["coll_gallito"]
-
-
+propertys = db["propertys"]
 
 
-file2 = open("gallito.json")
+
+
+file2 = open("output.json")
 data2 = json.load(file2)
 file2.close()
 
@@ -18,7 +18,7 @@ file2.close()
 
 # Insert the data into the MongoDB collections
 
-coll_gallito.insert_many(data2)
+propertys.insert_many(data2)
 
 
 print("Data successfully stored in MongoDB!")
