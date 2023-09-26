@@ -1,4 +1,6 @@
 import bson
+import re
+
 
 from flask import current_app, g
 from werkzeug.local import LocalProxy
@@ -30,6 +32,62 @@ def build_query_sort_project(filters):
     Builds the `query` predicate, `sort` and `projection` attributes for a given
     filters dictionary.
     """
+    sort = []
+    query = {}
+    project = None # elije que datos traer, de momento traeremos todos
+
+
+    #ordenamiento 
+
+    if "orden" in filters:
+        tipo = {"area": "TOTAL_AREA", "UYU": "price_UYU", "USD": "price_USS"}
+        for o, t in filters["orden"]:
+            if o in tipo:
+                sort.append((tipo[o], t))
+
+
+    #filtrado
+    filters_list = []
+    if "tipos" in filters: #es una lista de strigs, normalisadas ["normalisado", ...]
+        filters_list.append({"PROPERTY_TYPE": filters["tipos"]})
+
+    if "zonas" in filters: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
+        escaped_zonas = [re.escape(zona) for zona in filters["zonas"]]
+        regex_pattern = "|".join(escaped_zonas)
+        filters_list.append({"city_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+    
+    if "dormitorios" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
+        filters_list.append({"$or": [
+            {"BEDROOMS": {"$in": filters["dormitorios"][0]}},
+            {"BEDROOMS": {"$gte": filters["dormitorios"][1]}}
+        ]})
+
+    if "baños" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
+        filters_list.append({"$or": [
+            {"FULL_BATHROOMS": {"$in": filters["baños"][0]}},
+            {"FULL_BATHROOMS": {"$gte": filters["baños"][1]}}
+        ]})
+    
+    if "precio" in filters: #es un diccionario con tres valores ["moneda": "tipo", "min": int(none), "max": int(none)]
+        if filters["precio"]["moneda"] == "UYU":
+            filters_list.append({"price_UYU": { "$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}})
+            if "orden" not in filters:
+                sort.append(("price_UYU", 1))# orden base
+        elif filters["precio"]["moneda"] == "USD":
+            filters_list.append({"price_USS": { "$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}})
+            if "orden" not in filters:
+                sort.append(("price_USS", 1))# orden base
+    
+    if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
+        filters_list.append({"TOTAL_AREA": { "$gte": filters["area"]["min"], "$lte": filters["area"]["max"]}})
+        if "orden" not in filters:
+            sort.append(("TOTAL_AREA", -1))# orden base
+    
+    #filtro de proximidad con la latitud y longitud
+    if filters_list:
+        query["$and"] = filters_list
+    
+    return query, sort, project
 
 
 def get_rents(filters, page, rents_per_page):
@@ -44,21 +102,23 @@ def get_rents(filters, page, rents_per_page):
     is executed by this method (`get_rental_properties`).
 
     Returns 2 elements in a tuple: (properties, total_num_properties)
-    
-    query, sort, project = build_query_sort_project(filters)
-    if project:
-        cursor = db.movies.find(query, project).sort(sort)
-    else:
-        cursor = db.movies.find(query).sort(sort)
     """
-    cursor = db.propertys.find()
+    query, sort, project = build_query_sort_project(filters)
+
+    if project:
+        cursor = db.propertys.find(query, project).sort(sort)
+    elif sort:
+        cursor = db.propertys.find(query).sort(sort)
+    else:
+        cursor = db.propertys.find(query)
+    
     total_num_rents = 0
     if page == 0:
-        total_num_rents = db.propertys.count_documents({})
+        total_num_rents = db.propertys.count_documents(query)
  
     rents = cursor.limit(rents_per_page)
 
-    return (list(rents), total_num_rents)
+    return (list(rents), total_num_rents, query)
 
 def get_rent(id):
     """
@@ -68,7 +128,15 @@ def get_rent(id):
     """
 
 
-def get_all_type():
+def get_all_type(page, rents_per_page):
     """
     List all type of rents
     """
+    cursor = db.propertys.find()
+    total_num_rents = 0
+    if page == 0:
+        total_num_rents = db.propertys.count_documents({})
+ 
+    rents = cursor.limit(rents_per_page)
+
+    return (list(rents), total_num_rents)

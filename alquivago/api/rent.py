@@ -15,13 +15,14 @@ CORS(rents_api_v1)
 def api_get_rent():
     RENTS_PER_PAGE = 20
 
-    (rents, total_num_entries) = get_rents(
-        None, page=0, rents_per_page=RENTS_PER_PAGE)
+    filters = {"precio": {"moneda": "UYU", "min": 12000, "max": 12000}, "zonas": "Maroñas Curva", "tipos": "Apartamento", "area": {"min": 35, "max": 35}, "dormitorios": [[4], None], "baños": [[3], None]}
+    (rents, total_num_entries, query) = get_rents(
+        filters, page=0, rents_per_page=RENTS_PER_PAGE)
 
     response = {
         "rents": rents,
         "page": 0,
-        "filters": {},
+        "filters": query,
         "entries_per_page": RENTS_PER_PAGE,
         "total_results": total_num_entries,
     }
