@@ -1,4 +1,4 @@
-from flask.json import JSONEncoder
+from json import JSONEncoder
 import os
 
 from flask import Flask, render_template
