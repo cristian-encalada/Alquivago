@@ -1,8 +1,9 @@
 import requests
 import json
+import re
 
 # Define the API URL
-api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=5"
+api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=50"
 
 # Send a GET request to the API
 response = requests.get(api_url)
@@ -18,52 +19,40 @@ if response.status_code == 200:
     for result in data.get("results", []):
         # Initialize property type as None
         property_type = None
+        operation_type = None
+        bathrooms = None
+        bedrooms = None
+        total_area = None
         
-        # Loop through attributes to find the PROPERTY_TYPE
         for attribute in result.get("attributes", []):
             if attribute.get("id") == "PROPERTY_TYPE":
                 property_type = attribute.get("value_name")
-                break
-        
-        # Extract the "OPERATION" value_name
-        operation_type = None
-        for attribute in result.get("attributes", []):
-            if attribute.get("id") == "OPERATION":
+            elif attribute.get("id") == "OPERATION":
                 operation_type = attribute.get("value_name")
-                break
-
-        # Get the currency and price information
-        currency_id = result.get("currency_id")
-        price = result.get("price")
-
-        # Determine price in UYU and USD based on currency_id
-        if currency_id == "USD":
-            price_uyu = 0
-            price_usd = price
-            currency = "USD"
-        elif currency_id == "UYU":
-            price_uyu = price
-            price_usd = 0
-            currency = "UYU"
-        else:
-            # Handle other currency scenarios here if needed
-            price_uyu = 0
-            price_usd = 0
-            currency = currency_id
-
+            elif attribute.get("id") == "FULL_BATHROOMS":
+                bathrooms_value = attribute.get("value_name")
+                bathrooms = int(bathrooms_value) if bathrooms_value.isdigit() else None
+            elif attribute.get("id") == "BEDROOMS":
+                bedrooms_value = attribute.get("value_name")
+                bedrooms = int(bedrooms_value) if bedrooms_value.isdigit() else None
+            elif attribute.get("id") == "TOTAL_AREA":
+                total_area_value = attribute.get("value_name")
+                numeric_part = re.search(r'\d+', total_area_value)
+                total_area = int(numeric_part.group()) if numeric_part else None
+        
         item_data = {
             "id": "MLU_" + result.get("id"),
             "url_link": result.get("permalink"),
+            "origin": "mercado_libre",
             "operation_type": operation_type,
-            "price_uyu": price_uyu,
-            "price_usd": price_usd,
-            "currency": currency,
+            "price": result.get("price"),
+            "currency": result.get("currency_id"),
             "state_name": result.get("address", {}).get("state_name"),
             "zone_name": result.get("address", {}).get("city_name"),
             "property_type": property_type,
-            "total_area": result.get("attributes", [{}])[4].get("value_name"),
-            "bathrooms": result.get("attributes", [{}])[5].get("value_name"),
-            "bedrooms": result.get("attributes", [{}])[3].get("value_name"),
+            "total_area": total_area,
+            "bathrooms": bathrooms,
+            "bedrooms": bedrooms,
             "location": {
                 "latitude": result.get("location", {}).get("latitude"),
                 "longitude": result.get("location", {}).get("longitude")
