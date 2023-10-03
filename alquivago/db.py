@@ -26,7 +26,6 @@ def get_db():
 # Use LocalProxy to read the global db instance with just `db`
 db = LocalProxy(get_db)
 
-
 def build_query_sort_project(filters):
     """
     Builds the `query` predicate, `sort` and `projection` attributes for a given
@@ -69,14 +68,21 @@ def build_query_sort_project(filters):
         ]})
     
     if "precio" in filters: #es un diccionario con tres valores ["moneda": "tipo", "min": int(none), "max": int(none)]
+        camb = 1 #valor de cmabio entre UYU y USD
         if filters["precio"]["moneda"] == "UYU":
-            filters_list.append({"price_UYU": { "$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}})
-            if "orden" not in filters:
-                sort.append(("price_UYU", 1))# orden base
+            filters_list.append({ "$or": [
+                {"exchange": "$U", "price_UYU": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}, #CAMBIAR $U POR UYU Y price_UYU POR price
+                {"exchange": "U$S", "price_UYU": {"$gte": filters["precio"]["min"] / camb, "$lte": filters["precio"]["max"] / camb}}
+            ]})
+            #if "orden" not in filters:
+                #sort.append(("price_UYU", 1)) orden base
         elif filters["precio"]["moneda"] == "USD":
-            filters_list.append({"price_USS": { "$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}})
-            if "orden" not in filters:
-                sort.append(("price_USS", 1))# orden base
+            filters_list.append({ "$or": [
+                {"exchange": "$U", "price_UYU": {"$gte": filters["precio"]["min"] * camb, "$lte": filters["precio"]["max"] * camb}},
+                {"exchange": "U$S", "price_UYU": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}
+            ]})
+            #if "orden" not in filters:
+                #sort.append(("price_USS", 1)) orden base
     
     if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
         filters_list.append({"TOTAL_AREA": { "$gte": filters["area"]["min"], "$lte": filters["area"]["max"]}})
@@ -88,6 +94,21 @@ def build_query_sort_project(filters):
         query["$and"] = filters_list
     
     return query, sort, project
+
+
+def origen(rent):
+    """add origin and delete _id"""
+    origen_rent = {"gallito": "gallito"}
+    for document in rent:
+        
+        del document["_id"] #delete the _id (ObjectID)
+        
+        origen_id = document["id"].split("_")
+        if origen_id[0] in origen_rent:
+            document["origin"] = origen_rent[origen_id[0]]
+        else:
+            document["origin"] = None
+    return(rent)
 
 
 def get_rents(filters, page, rents_per_page):
@@ -112,13 +133,17 @@ def get_rents(filters, page, rents_per_page):
     else:
         cursor = db.propertys.find(query)
     
+    
     total_num_rents = 0
-    if page == 0:
-        total_num_rents = db.propertys.count_documents(query)
+    total_num_rents = db.propertys.count_documents(query)
+    skip = (page - 1) * rents_per_page
  
-    rents = cursor.limit(rents_per_page)
+    rents = cursor.skip(skip).limit(rents_per_page)
 
-    return (list(rents), total_num_rents, query)
+    rents = origen(list(rents))
+
+    return (rents, total_num_rents, query)
+
 
 def get_rent(id):
     """
@@ -126,6 +151,17 @@ def get_rent(id):
     property embedded in the property document. The comments are joined from the
     comments collection using expressive $lookup.
     """
+    try:
+        query = {"id": id}
+
+        rents = db.propertys.find(query)
+
+        return (list(rents))
+    except (StopIteration) as _:
+        return None
+
+    except Exception as e:
+        return {}
 
 
 def get_all_type(page, rents_per_page):
@@ -133,10 +169,13 @@ def get_all_type(page, rents_per_page):
     List all type of rents
     """
     cursor = db.propertys.find()
-    total_num_rents = 0
-    if page == 0:
-        total_num_rents = db.propertys.count_documents({})
- 
-    rents = cursor.limit(rents_per_page)
 
-    return (list(rents), total_num_rents)
+    total_num_rents = 0
+    total_num_rents = db.propertys.count_documents({})
+    skip = (page - 1) * rents_per_page
+ 
+    rents = cursor.skip(skip).limit(rents_per_page)
+
+    rents = origen(list(rents))
+
+    return (rents, total_num_rents)
