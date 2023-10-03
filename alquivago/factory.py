@@ -1,4 +1,3 @@
-from json import JSONEncoder
 import os
 
 from flask import Flask, render_template
@@ -13,13 +12,6 @@ from datetime import datetime, timedelta
 
 from alquivago.api.rent import rents_api_v1
 
-class MongoJsonEncoder(JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, datetime):
-            return obj.strftime("%Y-%m-%d %H:%M:%S")
-        if isinstance(obj, ObjectId):
-            return str(obj)  # Convertir ObjectId a cadena de texto
-        return json_util.default(obj, json_util.CANONICAL_JSON_OPTIONS)
 
 def create_app():
 
@@ -29,7 +21,6 @@ def create_app():
 
     app = Flask(__name__, template_folder=TEMPLATE_FOLDER)
     CORS(app)
-    app.json_encoder = MongoJsonEncoder
     app.register_blueprint(rents_api_v1)
     
 

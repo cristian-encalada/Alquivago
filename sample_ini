@@ -1,5 +1,0 @@
-[PROD]
-DB_URI = 
-
-[TEST]
-DB_URI = mongodb+srv://alice:CheshireCat@prueba.emolc4y.mongodb.net/alquivago_test?retryWrites=true&w=majority
