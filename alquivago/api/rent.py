@@ -21,10 +21,13 @@ def api_get_rent():
     filters = {"precio": {"moneda" : request.args.get('moneda'), "min": int(request.args.get('min')),  "max": int(request.args.get('max'))}}
     print(filters)
     """filters = {
-        "precio": request.args.get('precio'),
+        "precio": {
+            "moneda" : request.args.get('moneda'),
+            "min": int(request.args.get('min')),
+            "max": int(request.args.get('max'))},
         "zonas": request.args.get('zonas'),
         "tipos": request.args.get('tipos'),
-        "area": request.args.get('area'),
+        "area": int(request.args.get('area')),
         "dormitorios": request.args.get('dormitorios'),
         "baños": request.args.get('baños')
     }"""

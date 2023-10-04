@@ -39,7 +39,7 @@ def build_query_sort_project(filters):
     #ordenamiento 
 
     if "orden" in filters:
-        tipo = {"area": "TOTAL_AREA", "UYU": "price_UYU", "USD": "price_USS"}
+        tipo = {"area": "TOTAL_AREA", "UYU": "price", "USD": "price"}
         for o, t in filters["orden"]:
             if o in tipo:
                 sort.append((tipo[o], t))
@@ -48,7 +48,7 @@ def build_query_sort_project(filters):
     #filtrado
     filters_list = []
     if "tipos" in filters: #es una lista de strigs, normalisadas ["normalisado", ...]
-        filters_list.append({"PROPERTY_TYPE": filters["tipos"]})
+        filters_list.append({"property_type": filters["tipos"]})
 
     if "zonas" in filters: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
         escaped_zonas = [re.escape(zona) for zona in filters["zonas"]]
@@ -57,37 +57,37 @@ def build_query_sort_project(filters):
     
     if "dormitorios" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
         filters_list.append({"$or": [
-            {"BEDROOMS": {"$in": filters["dormitorios"][0]}},
-            {"BEDROOMS": {"$gte": filters["dormitorios"][1]}}
+            {"bedrooms": {"$in": filters["dormitorios"][0]}},
+            {"bedrooms": {"$gte": filters["dormitorios"][1]}}
         ]})
 
     if "baños" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
         filters_list.append({"$or": [
-            {"FULL_BATHROOMS": {"$in": filters["baños"][0]}},
-            {"FULL_BATHROOMS": {"$gte": filters["baños"][1]}}
+            {"bathrooms": {"$in": filters["baños"][0]}},
+            {"bathrooms": {"$gte": filters["baños"][1]}}
         ]})
     
     if "precio" in filters: #es un diccionario con tres valores ["moneda": "tipo", "min": int(none), "max": int(none)]
-        camb = 1 #valor de cmabio entre UYU y USD
+        camb = 40 #valor de cmabio entre UYU y USD
         if filters["precio"]["moneda"] == "UYU":
             filters_list.append({ "$or": [
-                {"exchange": "$U", "price_UYU": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}, #CAMBIAR $U POR UYU Y price_UYU POR price
-                {"exchange": "U$S", "price_UYU": {"$gte": filters["precio"]["min"] / camb, "$lte": filters["precio"]["max"] / camb}}
+                {"currency": "UYU", "price": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}, #CAMBIAR $U POR UYU Y price_UYU POR price
+                {"currency": "USD", "price": {"$gte": filters["precio"]["min"] / camb, "$lte": filters["precio"]["max"] / camb}}
             ]})
             #if "orden" not in filters:
                 #sort.append(("price_UYU", 1)) orden base
         elif filters["precio"]["moneda"] == "USD":
             filters_list.append({ "$or": [
-                {"exchange": "$U", "price_UYU": {"$gte": filters["precio"]["min"] * camb, "$lte": filters["precio"]["max"] * camb}},
-                {"exchange": "U$S", "price_UYU": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}
+                {"currency": "UYU", "price": {"$gte": filters["precio"]["min"] * camb, "$lte": filters["precio"]["max"] * camb}},
+                {"currency": "USD", "price": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}
             ]})
             #if "orden" not in filters:
                 #sort.append(("price_USS", 1)) orden base
     
     if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
-        filters_list.append({"TOTAL_AREA": { "$gte": filters["area"]["min"], "$lte": filters["area"]["max"]}})
+        filters_list.append({"total_area": { "$gte": filters["area"]["min"], "$lte": filters["area"]["max"]}})
         if "orden" not in filters:
-            sort.append(("TOTAL_AREA", -1))# orden base
+            sort.append(("total_area", -1))# orden base
     
     #filtro de proximidad con la latitud y longitud
     if filters_list:
@@ -102,12 +102,12 @@ def origen(rent):
     for document in rent:
         
         del document["_id"] #delete the _id (ObjectID)
-        
+        """
         origen_id = document["id"].split("_")
         if origen_id[0] in origen_rent:
             document["origin"] = origen_rent[origen_id[0]]
         else:
-            document["origin"] = None
+            document["origin"] = None"""
     return(rent)
 
 
