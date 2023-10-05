@@ -1,7 +1,14 @@
+consas a instalar: 
+    -pip install pymongo
+    -pip install flask-pymongo
+    -pip install flask-cors
+    -pip install bson
+    -pip install --upgrade bson
+
 antes de comenzar:
     -crear en la base de datos un usuario, preguntenle a gpt es mas simple que a escrivirlo
     -cargar los datos usando storage_data.py (cambiar el nombre de la base de datos "pydb")
-    - TENER EN CUENTA que usa flask 2.2.3
+    
 funcionamiento:
     - con el usuario creado se modifica el archivo sample_ini el primer DB_URI(con este formato:mongodb://<username>:<password>@localhost:27017/<db>) sin los <>
     - luego se corre el programa (python3 run.py)

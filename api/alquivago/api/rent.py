@@ -11,17 +11,33 @@ rents_api_v1 = Blueprint('rent_api_v1', 'rent_api_v1', url_prefix='/api/v1/rent'
 CORS(rents_api_v1)
 
 
-@rents_api_v1.route('/data', methods=['GET'])
+@rents_api_v1.route('/filtro', methods=['GET'])
 def api_get_rent():
-    RENTS_PER_PAGE = 20
+    RENTS_PER_PAGE = 10
 
-    (rents, total_num_entries) = get_rents(
-        None, page=0, rents_per_page=RENTS_PER_PAGE)
+    page = int(request.args.get('page'))
+    print(page)
+    #filters = {"precio": {"moneda": "UYU", "min": 12000, "max": 12000}, "zonas": "Maroñas Curva", "tipos": "Apartamento", "area": {"min": 35, "max": 35}, "dormitorios": [[4], None], "baños": [[3], None]}
+    filters = {"precio": {"moneda" : request.args.get('moneda'), "min": int(request.args.get('min')),  "max": int(request.args.get('max'))}}
+    print(filters)
+    """filters = {
+        "precio": {
+            "moneda" : request.args.get('moneda'),
+            "min": int(request.args.get('min')),
+            "max": int(request.args.get('max'))},
+        "zonas": request.args.get('zonas'),
+        "tipos": request.args.get('tipos'),
+        "area": int(request.args.get('area')),
+        "dormitorios": request.args.get('dormitorios'),
+        "baños": request.args.get('baños')
+    }"""
+    (rents, total_num_entries, query) = get_rents(
+        filters, page, rents_per_page=RENTS_PER_PAGE)
 
     response = {
         "rents": rents,
-        "page": 0,
-        "filters": {},
+        "page": page,
+        "filters": query,
         "entries_per_page": RENTS_PER_PAGE,
         "total_results": total_num_entries,
     }
