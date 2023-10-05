@@ -3,7 +3,7 @@ import json
 import re
 
 # Define the API URL
-api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=50"
+api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=10"
 
 # Send a GET request to the API
 response = requests.get(api_url)
@@ -40,7 +40,8 @@ if response.status_code == 200:
                 total_area = int(numeric_part.group()) if numeric_part else None
         
         item_data = {
-            "id": "MLU_" + result.get("id"),
+            "id": "MLU_" + result.get("id")[3:],
+            "title": result.get("title"),
             "url_link": result.get("permalink"),
             "origin": "mercado_libre",
             "operation_type": operation_type,
