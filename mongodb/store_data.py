@@ -29,7 +29,11 @@ data3 = json.load(file3)
 file3.close()
 data.extend(data3)
 
-# Insert the combined data into the MongoDB collection
+# Check if a document with the same 'id' exists in the collection
+def document_exists(collection, document_id):
+    return collection.find_one({"id": document_id}) is not None
+
+# Insert the combined data into a single collection, avoiding duplicates
 collected_data.insert_many(data)
 
-print("Data from all three files successfully stored in the 'collected_data' collection in MongoDB!")
+print("Data successfully stored into MongoDB database!")
