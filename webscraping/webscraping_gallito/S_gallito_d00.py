@@ -1,22 +1,29 @@
-# este script corre sobre windows
+#!/usr/bin/python3
+
 # scraping gallito
 
+import platform
+import time
+import json
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
-import time
-import json
 
+# Obtener el nombre del sistema operativo
+sistema_operativo = platform.system()
+
+if sistema_operativo == "Linux":
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=webdriver.ChromeOptions())
+elif sistema_operativo == 'Windows':
+    driver = webdriver.Chrome()
 
 # website en alquiler de inmuebles
 website = "https://www.gallito.com.uy"
 
-driver = webdriver.Chrome()
 driver.get(website)
 driver.maximize_window()
 
-# esperar que cargue pagina
-time.sleep(4)
+time.sleep(2)
 
 # elemento del menu
 elemento = driver.find_element(By.XPATH, '//*[@id="cat_inmuebles_li"]/a')
@@ -25,19 +32,24 @@ elemento = driver.find_element(By.XPATH, '//*[@id="cat_inmuebles_li"]/a')
 action = ActionChains(driver)
 action.move_to_element(elemento).perform()
 
-time.sleep(2)
+time.sleep(3)
 
 # click en el menu de alquileres
 menu_alquileres = driver.find_element(By.XPATH, '//div[@id="cat_inmuebles"]/div[2]/ul/li[2]/h3/a')
 menu_alquileres.click()
 
-time.sleep(2)
+time.sleep(1)
+
+seleccionarDep = driver.find_element(By.XPATH, '//*[@id="Div_Departamentos"]/li[1]/a')
+seleccionarDep.click()
+
+time.sleep(1)
 
 # lista en la que se van a guardar los datos de cada publicacion
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(5):
+for i in range(2):
 
     if i > 0:
         # avanzo a la siguiente pagina
@@ -80,19 +92,27 @@ for i in range(5):
         except:
             tipo_propiedad = ""
         try:
-            banos = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[5]/p').text
+            banos = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[5]/p').text.split()[0]
         except Exception:
-            banos = ""
+            banos = 0
             pass
         try:
-            metros = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[6]/p').text
+            metros = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[6]/p').text.split()[0]
         except Exception:
-            metros = ""
+            metros = 0
             pass
         try:
-            dormitorios = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[4]/p').text
+            dormitorios = driver.find_element(By.XPATH, '//div[@id="div_datosOperacion"]/div[4]/p').text.split()[0]
         except Exception:
-            dormitorios = ""
+            dormitorios = 0
+            pass
+        try:
+            time.sleep(1)
+            # capturar informacion de galeria de imagenes
+            lst_imgs = driver.find_elements(By.XPATH, '//*[@id="divInner_Galeria"]/div/a/picture/img')
+            img_urls = [img.get_attribute("src") for img in lst_imgs]
+        except Exception:
+            img_urls = []
             pass
         try:
             # voy a seccion de ubicacion
@@ -104,7 +124,7 @@ for i in range(5):
             src = url_map.get_attribute('src')
             lat = src.split("=")[2].split(",")[0][:11]
             lon = src.split("=")[2].split(",")[-1][:11]
-        except Exception :
+        except Exception:
             lat = 0
             lon = 0
             pass
@@ -114,19 +134,21 @@ for i in range(5):
             dic_alquiler = {
                 "id": id,
                 "url_link": url_alquiler,
+                "origin": "gallito",
+                "operation_type": "Alquiler",
                 "price": precio,
-                "exchange": str(moneda),
+                "currency": str(moneda),
                 "state_name": departamento,
                 "city_name": zona,
-                "PROPERTY_TYPE": tipo_propiedad,
-                "TOTAL_AREA": metros,
-                "FULL_BATHROOMS": banos,
-                "BEDROOMS": dormitorios,
+                "property_type": tipo_propiedad,
+                "total_area": int(metros),
+                "bathrooms": int(banos),
+                "bedrooms": int(dormitorios),
                 "location": {
                     "latitude": float(lat),
                     "longitude": float(lon)
                 },
-                "imagenes": []
+                "images": img_urls
             }
             lst_data.append(dic_alquiler)
         except Exception:
