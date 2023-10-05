@@ -2,13 +2,13 @@ import requests
 import json
 import re
 
-# Define the API URL
+# Define the 1rst API URL
 api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=10"
 
-# Send a GET request to the API
+# Send a GET request to the 1st API
 response = requests.get(api_url)
 
-# Check if the request was successful
+# Check if the 1st API request was successful
 if response.status_code == 200:
     data = response.json()
     
@@ -38,7 +38,20 @@ if response.status_code == 200:
                 total_area_value = attribute.get("value_name")
                 numeric_part = re.search(r'\d+', total_area_value)
                 total_area = int(numeric_part.group()) if numeric_part else None
+
+        # Fetch images from a 2nd API using the item's id
+        item_id = result.get("id")[3:]  # Remove the "MLU" prefix
+        images_api_url = f"https://api.mercadolibre.com/items?ids=MLU{item_id}"
+        images_response = requests.get(images_api_url)
         
+        if images_response.status_code == 200:
+            images_data = images_response.json()
+            
+            # Extract up to 5 image URLs from the response
+            images = [image.get("secure_url") for image in images_data[0].get("body", {}).get("pictures", [])[:5]]
+        else:
+            images = []
+
         item_data = {
             "id": "MLU_" + result.get("id")[3:],
             "title": result.get("title"),
@@ -57,7 +70,7 @@ if response.status_code == 200:
                 "latitude": result.get("location", {}).get("latitude"),
                 "longitude": result.get("location", {}).get("longitude")
             },
-            "images": [result.get("thumbnail")]
+            "images": images
         }
         extracted_data.append(item_data)
 
