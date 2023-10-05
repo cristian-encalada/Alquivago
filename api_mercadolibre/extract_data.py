@@ -15,9 +15,8 @@ if response.status_code == 200:
     # Initialize a list to store the extracted data
     extracted_data = []
     
-    # Loop through the results and extract the required fields
+    # Loop to extract the required fields
     for result in data.get("results", []):
-        # Initialize property type as None
         property_type = None
         operation_type = None
         bathrooms = None
@@ -45,7 +44,7 @@ if response.status_code == 200:
             "url_link": result.get("permalink"),
             "origin": "mercado_libre",
             "operation_type": operation_type,
-            "price": result.get("price"),
+            "price": float(result.get("price")),
             "currency": result.get("currency_id"),
             "state_name": result.get("address", {}).get("state_name"),
             "zone_name": result.get("address", {}).get("city_name"),
