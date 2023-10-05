@@ -1,6 +1,7 @@
 [
     {
-        "id": "MLU_MLU633830255",
+        "id": "MLU_633830255",
+        "title": "Apartamento Con Patio Y Garage En Pocitos",
         "url_link": "https://apartamento.mercadolibre.com.uy/MLU-633830255-apartamento-con-patio-y-garage-en-pocitos-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -21,7 +22,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658624044",
+        "id": "MLU_658624044",
+        "title": "Venta Apto 1 Dormitorio Con Baño En Suite  Estacionamiento  En Plena Península!!",
         "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658624044-venta-apto-1-dormitorio-con-bano-en-suite-estacionamiento-en-plena-peninsula-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -42,7 +44,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658662044",
+        "id": "MLU_658662044",
+        "title": "Casa En Alquiler De 2 Dormitorios En Brazo Oriental (ref: Vld-3810)",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-658662044-casa-en-alquiler-de-2-dormitorios-en-brazo-oriental-ref-vld-3810-_JM",
         "origin": "mercado_libre",
         "operation_type": "Alquiler",
@@ -63,7 +66,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658880562",
+        "id": "MLU_658880562",
+        "title": "Se Vende Apartamento 2 Dormitorios, Maldonado",
         "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658880562-se-vende-apartamento-2-dormitorios-maldonado-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -84,7 +88,8 @@
         ]
     },
     {
-        "id": "MLU_MLU659038398",
+        "id": "MLU_659038398",
+        "title": "Venta Hermosa Casa De Altos, La Blanqueada, 2 O 3 Dormitorios, Al Frente, Balcón, Terraza, Sin Gastos Comunes, Independiente, Divina",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-659038398-venta-hermosa-casa-de-altos-la-blanqueada-2-o-3-dormitorios-al-frente-balcon-terraza-sin-gastos-comunes-independiente-divina-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -105,7 +110,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658763614",
+        "id": "MLU_658763614",
+        "title": "Venta Casa 2 Dormitorios En Altos De La Laguna",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-658763614-venta-casa-2-dormitorios-en-altos-de-la-laguna-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -126,7 +132,8 @@
         ]
     },
     {
-        "id": "MLU_MLU659049626",
+        "id": "MLU_659049626",
+        "title": "2023 Y Verano 2024 Casas Y Apartamentos En Piriapolis Frente Al Mar Dueño Alquila 4500 Pesos El Fin De Semana",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-659049626-2023-y-verano-2024-casas-y-apartamentos-en-piriapolis-frente-al-mar-dueno-alquila-4500-pesos-el-fin-de-semana-_JM",
         "origin": "mercado_libre",
         "operation_type": "Alquiler temporada",
@@ -147,7 +154,8 @@
         ]
     },
     {
-        "id": "MLU_MLU659051156",
+        "id": "MLU_659051156",
+        "title": "Piriápolis - San Francisco. Casa En Venta A 150 Metros De La Playa. Padrón Único.  ",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-659051156-piriapolis-san-francisco-casa-en-venta-a-150-metros-de-la-playa-padron-unico-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -168,7 +176,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658726410",
+        "id": "MLU_658726410",
+        "title": "Hermoso Apartamento En Venta De Dos Dormitorios Con Garaje Malvin",
         "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658726410-hermoso-apartamento-en-venta-de-dos-dormitorios-con-garaje-malvin-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -189,7 +198,8 @@
         ]
     },
     {
-        "id": "MLU_MLU658584290",
+        "id": "MLU_658584290",
+        "title": "Venta Casa 2 Dormitorios El Pinar",
         "url_link": "https://casa.mercadolibre.com.uy/MLU-658584290-venta-casa-2-dormitorios-el-pinar-_JM",
         "origin": "mercado_libre",
         "operation_type": "Venta",
@@ -207,846 +217,6 @@
         },
         "images": [
             "http://http2.mlstatic.com/D_610871-MLU71962837732_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659092428",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659092428-oportunidad-de-estrenar-apartamento-en-tres-cruces-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 28700.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Tres Cruces",
-        "property_type": "Apartamento",
-        "total_area": 65,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8945234,
-            "longitude": -56.1746054
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_600835-MLU71980470360_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658789524",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658789524-en-venta-casa-3-dormitorios-living-c-estufa-alena-barbacoa-y-cochera-biarritz-maldonado-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 104000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Maldonado",
-        "property_type": "Casa",
-        "total_area": 300,
-        "bathrooms": 1,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8900302,
-            "longitude": -54.9430478
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_648990-MLU71964295260_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659066188",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659066188-venta-apartamento-1-dormitorio-peninsula-punta-del-este-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 108000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Apartamento",
-        "total_area": 32,
-        "bathrooms": 1,
-        "bedrooms": 1,
-        "location": {
-            "latitude": -34.957833,
-            "longitude": -54.938289
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_964342-MLU72036686803_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659128272",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659128272-apartamento-a-estrenar-2-dormitorios-la-blanqueada-cochera-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 33000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "La Blanqueada",
-        "property_type": "Apartamento",
-        "total_area": 50,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8837406,
-            "longitude": -56.1569851
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_788237-MLU71978301074_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659054966",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-659054966-oportunidad-alquiler-con-opcion-a-compra-53000-us-250000-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 53000.0,
-        "currency": "UYU",
-        "state_name": "Canelones",
-        "zone_name": "Ciudad de la Costa",
-        "property_type": "Casa",
-        "total_area": 311,
-        "bathrooms": 3,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8370966,
-            "longitude": -56.0161798
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_811696-MLU72043889329_102023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658494826",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658494826-propiedad-3-dormitorios-piscina-barbacoa-y-apartamento-al-fondo-solymar-sur-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 270000.0,
-        "currency": "USD",
-        "state_name": "Canelones",
-        "zone_name": "Ciudad de la Costa",
-        "property_type": "Casa",
-        "total_area": 109,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8235451,
-            "longitude": -55.9440966
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_878989-MLU72009087391_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658932582",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658932582-2024-casas-y-apartamentos-en-piriapolis-frente-al-mar-dueno-alquila-4500-pesos-el-fin-de-seman-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler temporada",
-        "price": 2000.0,
-        "currency": "UYU",
-        "state_name": "Maldonado",
-        "zone_name": "Piriápolis",
-        "property_type": "Casa",
-        "total_area": 500,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8598268,
-            "longitude": -55.2844541
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_897293-MLU72025728453_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658623014",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658623014-alquiler-casa-3-dormitorios-parque-miramar-jardin-parrillero-amenities-seguridad-almadia-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 1500.0,
-        "currency": "USD",
-        "state_name": "Canelones",
-        "zone_name": "Parque Miramar",
-        "property_type": "Casa",
-        "total_area": 0,
-        "bathrooms": 1,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8598469,
-            "longitude": -56.0446446
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_782518-MLU72017958543_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658997542",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658997542-2023-y-2024-alquiler-de-casas-y-apartamentos-frente-al-mar-en-piriapolis-propietario-alquila-4500-el-fin-de-semana-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler temporada",
-        "price": 1980.0,
-        "currency": "UYU",
-        "state_name": "Maldonado",
-        "zone_name": "Piriápolis",
-        "property_type": "Casa",
-        "total_area": 500,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8569646,
-            "longitude": -55.2879303
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_811320-MLU72025823083_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658558944",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658558944-proximo-a-zona-gastronomica-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 580000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Casa",
-        "total_area": 1400,
-        "bathrooms": 4,
-        "bedrooms": 4,
-        "location": {
-            "latitude": -34.9374522,
-            "longitude": -54.9353119
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_841829-MLU72020653655_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658802552",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658802552-apartamento-venta-pocitos-montevideo-imasuy-f-ref-ims-20143-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 237000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Pocitos",
-        "property_type": "Apartamento",
-        "total_area": 131,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9084582,
-            "longitude": -56.1556997
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_989517-MLU71964407676_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658385572",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658385572-alquiler-apartamento-3-dormitorios-amueblado-ciudad-vieja-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 47000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Ciudad Vieja",
-        "property_type": "Apartamento",
-        "total_area": 93,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9112603,
-            "longitude": -56.2077594
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_632284-MLU71962432238_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658726818",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658726818-venta-casa-4-dormitorios-barbacoa-jardin-solymar-canelones-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 330000.0,
-        "currency": "USD",
-        "state_name": "Canelones",
-        "zone_name": "Solymar",
-        "property_type": "Casa",
-        "total_area": 568,
-        "bathrooms": 3,
-        "bedrooms": 4,
-        "location": {
-            "latitude": -34.8496372,
-            "longitude": -55.9915705
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_661005-MLU71968221194_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658726310",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658726310-en-alquiler-amplia-casa-con-capacidad-para-10-personas-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler temporada",
-        "price": 5000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Casa",
-        "total_area": 1100,
-        "bathrooms": 3,
-        "bedrooms": 5,
-        "location": {
-            "latitude": -34.9365768,
-            "longitude": -54.9198932
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_694823-MLU71967480672_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658842906",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658842906-hermoso-apartamento-de-un-dormitorio-en-venta-en-malvin-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 118000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Malvin",
-        "property_type": "Apartamento",
-        "total_area": 45,
-        "bathrooms": 1,
-        "bedrooms": 1,
-        "location": {
-            "latitude": -34.8923984,
-            "longitude": -56.116449
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_726153-MLU71968027516_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658649226",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658649226-alquiler-casa-3-dormitorios-el-pinar-con-cochera-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 65000.0,
-        "currency": "UYU",
-        "state_name": "Canelones",
-        "zone_name": "El Pinar",
-        "property_type": "Casa",
-        "total_area": 1100,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8047724,
-            "longitude": -55.9106141
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_745060-MLU71871260772_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU633803931",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-633803931-venta-comoda-casa-en-balneario-argentino-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 68000.0,
-        "currency": "USD",
-        "state_name": "Canelones",
-        "zone_name": "Balneario Argentino",
-        "property_type": "Casa",
-        "total_area": 540,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.786818,
-            "longitude": -55.443616
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_882682-MLA71953947574_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658802744",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658802744-alquiler-invernal-en-la-brava-3-dormitorios-3-banos-dependencia-mucama-diaria-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 1500.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Apartamento",
-        "total_area": 130,
-        "bathrooms": 3,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9585526,
-            "longitude": -54.9376291
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_678913-MLU71964927398_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658673828",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658673828-chalet-totalmente-remodelado-en-excelente-ubicacion-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 450000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Casa",
-        "total_area": 500,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9285317,
-            "longitude": -54.9470464
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_906109-MLU71964345856_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658778844",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658778844-venta-casa-de-2-dormitorios-mas-apartamento-en-maldonado-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 130000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Maldonado",
-        "property_type": "Casa",
-        "total_area": 111,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.9007303,
-            "longitude": -54.9550293
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_739934-MLU71969013026_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659062576",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-659062576-alquiler-de-casas-y-apartamentos-en-piriapolis-frente-al-mar-o-a-2-cuadras-de-la-playa-verano-2024-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler temporada",
-        "price": 1995.0,
-        "currency": "UYU",
-        "state_name": "Maldonado",
-        "zone_name": "Piriápolis",
-        "property_type": "Casa",
-        "total_area": 500,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8598967,
-            "longitude": -55.2843994
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_689959-MLU72026129619_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658791384",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658791384-venta-apartamento-reciclado-1-dormitorio-parque-rodo-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 155000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Parque Rodó",
-        "property_type": "Apartamento",
-        "total_area": 48,
-        "bathrooms": 1,
-        "bedrooms": 1,
-        "location": {
-            "latitude": -34.913869,
-            "longitude": -56.172066
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_823838-MLU72024312927_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658255974",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658255974-venta-de-apartamento-a-estrenar-vivienda-promovida-con-parrillero-y-mas-c830001p-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 62645.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Aguada",
-        "property_type": "Apartamento",
-        "total_area": 26,
-        "bathrooms": 1,
-        "bedrooms": 0,
-        "location": {
-            "latitude": -34.8928901,
-            "longitude": -56.1790976
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_908888-MLU71952786688_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659041704",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659041704-venta-oficina-reciclada-ciudad-vieja-montevideo-g-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 125000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Ciudad Vieja",
-        "property_type": "Apartamento",
-        "total_area": 107,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9062338,
-            "longitude": -56.2066961
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_956541-MLU71460200221_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658932548",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658932548-orden-de-venta-casa-blanqueada-2-dormitorios-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 182000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "La Blanqueada",
-        "property_type": "Casa",
-        "total_area": 93,
-        "bathrooms": 2,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.876443,
-            "longitude": -56.165028
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_868899-MLU72025766719_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659013570",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-659013570-vende-us-185000-lausana-maldonado-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 185000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Maldonado",
-        "property_type": "Casa",
-        "total_area": 612,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8941434,
-            "longitude": -54.9982516
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_728760-MLU71978730062_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658804618",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658804618-casa-venta-cordon-montevideo-imasuy-d-ref-ims-21007-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 156000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Cordón",
-        "property_type": "Casa",
-        "total_area": 145,
-        "bathrooms": 1,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.9081255,
-            "longitude": -56.1785366
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_870806-MLU72025080627_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659154940",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659154940-penthouse-en-el-corazon-del-parque-rodo-excelente-oportunidad-vista-inmejorable-4-dormitorios-3-banos-cochera-terraza-venta-us340000-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 340000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Parque Rodó",
-        "property_type": "Apartamento",
-        "total_area": 94,
-        "bathrooms": 3,
-        "bedrooms": 4,
-        "location": {
-            "latitude": -34.913443,
-            "longitude": -56.1717086
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_676488-MLU72001968418_102023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659083378",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-659083378-gran-propiedad-padron-unico-ideal-empresa-o-gran-familia-punta-carretas-pocitos-golf-parque-rodo-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 539000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Punta Carretas",
-        "property_type": "Casa",
-        "total_area": 259,
-        "bathrooms": 4,
-        "bedrooms": 5,
-        "location": {
-            "latitude": -34.9184053,
-            "longitude": -56.1599477
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_601575-MLU54727629330_032023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658776658",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658776658-venta-casa-mas-2-aptos-mas-de-280-m2-construidos-barbacoa-cochera-y-patio-en-maldonado-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 125000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Maldonado",
-        "property_type": "Casa",
-        "total_area": 280,
-        "bathrooms": 3,
-        "bedrooms": 5,
-        "location": {
-            "latitude": -34.8987184,
-            "longitude": -54.9378583
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_651577-MLU71964734614_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659117270",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659117270-venta-apartamento-centro-2-dormitorios-a-estrenar-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 175596.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Centro",
-        "property_type": "Apartamento",
-        "total_area": 7,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.899553,
-            "longitude": -56.19494
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_831904-MLU72035049031_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659008336",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659008336-apartamento-monoambiente-en-alquiler-centro-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 15000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Centro",
-        "property_type": "Apartamento",
-        "total_area": 40,
-        "bathrooms": 1,
-        "bedrooms": 0,
-        "location": {
-            "latitude": -34.9043659,
-            "longitude": -56.198094
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_749807-MLU72002846306_102023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659023856",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659023856-alquiler-apartamento-de-2-dormitorio-a-estrenar-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 30000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Cordón",
-        "property_type": "Apartamento",
-        "total_area": 59,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8980868,
-            "longitude": -56.1692125
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_761722-MLU72026592855_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659101970",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659101970-alquiler-casa-2-dormitorios-en-el-pinar-sur-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Alquiler",
-        "price": 22000.0,
-        "currency": "UYU",
-        "state_name": "Canelones",
-        "zone_name": "El Pinar",
-        "property_type": "Apartamento",
-        "total_area": 80,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.808307,
-            "longitude": -55.933912
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_982051-MLU72027232155_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659122616",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-659122616-espectacular-casa-padron-unico-zona-williman-y-21-ideal-empresa-o-familia-con-gusto-por-buenos-espacios-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 539000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Parque Rodó",
-        "property_type": "Casa",
-        "total_area": 259,
-        "bathrooms": 4,
-        "bedrooms": 5,
-        "location": {
-            "latitude": -34.9178518,
-            "longitude": -56.1602706
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_925430-MLU54724320093_032023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658359390",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658359390-casa-en-venta-3-dormitorios-y-barbacoa-en-ciudad-de-la-costa-solymar-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 245000.0,
-        "currency": "USD",
-        "state_name": "Canelones",
-        "zone_name": "Ciudad de la Costa",
-        "property_type": "Casa",
-        "total_area": 130,
-        "bathrooms": 2,
-        "bedrooms": 3,
-        "location": {
-            "latitude": -34.8290544,
-            "longitude": -55.9735081
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_721274-MLU72008497013_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658700946",
-        "url_link": "https://casa.mercadolibre.com.uy/MLU-658700946-se-vende-casa-a-estrenar-las-flores-maldonado-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 107000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Las Flores",
-        "property_type": "Casa",
-        "total_area": 60,
-        "bathrooms": 1,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.8151408,
-            "longitude": -55.3237948
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_802984-MLU72025644243_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU659020788",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-659020788-apartamento-en-venta-de-2-dormitorios-en-punta-del-este-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 200000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Apartamento",
-        "total_area": 74,
-        "bathrooms": 2,
-        "bedrooms": 2,
-        "location": {
-            "latitude": -34.9624337,
-            "longitude": -54.9432886
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_631235-MLU72059204709_102023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658597840",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658597840-se-vende-monoambiente-en-pleno-centro-de-18-de-julio-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 80000.0,
-        "currency": "USD",
-        "state_name": "Montevideo",
-        "zone_name": "Montevideo",
-        "property_type": "Apartamento",
-        "total_area": 46,
-        "bathrooms": 1,
-        "bedrooms": 0,
-        "location": {
-            "latitude": -34.9028907,
-            "longitude": -56.1785302
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_826158-MLU71964192884_092023-I.jpg"
-        ]
-    },
-    {
-        "id": "MLU_MLU658698682",
-        "url_link": "https://apartamento.mercadolibre.com.uy/MLU-658698682-espectacular-departamento-triplex-de-4-suites-dep-de-servicio-en-venta-frente-al-mar-_JM",
-        "origin": "mercado_libre",
-        "operation_type": "Venta",
-        "price": 2900000.0,
-        "currency": "USD",
-        "state_name": "Maldonado",
-        "zone_name": "Punta del Este",
-        "property_type": "Apartamento",
-        "total_area": 488,
-        "bathrooms": 4,
-        "bedrooms": 4,
-        "location": {
-            "latitude": -34.918002,
-            "longitude": -54.9765911
-        },
-        "images": [
-            "http://http2.mlstatic.com/D_760137-MLU72021090763_092023-I.jpg"
         ]
     }
 ]
