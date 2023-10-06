@@ -1,8 +1,16 @@
 import json
 import pymongo
 
-# Connect to the MongoDB database
-client = pymongo.MongoClient("mongodb://localhost:27017")
+# Connect to the local MongoDB database
+# client = pymongo.MongoClient("mongodb://localhost:27017")
+
+# Connect to the MongoDB Atlas database
+atlas_uri = "mongodb+srv://alquivago:alquivago123@cluster0.e4fyf7c.mongodb.net/?retryWrites=true&w=majority"
+
+# Connect to the MongoDB Atlas database
+client = pymongo.MongoClient(atlas_uri)
+
+
 db = client["alquivago"]
 
 # Create a collection for collected data
