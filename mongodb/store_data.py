@@ -29,11 +29,14 @@ data3 = json.load(file3)
 file3.close()
 data.extend(data3)
 
-# Check if a document with the same 'id' exists in the collection
-def document_exists(collection, document_id):
-    return collection.find_one({"id": document_id}) is not None
+# Check if a document with the same 'id' exists in the collection and insert if it doesn't
+def insert_if_not_exists(collection, document_id, data):
+    if not collection.find_one({"id": document_id}):
+        collection.insert_one(data)
 
-# Insert the combined data into a single collection, avoiding duplicates
-collected_data.insert_many(data)
+# Loop through data and insert if not exists
+for item_data in data:
+    document_id = item_data["id"]
+    insert_if_not_exists(collected_data, document_id, item_data)
 
 print("Data successfully stored into MongoDB database!")
