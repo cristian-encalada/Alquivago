@@ -80,3 +80,14 @@ Acceder a la URL
 http://localhost:5173/
 ```
 
+# Run docker compose with all containers (flask, react, mongodb, selenium)
+
+To build and run all services defined in your docker-compose.yml file:
+```sh
+docker-compose up -d
+```
+
+To stop and remove all containers defined in your docker-compose.yml file:
+```
+docker-compose down
+```
