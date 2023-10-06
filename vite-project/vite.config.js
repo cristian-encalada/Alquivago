@@ -10,4 +10,7 @@ export default defineConfig({
       path: "path-browserify",
     },
   },
+  server: {
+    port:5173,
+  },
 })
