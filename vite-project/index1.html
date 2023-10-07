@@ -1,62 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Browser</title>
-    <style>
-      article {
-        position: relative;
-        width: 250px;
-        transition: all 0.4s;
-      }
-      article img:last-child {
-        position: absolute;
-        height: 350px; /*tam img*/
-        width: 350px; /*tam img*/
-        bottom: 50px;
-        left: 0;
-        right: 0;
-        margin: auto;
-        transform: translateY(25%);
-        transition: 0.5s ease;
-        opacity: 0;
-      }
-      article:hover {
-        transform: perspective(250px) rotateX(10deg) translateY(-5%)
-          translateZ(0);
-      }
-      article::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        height: 100%; /*tamaño igual que la imagen*/
-        width: 140%; /*tamaño igual que la imagen*/
-        background-image: linear-gradient(
-          to top,
-          transparent 10%,
-          rgba(0, 0, 0, 0.5) 50%,
-          rgba(0, 0, 0, 1) 95%
-        );
-        opacity: 0;
-        transition: all 0.5s ease;
-      }
-      article:hover::before {
-        opacity: 1;
-      }
-      article:hover img:last-child {
-        opacity: 1;
-        transform: translateY(10%);
-      }
-    </style>
-  </head>
-  <body>
-    <article>
-      <img
-        src="https://e0.pxfuel.com/wallpapers/466/677/desktop-wallpaper-phone-japanese-style-neon-shallows-japan-phone-thumbnail.jpg"
-      />
-      <img
-        src="https://freepngimg.com/thumb/pokemon/104565-detective-movie-pikachu-pokemon-free-transparent-image-hd.png"
-      />
-    </article>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="src/index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="border-2 border-rebeccapurple text-center">
+  <div class="mx-auto border-2 border-salmon flex flex-row w-80 max-w-950 h-200 justify-start rounded-2xl">
+    <div class="bg-cover bg-center w-30 max-h-full rounded-l-2xl" style="background-image: url('ruta/local/de/imagen.png');">
+      <!-- Contenido de la imagen -->
+    </div>
+    <div class="flex-1 p-10">
+      <h3 class="text-center">Titulo de la publicacion original</h3>
+      <p>Apartamento</p>
+      <p>Pocitos</p>
+      <span>$ 24000</span>
+    </div>
+    <div class="w-250 border-2 border-blue flex flex-col gap-1">
+      <div class="rounded-full text-left ml-10">
+        <p>5 dorm.</p>
+        <p>5 Baños</p>
+        <p>120 mt2</p>
+      </div>
+      <div class="flex items-center justify-center mx-auto w-150 h-50 rounded-2xl">
+        <span>Consultar</span>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 </html>
