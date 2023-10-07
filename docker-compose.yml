@@ -1,14 +1,14 @@
 version: '3'
 services:
   frontend:
-    image: frontend-image
+    image: gab020/vite-react
     ports:
-      - "3000:3000"
+      - "5173:5173"
     depends_on:
       - backend
 
   backend:
-    image: backend-image
+    image: gab020/flaskimg
     ports:
       - "5000:5000"
     depends_on:
