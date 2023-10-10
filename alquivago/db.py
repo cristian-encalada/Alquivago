@@ -1,4 +1,3 @@
-import bson
 import re
 
 
@@ -35,61 +34,94 @@ def build_query_sort_project(filters):
     query = {}
     project = None # elije que datos traer, de momento traeremos todos
 
-
+    #constantes
+    more_bathrooms = 3
+    more_bedrooms = 4
+    conversion_min = None
+    conversion_max = None
+    camb = 40 #valor de cmabio entre UYU y USD
     #ordenamiento 
 
-    if "orden" in filters:
+    if "sort" in filters:
         tipo = {"area": "TOTAL_AREA", "UYU": "price", "USD": "price"}
-        for o, t in filters["orden"]:
+        for o, t in filters["sort"]:
             if o in tipo:
                 sort.append((tipo[o], t))
 
 
     #filtrado
     filters_list = []
-    if "tipos" in filters: #es una lista de strigs, normalisadas ["normalisado", ...]
-        filters_list.append({"property_type": filters["tipos"]})
+    if filters["types"] is not None: #es una lista de strigs, normalisadas ["normalisado", ...]
+        filters_list.append({"property_type": {"$in": filters["types"]}})
 
-    if "zonas" in filters: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
-        escaped_zonas = [re.escape(zona) for zona in filters["zonas"]]
-        regex_pattern = "|".join(escaped_zonas)
-        filters_list.append({"city_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+    if filters["zones"] is not None: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
+        escaped_zones = [re.escape(zone) for zone in filters["zones"]]
+        regex_pattern = "|".join(escaped_zones)
+        filters_list.append({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
     
-    if "dormitorios" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
-        filters_list.append({"$or": [
-            {"bedrooms": {"$in": filters["dormitorios"][0]}},
-            {"bedrooms": {"$gte": filters["dormitorios"][1]}}
-        ]})
+    if filters["bedrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
+        list_b = [element for element in filters["bedrooms"] if element != None and element <= more_bedrooms]
+        if len(list_b) > 0:
+            bedrooms = {"$or": [{"bedrooms": {"$in": list_b}}]}
+            if more_bedrooms in list_b:
+                bedrooms["$or"].append({"bedrooms": {"$gt": more_bedrooms}})
+            filters_list.append(bedrooms)
 
-    if "baños" in filters: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
-        filters_list.append({"$or": [
-            {"bathrooms": {"$in": filters["baños"][0]}},
-            {"bathrooms": {"$gte": filters["baños"][1]}}
-        ]})
-    
-    if "precio" in filters: #es un diccionario con tres valores ["moneda": "tipo", "min": int(none), "max": int(none)]
-        camb = 40 #valor de cmabio entre UYU y USD
-        if filters["precio"]["moneda"] == "UYU":
-            filters_list.append({ "$or": [
-                {"currency": "UYU", "price": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}, #CAMBIAR $U POR UYU Y price_UYU POR price
-                {"currency": "USD", "price": {"$gte": filters["precio"]["min"] / camb, "$lte": filters["precio"]["max"] / camb}}
-            ]})
-            #if "orden" not in filters:
-                #sort.append(("price_UYU", 1)) orden base
-        elif filters["precio"]["moneda"] == "USD":
-            filters_list.append({ "$or": [
-                {"currency": "UYU", "price": {"$gte": filters["precio"]["min"] * camb, "$lte": filters["precio"]["max"] * camb}},
-                {"currency": "USD", "price": {"$gte": filters["precio"]["min"], "$lte": filters["precio"]["max"]}}
-            ]})
-            #if "orden" not in filters:
-                #sort.append(("price_USS", 1)) orden base
-    
+    if filters["bathrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num] 
+        list_b = [element for element in filters["bathrooms"] if element != None and element <= more_bathrooms]
+        if len(list_b) > 0:
+            bathrooms = {"$or": [{"bathrooms": {"$in": list_b}}]}
+            if more_bathrooms in list_b:
+                bathrooms["$or"].append({"bathrooms": {"$gt": more_bathrooms}})
+            filters_list.append(bathrooms)
+
+    if "price" in filters: #es un diccionario con tres valores ["currency": "tipo", "min": int(none), "max": int(none)]
+        price = { "$or": [
+            {"currency": "UYU", "price": {}}, #CAMBIAR $U POR UYU Y price_UYU POR price
+            {"currency": "USD", "price": {}}
+        ]}
+        price_min = filters["price"]["min"]
+        price_max = filters["price"]["max"]
+        if filters["price"]["currency"] == "UYU":
+            if price_min is not None:
+                conversion_min = price_min / camb
+                price["$or"][0]["price"]["$gte"] = price_min
+                price["$or"][1]["price"]["$gte"] = conversion_min
+            if price_max is not None:
+                conversion_max = price_max / camb
+                price["$or"][0]["price"]["$lte"] = price_max
+                price["$or"][1]["price"]["$lte"] = conversion_max
+        elif filters["price"]["currency"] == "USD":
+            if price_min is not None:
+                conversion_min = price_min * camb
+                price["$or"][0]["price"]["$gte"] = conversion_min
+                price["$or"][1]["price"]["$gte"] = price_min
+            if price_max is not None:
+                conversion_max = price_max * camb
+                price["$or"][0]["price"]["$lte"] = conversion_max
+                price["$or"][1]["price"]["$lte"] = price_max
+        if price_min is not None or price_max is not None:
+            filters_list.append(price)
+        #if "orden" not in filters:
+        
     if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
-        filters_list.append({"total_area": { "$gte": filters["area"]["min"], "$lte": filters["area"]["max"]}})
-        if "orden" not in filters:
+        area = {"total_area": {}}
+        area_min = filters["area"]["min"]
+        area_max = filters["area"]["max"]
+        if area_min is not None:
+            area["total_area"]["$gte"] = area_min
+        if area_max is not None:
+            area["total_area"]["$lte"] = area_max
+        if area_min is not None or area_max is not None:
+            filters_list.append(area)
+        if "sort" not in filters:
             sort.append(("total_area", -1))# orden base
     
+    if "currency" in filters:#es un string
+        filters_list.append({"currency": filters["currency"]})
+    
     #filtro de proximidad con la latitud y longitud
+    
     if filters_list:
         query["$and"] = filters_list
     
@@ -152,12 +184,12 @@ def get_rent(id):
     comments collection using expressive $lookup.
     """
     try:
-        query = {"id": id}
+        query = {"id": {"$in": id}}
 
         rents = db.propertys.find(query)
 
         return (list(rents))
-    except (StopIteration) as _:
+    except StopIteration:
         return None
 
     except Exception as e:

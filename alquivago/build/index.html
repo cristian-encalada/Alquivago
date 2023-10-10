@@ -14,7 +14,8 @@
         // Agrega un evento clic al botón
         document.getElementById('getDataButton').addEventListener('click', () => {
             // Realiza una solicitud a la API del backend
-            fetch('/api/v1/rent/filtro?moneda=UYU&min=12000&max=12000&page=1') // Cambia la URL a la ruta de tu API
+            fetch('/api/v1/rent/filtro?page=1&tipos=Casa&zonas=Brazo Oriental&dormitorios=2&baños=1&moneda=UYU&min_max=22000,N&area=80,N') // Cambia la URL a la ruta de tu API
+            //fetch('/api/v1/rent/filtro?zonas=Punta') // Cambia la URL a la ruta de tu API
                 .then(response => response.json())
                 .then(data => {
                     // Muestra los datos en el contenedor
