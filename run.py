@@ -1,6 +1,5 @@
 from alquivago.factory import create_app
 
-import os
 import configparser
 
 
@@ -10,6 +9,6 @@ config = configparser.ConfigParser()
 if __name__ == "__main__":
     app = create_app()
     app.config['DEBUG'] = True
-    app.config['MONGO_URI'] = "mongodb+srv://alice:CheshireCat@prueba.emolc4y.mongodb.net/alquivago_test?retryWrites=true&w=majority"
+    app.config['MONGO_URI'] = "mongodb+srv://alice:CheshireCat@prueba.emolc4y.mongodb.net/alquivago?retryWrites=true&w=majority"
 
     app.run()

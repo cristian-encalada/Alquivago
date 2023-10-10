@@ -2,8 +2,6 @@ consas a instalar:
     -pip install pymongo
     -pip install flask-pymongo
     -pip install flask-cors
-    -pip install bson
-    -pip install --upgrade bson
 
 antes de comenzar:
     -crear en la base de datos un usuario, preguntenle a gpt es mas simple que a escrivirlo
