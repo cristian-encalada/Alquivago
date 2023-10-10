@@ -57,7 +57,7 @@ def build_query_sort_project(filters):
     if filters["zones"] is not None: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
         escaped_zones = [re.escape(zone) for zone in filters["zones"]]
         regex_pattern = "|".join(escaped_zones)
-        filters_list.append({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+        filters_list.append({"city_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
     
     if filters["bedrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
         list_b = [element for element in filters["bedrooms"] if element != None and element <= more_bedrooms]
