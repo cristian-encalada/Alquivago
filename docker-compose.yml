@@ -2,8 +2,12 @@ version: '3'
 services:
   frontend:
     image: gab020/vite-react
-    ports:
-      - "5173:5173"
+# Using network_mode to fix Connection reset by peer: https://stackoverflow.com/a/57774458
+# Verify the port where vite is running with the command: sudo docker logs alquivago-frontend-1
+# Local:   http://localhost:3000/
+    network_mode: host
+#    ports:
+#      - "5173:5173"
     depends_on:
       - backend
 
@@ -17,24 +21,12 @@ services:
   database:
     image: mongo
     ports:
-      - "27017:27017"
+      - "27017"
     volumes:
       - ~/mongodb_data:/data/db
 
   chrome:
     image: selenium/node-chrome:latest
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_VNC_NO_PASSWORD=1
-    restart: always
-
-  firefox:
-    image: selenium/node-firefox:latest
     shm_size: 2gb
     depends_on:
       - selenium-hub
