@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../dist/output.css">
+    <title>Alquivago</title>
+  </head>
+  <body class="bg-black">
+    <header class="from-azul-600 to-white lg:bg-azul-400 flex h-screen flex-col items-center justify-center bg-opacity-60 bg-gradient-to-b bg-blend-multiply lg:flex lg:h-screen lg:w-full lg:flex-col lg:items-center lg:justify-center lg:bg-[url('https://upload.wikimedia.org/wikipedia/commons/6/60/Atardecer_en_el_Palacio_Legislativo.jpg')] lg:bg-cover lg:bg-center">
+      <nav class="lg:border-dorado-300 bg-azul-700 border-b-dorado-300 absolute top-0 flex h-28 w-full items-center justify-center rounded-b-2xl border-b-2 lg:flex lg:h-24 lg:w-full lg:items-end lg:justify-start lg:border-b-2 lg:bg-transparent">
+        <object data="assets/ellipse_1logo-fotor-bg-remover-20231004164642 (1).svg" type="image/svg+xml" class="w-20 h-20"></object>
+        <h1 class="text-dorado-300 hidden text-2xl font-semibold lg:mb-3 lg:block">Alquivago</h1>
+      </nav>
+      <h1 class="relative top-40 hidden font-semibold lg:block lg:text-center lg:text-8xl lg:text-white">Tu alquiler mas adecuado</h1>
+      <h1 class="relative bottom-12 text-5xl font-medium text-white lg:hidden">Buscar zona</h1>
+      <section class="flex h-3/6 w-2/3 flex-col justify-evenly lg:hidden">
+        <input type="search" class="text-dorado-400 h-1/5 w-full rounded-2xl text-center text-3xl font-normal" placeholder="Ejemplo: Pocitos" />
+        <button class="bg-dorado-300 round h-1/5 rounded-full text-3xl font-medium text-white">Filtrar</button>
+        <button class="bg-dorado-300 round h-1/5 rounded-full text-3xl font-medium text-white">Buscar</button>
+      </section>
+      <div type="search" class="lg:relative lg:mt-60 lg:flex lg:h-20 lg:w-2/3 lg:items-center lg:rounded-full lg:bg-white">
+        <input type="search" class="hidden lg:block lg:h-full lg:w-5/6 lg:rounded-full lg:text-lg" />
+        <button class="lg:bg-dorado-300 hidden lg:mr-5 lg:block lg:h-4/5 lg:w-1/6 lg:rounded-full lg:text-2xl lg:font-semibold lg:text-white">Buscar</button>
+      </div>
+    </header>
+    <section class="bg-azul-300 flex h-screen w-full flex-col items-center justify-evenly">
+      <div class="container h-2/5 rounded-lg bg-white shadow-2xl shadow-slate-500"></div>
+      <div class="bg-azul-300 container flex h-1/6 gap-8 rounded-xl lg:justify-evenly">
+        <div class="h-full w-1/3 rounded-3xl opacity-40 shadow-xl shadow-slate-500 transition hover:opacity-100 lg:w-52">
+          <img src="./assets/infocasas-logo.jpg" class="w-full h-full rounded-3xl object-fill">
+        </div>
+        <div class="h-full w-1/3 rounded-3xl opacity-40 shadow-xl shadow-slate-500 transition hover:opacity-100 lg:w-52">
+          <img src="./assets/mercadolibre-logo.jpg" class="w-full h-full rounded-3xl object-fill">
+        </div>
+        <div class="h-full w-1/3 rounded-3xl opacity-40 shadow-xl shadow-slate-500 transition hover:opacity-100 lg:w-52">
+          <img src="./assets/gallito-logo.png" class="w-full h-full rounded-3xl object-fill">
+        </div>
+      </div>
+    </section>
+    <section class="bg-azul-300 flex h-max w-full flex-col items-center gap-4 lg:flex-row lg:items-start lg:pt-6">
+      <div class="flex aspect-square w-2/5 flex-col rounded-3xl bg-white opacity-60 shadow-2xl transition hover:opacity-100">
+        <img src="https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC" class="h-4/5 rounded-t-3xl object-cover" />
+        <h1 class="text-center text-lg font-medium">Gabriel Delgado</h1>
+        <p class="text-center font-thin">Full-Stack engineer - UX/UI Designer</p>
+      </div>
+      <div class="flex aspect-square w-2/5 flex-col rounded-3xl bg-white opacity-60 shadow-2xl transition hover:opacity-100">
+        <img src="https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC" class="h-4/5 rounded-t-3xl object-cover" />
+        <h1 class="text-center text-lg font-medium">Gabriel Delgado</h1>
+        <p class="text-center font-thin">Full-Stack engineer - UX/UI Designer</p>
+      </div>
+      <div class="flex aspect-square w-2/5 flex-col rounded-3xl bg-white opacity-60 shadow-2xl transition hover:opacity-100">
+        <img src="https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC" class="h-4/5 rounded-t-3xl object-cover" />
+        <h1 class="text-center text-lg font-medium">Gabriel Delgado</h1>
+        <p class="text-center font-thin">Full-Stack engineer - UX/UI Designer</p>
+      </div>
+      <div class="flex aspect-square w-2/5 flex-col rounded-3xl bg-white opacity-60 shadow-2xl transition hover:opacity-100">
+        <img src="https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC" class="h-4/5 rounded-t-3xl object-cover" />
+        <h1 class="text-center text-lg font-medium">Gabriel Delgado</h1>
+        <p class="text-center font-thin">Full-Stack engineer - UX/UI Designer</p>
+      </div>
+      <div class="flex aspect-square w-2/5 flex-col rounded-3xl bg-white opacity-60 shadow-2xl transition hover:opacity-100">
+        <img src="https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC" class="h-4/5 rounded-t-3xl object-cover" />
+        <h1 class="text-center text-lg font-medium">Gabriel Delgado</h1>
+        <p class="text-center font-thin">Full-Stack engineer - UX/UI Designer</p>
+      </div>
+    </section>
+  </body>
+</html>
