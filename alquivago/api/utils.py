@@ -50,8 +50,8 @@ def sorting(text):
     if sorts:
         for s in sorts:
             s = s.split(':')
-            if len(s) > 2:
-                s[1] = chek_int(s[1])
+            if len(s) >= 2:
+                s[1] = is_int(s[1])
                 if s[1] is not None:
                     if s[1] > 1:
                         s[1] = 1

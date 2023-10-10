@@ -25,12 +25,12 @@ def get_db():
 # Use LocalProxy to read the global db instance with just `db`
 db = LocalProxy(get_db)
 
-def build_query_sort_project(filters):
+def build_query_sort_project(filters, conv):
     """
     Builds the `query` predicate, `sort` and `projection` attributes for a given
     filters dictionary.
     """
-    sort = []
+    sort = filters["sort"]
     query = {}
     project = None # elije que datos traer, de momento traeremos todos
 
@@ -39,15 +39,7 @@ def build_query_sort_project(filters):
     more_bedrooms = 4
     conversion_min = None
     conversion_max = None
-    camb = 40 #valor de cmabio entre UYU y USD
-    #ordenamiento 
-
-    if "sort" in filters:
-        tipo = {"area": "TOTAL_AREA", "UYU": "price", "USD": "price"}
-        for o, t in filters["sort"]:
-            if o in tipo:
-                sort.append((tipo[o], t))
-
+    conv = 40 #valor de cmabio entre UYU y USD
 
     #filtrado
     filters_list = []
@@ -84,25 +76,27 @@ def build_query_sort_project(filters):
         price_max = filters["price"]["max"]
         if filters["price"]["currency"] == "UYU":
             if price_min is not None:
-                conversion_min = price_min / camb
+                conversion_min = price_min / conv
                 price["$or"][0]["price"]["$gte"] = price_min
                 price["$or"][1]["price"]["$gte"] = conversion_min
             if price_max is not None:
-                conversion_max = price_max / camb
+                conversion_max = price_max / conv
                 price["$or"][0]["price"]["$lte"] = price_max
                 price["$or"][1]["price"]["$lte"] = conversion_max
         elif filters["price"]["currency"] == "USD":
             if price_min is not None:
-                conversion_min = price_min * camb
+                conversion_min = price_min * conv
                 price["$or"][0]["price"]["$gte"] = conversion_min
                 price["$or"][1]["price"]["$gte"] = price_min
             if price_max is not None:
-                conversion_max = price_max * camb
+                conversion_max = price_max * conv
                 price["$or"][0]["price"]["$lte"] = conversion_max
                 price["$or"][1]["price"]["$lte"] = price_max
         if price_min is not None or price_max is not None:
             filters_list.append(price)
         #if "orden" not in filters:
+        if "price" in sort:
+            sort["price"] = 1# orden base acendente
         
     if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
         area = {"total_area": {}}
@@ -114,8 +108,8 @@ def build_query_sort_project(filters):
             area["total_area"]["$lte"] = area_max
         if area_min is not None or area_max is not None:
             filters_list.append(area)
-        if "sort" not in filters:
-            sort.append(("total_area", -1))# orden base
+        if "area" in sort:
+            sort["area"] = -1# orden base desendente
     
     if "currency" in filters:#es un string
         filters_list.append({"currency": filters["currency"]})
@@ -128,19 +122,37 @@ def build_query_sort_project(filters):
     return query, sort, project
 
 
-def origen(rent):
-    """add origin and delete _id"""
-    origen_rent = {"gallito": "gallito"}
-    for document in rent:
-        
-        del document["_id"] #delete the _id (ObjectID)
-        """
-        origen_id = document["id"].split("_")
-        if origen_id[0] in origen_rent:
-            document["origin"] = origen_rent[origen_id[0]]
-        else:
-            document["origin"] = None"""
+def sort_apply(rent, sort, conv):
+    """apply sort"""
+     #ordenamiento 
+    sorts = {}
+    rent = list(rent)
+    if sort is not None:
+        type = {"area": "total_area", "price": "price_conv"}
+        for o, t in sort.items():
+            if o in type:
+                sorts[type[o]] = t
+    if "price" in sort and rent:
+        for document in rent:
+            document["price_conv"] = document["price"]
+            if document["currency"] == "USD":
+                document["price_conv"] = document["price"] * conv
+    
+    print(rent)
+    if len(sorts) != 0:
+        def custom_key(document):
+            return tuple(t * document[o] for o, t in sorts.items())
+        rent = sorted(rent, key=custom_key)
     return(rent)
+
+def delete__id(rent):
+    """delete _id and price_conv"""
+    if rent:
+        for document in rent:
+            del document["_id"] #delete the _id (ObjectID)
+            if "price_conv" in document:
+                del document["price_conv"]
+    return rent
 
 
 def get_rents(filters, page, rents_per_page):
@@ -156,12 +168,11 @@ def get_rents(filters, page, rents_per_page):
 
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
-    query, sort, project = build_query_sort_project(filters)
+    conv = 40
+    query, sort, project = build_query_sort_project(filters, conv)
 
     if project:
-        cursor = db.propertys.find(query, project).sort(sort)
-    elif sort:
-        cursor = db.propertys.find(query).sort(sort)
+        cursor = db.propertys.find(query, project)
     else:
         cursor = db.propertys.find(query)
     
@@ -169,10 +180,18 @@ def get_rents(filters, page, rents_per_page):
     total_num_rents = 0
     total_num_rents = db.propertys.count_documents(query)
     skip = (page - 1) * rents_per_page
- 
-    rents = cursor.skip(skip).limit(rents_per_page)
 
-    rents = origen(list(rents))
+    rents = sort_apply(cursor, sort, conv)
+    
+    print(rents)
+
+    if (skip + rents_per_page) <= len(rents):
+        rents = rents[skip:skip + rents_per_page]
+    elif skip <= len(rents):
+        rents = rents[skip:]
+    else:
+        rents = []
+    rents = delete__id(rents)
 
     return (rents, total_num_rents, query)
 
@@ -208,6 +227,6 @@ def get_all_type(page, rents_per_page):
  
     rents = cursor.skip(skip).limit(rents_per_page)
 
-    rents = origen(list(rents))
+    rents = sort_apply(list(rents))
 
     return (rents, total_num_rents)
