@@ -3,8 +3,9 @@ services:
   frontend:
     image: gab020/vite-react
 # Using network_mode to fix Connection reset by peer: https://stackoverflow.com/a/57774458
-# Verify the port where vite is running with the command: sudo docker logs alquivago-frontend-1
+# Verify the port where vite is running with the command: sudo docker logs vite-react
 # Local:   http://localhost:3000/
+    container_name: vite-react
     network_mode: host
 #    ports:
 #      - "5173:5173"
@@ -13,6 +14,7 @@ services:
 
   backend:
     image: gab020/flaskimg
+    container_name: flask
     ports:
       - "5000:5000"
     depends_on:
@@ -20,6 +22,7 @@ services:
 
   database:
     image: mongo
+    container_name: mongodb
     ports:
       - "27017"
     volumes:
@@ -27,6 +30,7 @@ services:
 
   chrome:
     image: selenium/node-chrome:latest
+    container_name: node-chrome
     shm_size: 2gb
     depends_on:
       - selenium-hub
