@@ -20,7 +20,7 @@ jobs:
 
     - name: Build and push Docker image for Front end
       run: |
-        docker build -t gab020/vite-react:latest -f front-end-img
+        docker build -t gab020/vite-react:latest -f front-end-img .
         docker push gab020/vite-react:latest
 
   build_back_end:
@@ -36,5 +36,5 @@ jobs:
     - name: Build and push Docker image for Back end
       run: |
         cd /path/to/another/project
-        docker build -t gab020/flaskimg:latest -f back-end-img
+          docker build -t gab020/flaskimg:latest -f back-end-img .
         docker push gab020/flaskimg:latest
