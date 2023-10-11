@@ -3,7 +3,7 @@ import json
 import re
 
 # Define the 1rst API URL
-api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=10"
+api_url = "https://api.mercadolibre.com/sites/MLU/search?category=MLU1459&limit=50"
 
 # Send a GET request to the 1st API
 response = requests.get(api_url)
