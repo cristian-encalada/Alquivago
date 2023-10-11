@@ -1,15 +1,14 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import "./index.css"
-import gallitoLogo from './assets/gallito-logo.png'
-import infocasasLogo from './assets/infocasas-logo.jpg'
-import mercadoLibreLogo from './assets/mercadolibre-logo.png'
+import reactLogo from '../assets/react.svg'
+import "../index.css"
+import gallitoLogo from '../assets/gallito-logo.png'
+import infocasasLogo from '../assets/infocasas-logo.jpg'
+import mercadoLibreLogo from '../assets/mercadolibre-logo.png'
 
-function App({propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+function Publish({propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
-    mercadolibre: mercadoLibreLogo
+    mercado_libre: mercadoLibreLogo
   }
   const Background = originBackground[propertyOrigin];
   return (
@@ -49,4 +48,4 @@ function App({propertyType, propertyBathrooms, propertyBedrooms, propertyZone, p
 </div>
   );
 };
-export default App
+export default Publish
