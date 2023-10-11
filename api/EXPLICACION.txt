@@ -1,0 +1,21 @@
+consas a instalar: 
+    -pip install pymongo
+    -pip install flask-pymongo
+    -pip install flask-cors
+
+antes de comenzar:
+    -crear en la base de datos un usuario, preguntenle a gpt es mas simple que a escrivirlo
+    -cargar los datos usando storage_data.py (cambiar el nombre de la base de datos "pydb")
+    
+funcionamiento:
+    - con el usuario creado se modifica el archivo sample_ini el primer DB_URI(con este formato:mongodb://<username>:<password>@localhost:27017/<db>) sin los <>
+    - luego se corre el programa (python3 run.py)
+
+explicacion de las carpetas:
+    -alquivago: contiene todo el sistema, desde la creacion de la app con flask, hasta los html y estilos
+        -db.py: tiene las funciones
+        -factory.py: crea la app y le indica donde estan los templeits y la patete estatica de la pagina (por defecto van en build y build/static)
+    -api: 
+        -rent.py: tine las API, de momento solo hay una.
+    -build: contiene los html (de momento solo en index.html)
+        -build/static: de momento no existe pero es donde estaria el CSS
