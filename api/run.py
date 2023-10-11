@@ -11,4 +11,4 @@ if __name__ == "__main__":
     app.config['DEBUG'] = True
     app.config['MONGO_URI'] = "mongodb+srv://alice:CheshireCat@prueba.emolc4y.mongodb.net/alquivago?retryWrites=true&w=majority"
 
-    app.run()
+    app.run(host='0.0.0.0', port=5000)
