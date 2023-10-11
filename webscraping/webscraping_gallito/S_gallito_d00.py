@@ -49,7 +49,7 @@ time.sleep(1)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(2):
+for i in range(1):
 
     if i > 0:
         # avanzo a la siguiente pagina
@@ -80,6 +80,10 @@ for i in range(2):
             precioString = driver.find_element(By.XPATH, '//div[@id="div_datosBasicos"]/div[2]/span').text
             precio = float(precioString.split(" ")[-1].replace(".",""))
             moneda = precioString.split(" ")[0]
+            if moneda == '$U':
+                moneda = 'UYU'
+            elif moneda == 'U$S':
+                moneda = 'USD'
         except Exception:
             pass
         try:
@@ -139,7 +143,7 @@ for i in range(2):
                 "price": precio,
                 "currency": str(moneda),
                 "state_name": departamento,
-                "city_name": zona,
+                "zone_name": zona,
                 "property_type": tipo_propiedad,
                 "total_area": int(metros),
                 "bathrooms": int(banos),
