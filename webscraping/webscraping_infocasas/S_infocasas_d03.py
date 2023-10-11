@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # scraping infocasas
 
 import platform
@@ -16,7 +14,18 @@ if sistema_operativo == "Linux":
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome()
 
+time.sleep(4)
+
 website = "https://www.infocasas.com.uy"
+
+time.sleep(5)
+
+# pop up publicidad
+try:                                          
+    btnpopup = driver.find_element(By.XPATH, '//*[@id="onesignal-slidedown-cancel-button"]')
+    btnpopup.click()
+except Exception as e:
+    pass
 
 driver.get(website)
 driver.maximize_window()
@@ -46,7 +55,7 @@ lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
 # for i in range(4):
-for i in range(4):
+for i in range(1):
 
     # avanzar de pagina
     if i == 1:
@@ -106,6 +115,10 @@ for i in range(4):
             precio_float = float(precio.replace(".", ""))
             # obtener tipo de moneda
             moneda = lst_precio[0].text.split(" ")[0]
+            if moneda == '$':
+                moneda = 'UYU'
+            elif moneda == 'U$S':
+                moneda = 'USD'
         except Exception:
             lst_precio = []
             precio = 0
@@ -183,6 +196,7 @@ for i in range(4):
         try:
             dic_alquiler = {
                 "id": id,
+                "title": "",
                 "url_link": url_link,
                 "origin": "infocasas",
                 "operation_type": "Alquiler",
@@ -203,6 +217,8 @@ for i in range(4):
             lst_data.append(dic_alquiler)
         except Exception:
             pass
+
+        print(lst_data)
 
         # cerrar pestaña abierta y volver a la principal
         driver.close()

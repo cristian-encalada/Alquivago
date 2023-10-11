@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # scraping gallito
 
 import platform
@@ -19,6 +17,8 @@ elif sistema_operativo == 'Windows':
 
 # website en alquiler de inmuebles
 website = "https://www.gallito.com.uy"
+
+time.sleep(4)
 
 driver.get(website)
 driver.maximize_window()
@@ -137,6 +137,7 @@ for i in range(1):
         try:
             dic_alquiler = {
                 "id": id,
+                "title": "",
                 "url_link": url_alquiler,
                 "origin": "gallito",
                 "operation_type": "Alquiler",

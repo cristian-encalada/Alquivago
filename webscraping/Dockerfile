@@ -41,7 +41,7 @@ RUN mkdir -p /root/airflow/dags && \
     cd /root/airflow/dags && \
     git clone -b dev https://github.com/cristian-encalada/Alquivago.git /root/airflow/dags && \
     mkdir /root/airflow/tmp && \
-    cp /root/airflow/dags/webscraping/webscraping_gallito/*.py /root/airflow/tmp && \
+    cp /root/airflow/dags/webscraping/webscraping_dags/*.py /root/airflow/tmp && \
     rm -r /root/airflow/dags &&\
     mkdir /root/airflow/dags &&\
     cp /root/airflow/tmp/*.py /root/airflow/dags &&\
