@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client'
 import { useState, useEffect } from 'react';
 import Publish from './Components/Publish'
 import { data } from 'autoprefixer';
-/* adding comment */
+/* adding comment second instance */
 const MyComponent = () => {
     const [data, setData] = useState([]);
 
