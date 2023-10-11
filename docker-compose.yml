@@ -6,9 +6,9 @@ services:
 # Verify the port where vite is running with the command: sudo docker logs vite-react
 # Local:   http://localhost:3000/
     container_name: vite-react
-    network_mode: host
-#    ports:
-#      - "5173:5173"
+#    network_mode: host
+    ports:
+      - "5173:5173"
     depends_on:
       - backend
 
@@ -27,24 +27,3 @@ services:
       - "27017"
     volumes:
       - ~/mongodb_data:/data/db
-
-  chrome:
-    image: selenium/node-chrome:latest
-    container_name: node-chrome
-    shm_size: 2gb
-    depends_on:
-      - selenium-hub
-    environment:
-      - SE_EVENT_BUS_HOST=selenium-hub
-      - SE_EVENT_BUS_PUBLISH_PORT=4442
-      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
-      - SE_VNC_NO_PASSWORD=1
-    restart: always
-
-  selenium-hub:
-    image: selenium/hub:latest
-    container_name: selenium-hub
-    ports:
-      - "4442:4442"
-      - "4443:4443"
-      - "4444:4444"
