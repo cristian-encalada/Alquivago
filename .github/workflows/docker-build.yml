@@ -35,6 +35,5 @@ jobs:
 
     - name: Build and push Docker image for Back end
       run: |
-        cd /path/to/another/project
-          docker build -t gab020/flaskimg:latest -f back-end-img .
+        docker build -t gab020/flaskimg:latest -f back-end-img .
         docker push gab020/flaskimg:latest
