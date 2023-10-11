@@ -8,7 +8,7 @@ on:
     - dev
 
 jobs:
-  build:
+  build_front_end:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,7 +18,23 @@ jobs:
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
 
-    - name: Build and push Docker image
+    - name: Build and push Docker image for Front end
       run: |
-        docker build -t gab020/vite-react:latest .
+        docker build -t gab020/vite-react:latest -f front-end-img
         docker push gab020/vite-react:latest
+
+    build_back_end:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKERHUB_USERNAME }} -p ${{ secrets.DOCKERHUB_TOKEN }}
+
+    - name: Build and push Docker image for Back end
+      run: |
+        cd /path/to/another/project
+        docker build -t gab020/flaskimg:latest -f back-end-img
+        docker push gab020/flaskimg:latest
