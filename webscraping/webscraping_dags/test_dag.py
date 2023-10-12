@@ -5,6 +5,7 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import logging
 
+
 default_args = {
     'owner': 'airflow_alquivago',
     'depends_on_past': False,
@@ -34,10 +35,10 @@ with DAG(
     schedule_interval=timedelta(hours=4), # hora
     # schedule_interval=timedelta(minutes=30), # minutos
     start_date=days_ago(1),
-    tags=['scraping alquivago']
+    tags=['scraping']
 ) as dag:
     scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
     scraping_infocasas_task = PythonOperator(task_id="S_infocasas", python_callable=scraping_infocasas)
-    extract_data_mercadolibre_task = PythonOperator(task_id="extract_data", python_callable=extract_data_mercadolibre)
+    extract_data_mercadolibre_task = PythonOperator(task_id="extract_mercadolibre", python_callable=extract_data_mercadolibre)
 
     scraping_gallito_task >> scraping_infocasas_task >> extract_data_mercadolibre_task

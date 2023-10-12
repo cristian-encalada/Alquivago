@@ -90,6 +90,11 @@ for i in range(2):
         except Exception:
             pass
         try:
+            title = driver.find_element(By.XPATH, '//div[@id="div_datosBasicos"]/h1').text
+        except Exception:
+            title = ""
+            pass
+        try:
             departamento = driver.find_element(By.XPATH, '//*[@id="ol_breadcrumb"]/li[5]/a').text
             zona = driver.find_element(By.XPATH, '//*[@id="ol_breadcrumb"]/li[6]/a').text
         except Exception:
@@ -140,7 +145,7 @@ for i in range(2):
         try:
             dic_alquiler = {
                 "id": id,
-                "title": "",
+                "title": str(title),
                 "url_link": url_alquiler,
                 "origin": "gallito",
                 "operation_type": "Alquiler",
