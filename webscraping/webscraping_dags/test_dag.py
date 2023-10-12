@@ -6,7 +6,6 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import logging
 
-
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -26,14 +25,15 @@ def scraping_gallito():
     subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d02.py'])
 
 with DAG(
-    'dag_scraping',
+    'dag_infocasas_and_gallito',
     default_args=default_args,
-    description='alquivago scraping',
-    schedule_interval=timedelta(hours=6), # hora
+    description='Scraping infocasas and gallito',
+    schedule_interval=timedelta(hours=2), # Change the schedule interval as needed
     start_date=datetime(2023, 10, 12),
-    tags=['scraping']
+    tags=['infocasas', 'gallito']
 ) as dag:
     scraping_infocasas_task = PythonOperator(task_id="S_infocasas", python_callable=scraping_infocasas)
     scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
 
-    scraping_infocasas_task >> scraping_gallito_task
+
+scraping_infocasas_task >> scraping_gallito_task
