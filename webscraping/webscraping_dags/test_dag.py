@@ -28,7 +28,7 @@ with DAG(
     'dag_infocasas_and_gallito',
     default_args=default_args,
     description='Scraping infocasas and gallito',
-    schedule_interval=timedelta(hours=2), # Change the schedule interval as needed
+    schedule_interval = '0 */6 * * *',
     start_date=datetime(2023, 10, 12),
     tags=['infocasas', 'gallito']
 ) as dag:
