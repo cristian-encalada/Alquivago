@@ -169,7 +169,6 @@ for i in range(2):
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
-
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
 with open('gallito.json', 'w', encoding='utf-8') as json_file:
