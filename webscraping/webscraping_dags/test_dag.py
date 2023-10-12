@@ -32,7 +32,7 @@ with DAG(
     'alquivago',
     default_args=default_args,
     description='DAG_scraping',
-    schedule_interval=timedelta(hours=4), # hora
+    schedule_interval=timedelta(hours=6), # hora
     # schedule_interval=timedelta(minutes=30), # minutos
     start_date=days_ago(1),
     tags=['scraping']

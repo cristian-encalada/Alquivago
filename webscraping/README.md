@@ -13,3 +13,8 @@ https://hub.docker.com/u/hentype:
 ```
 docker pull hentype/custom:latest
 ```
+
+start Airflow:
+```
+airflow standalone
+```
