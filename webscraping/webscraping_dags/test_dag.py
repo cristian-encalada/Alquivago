@@ -42,7 +42,4 @@ with DAG(
     start_date=datetime(2023, 10, 13),
     tags=['gallito']
 ) as dag:
-    scraping_infocasas_task = PythonOperator(task_id="S_gallito", python_callable=scraping_infocasas)
-
-
-scraping_infocasas_task >> scraping_gallito_task
+    scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
