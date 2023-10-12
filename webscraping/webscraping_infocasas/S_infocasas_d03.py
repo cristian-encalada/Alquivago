@@ -14,18 +14,9 @@ if sistema_operativo == "Linux":
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome()
 
-time.sleep(4)
-
 website = "https://www.infocasas.com.uy"
 
-time.sleep(5)
-
-# pop up publicidad
-try:                                          
-    btnpopup = driver.find_element(By.XPATH, '//*[@id="onesignal-slidedown-cancel-button"]')
-    btnpopup.click()
-except Exception as e:
-    pass
+time.sleep(4)
 
 driver.get(website)
 driver.maximize_window()
@@ -61,11 +52,19 @@ for i in range(1):
     if i == 1:
         primer_pag = driver.find_element(By.XPATH, '//div[@id="__next"]//ul/li[2]/a')
         primer_pag.click()
-        time.sleep(2)
+        time.sleep(4)
     if i > 1:
         avanzar_pag = driver.find_element(By.XPATH, '//div[@id="__next"]//ul/li[11]/a')
         avanzar_pag.click()
-        time.sleep(2)
+        time.sleep(4)
+
+
+    # pop up publicidad
+    try:                                          
+        btnpopup = driver.find_element(By.XPATH, '//body/div[2]/div//button')
+        btnpopup.click()
+    except Exception as e:
+        pass
 
     # capturar articles de alquileres
     lst_article = driver.find_elements(By.XPATH, '//div[@id="__next"]//section//div/a[@class="lc-data"]')
@@ -90,7 +89,7 @@ for i in range(1):
 
         # abre una pestaña nueva
         article.click()
-        time.sleep(1)
+        time.sleep(2)
 
         # cambia el enfoque a la nueva pestaña
         new_window = driver.window_handles[-1]
@@ -157,10 +156,10 @@ for i in range(1):
             pass
         try:
             # abrir galeria
-            time.sleep(1)
+            time.sleep(2)
             btn_galeria_abrir = driver.find_element(By.XPATH, '//div[@id="__next"]//div[3]/div/div/button[1]')
             btn_galeria_abrir.click()
-            time.sleep(1)
+            time.sleep(2)
             # capturar informacion de galeria de imagenes
             lst_imgs = driver.find_elements(By.XPATH, '//div[@class="pmp-image"]//img')
             img_urls = [img.get_attribute("src") for img in lst_imgs]
@@ -169,7 +168,7 @@ for i in range(1):
             pass
         try:
             # ir a street view
-            time.sleep(1)
+            time.sleep(2)
             div_street_view = driver.find_element(By.XPATH, '//div[text()="Street View"]')
             div_street_view.click()
             time.sleep(2)
@@ -217,8 +216,6 @@ for i in range(1):
             lst_data.append(dic_alquiler)
         except Exception:
             pass
-
-        print(lst_data)
 
         # cerrar pestaña abierta y volver a la principal
         driver.close()
