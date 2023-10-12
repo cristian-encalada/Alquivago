@@ -25,15 +25,24 @@ def scraping_gallito():
     subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d02.py'])
 
 with DAG(
-    'dag_infocasas_and_gallito',
+    'dag_infocasas',
     default_args=default_args,
-    description='Scraping infocasas and gallito',
+    description='Scraping infocasas',
     schedule_interval = '0 */6 * * *',
-    start_date=datetime(2023, 10, 12),
-    tags=['infocasas', 'gallito']
+    start_date=datetime(2023, 10, 13),
+    tags=['infocasas']
 ) as dag:
     scraping_infocasas_task = PythonOperator(task_id="S_infocasas", python_callable=scraping_infocasas)
-    scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
+
+with DAG(
+    'dag_gallito',
+    default_args=default_args,
+    description='Scraping gallito',
+    schedule_interval = '0 */8 * * *',
+    start_date=datetime(2023, 10, 13),
+    tags=['gallito']
+) as dag:
+    scraping_infocasas_task = PythonOperator(task_id="S_gallito", python_callable=scraping_infocasas)
 
 
 scraping_infocasas_task >> scraping_gallito_task
