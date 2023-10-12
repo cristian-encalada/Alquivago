@@ -6,9 +6,8 @@ on:
   push:
     branches:
     - dev
-    paths:
-      - 'vite-project/**' # Watch changes in the front-end directory
-      - 'api/**'  # Watch changes in the back-end directory
+    - main
+    # paths: - 'vite-project/**' # Watch changes in the front-end directory  - 'api/**'  # Watch changes in the back-end directory
 
 jobs:
   build_front_end:
