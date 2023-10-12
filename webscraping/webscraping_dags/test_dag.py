@@ -7,13 +7,13 @@ import logging
 
 
 default_args = {
-    'owner': 'airflow_alquivago',
+    'owner': 'airflow',
     'depends_on_past': False,
     'email': ['martinleiro9@gmail.com'],
     'email_on_failure': True,
     'email_on_retry': False,
     'retries': 1,
-    'retry_delay': timedelta(minutes=3),
+    'retry_delay': timedelta(minutes=2),
 }
 
 def scraping_gallito():
@@ -29,7 +29,7 @@ def extract_data_mercadolibre():
     subprocess.run(['python3', 'root/Alquivago/api_mercadolibre/extract_data.py'])
 
 with DAG(
-    'Scraping Alquivago',
+    'alquivago',
     default_args=default_args,
     description='DAG_scraping',
     schedule_interval=timedelta(hours=4), # hora
@@ -39,6 +39,5 @@ with DAG(
 ) as dag:
     scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
     scraping_infocasas_task = PythonOperator(task_id="S_infocasas", python_callable=scraping_infocasas)
-    extract_data_mercadolibre_task = PythonOperator(task_id="extract_mercadolibre", python_callable=extract_data_mercadolibre)
 
-    scraping_gallito_task >> scraping_infocasas_task >> extract_data_mercadolibre_task
+    scraping_infocasas_task >> scraping_gallito_task >> extract_data_mercadolibre_task
