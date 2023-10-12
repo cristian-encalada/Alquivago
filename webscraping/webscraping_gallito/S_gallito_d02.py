@@ -174,9 +174,12 @@ for i in range(2):
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
+# directorio de guardado
+jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
-with open('gallito.json', 'w', encoding='utf-8') as json_file:
+with open(jsonPath, 'w', encoding='utf-8') as json_file:
     json_file.write(json_data)
 
 # input("Enter para salir..")
