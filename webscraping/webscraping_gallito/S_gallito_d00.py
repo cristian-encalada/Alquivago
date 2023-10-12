@@ -10,8 +10,11 @@ from selenium.webdriver.common.action_chains import ActionChains
 # Obtener el nombre del sistema operativo
 sistema_operativo = platform.system()
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--disable-notifications")
+
 if sistema_operativo == "Linux":
-    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=webdriver.ChromeOptions())
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=chrome_options)
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome()
 
@@ -49,7 +52,7 @@ time.sleep(1)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(1):
+for i in range(2):
 
     if i > 0:
         # avanzo a la siguiente pagina
