@@ -29,7 +29,7 @@ with DAG(
     'dag_scraping',
     default_args=default_args,
     description='alquivago scraping',
-    schedule_interval=timedelta(hours=1), # hora
+    schedule_interval=timedelta(hours=6), # hora
     start_date=datetime(2023, 10, 12),
     tags=['scraping']
 ) as dag:
