@@ -1,7 +1,11 @@
 import ReactDOM from 'react-dom/client'
 import { useState, useEffect } from 'react';
-import Publish from './Components/Publish'
+import Publish from './Components/Publish';
+import Navbar from './Components/Navbar';
+import FiltersBar from './Components/FiltersBar';
+import FiltersSection from './Components/FiltersSection';
 import { data } from 'autoprefixer';
+import Header from './Components/Header';
 /* adding comment second instance */
 const MyComponent = () => {
     const [data, setData] = useState([]);
@@ -45,4 +49,4 @@ const MyComponent = () => {
     };
 
 const renderizado = ReactDOM.createRoot(document.getElementById('renderizado'));
-renderizado.render(<MyComponent />);
+renderizado.render(<Header />);
