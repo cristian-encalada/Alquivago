@@ -588,6 +588,34 @@ video {
   top: 10rem;
 }
 
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
+.ml-6 {
+  margin-left: 1.5rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
+}
+
 .flex {
   display: flex;
 }
@@ -598,6 +626,14 @@ video {
 
 .aspect-square {
   aspect-ratio: 1 / 1;
+}
+
+.h-1\/2 {
+  height: 50%;
+}
+
+.h-1\/3 {
+  height: 33.333333%;
 }
 
 .h-1\/5 {
@@ -612,8 +648,8 @@ video {
   height: 40%;
 }
 
-.h-24 {
-  height: 6rem;
+.h-20 {
+  height: 5rem;
 }
 
 .h-28 {
@@ -626,6 +662,14 @@ video {
 
 .h-4\/5 {
   height: 80%;
+}
+
+.h-5\/6 {
+  height: 83.333333%;
+}
+
+.h-80 {
+  height: 20rem;
 }
 
 .h-full {
@@ -641,12 +685,8 @@ video {
   height: 100vh;
 }
 
-.h-20 {
-  height: 5rem;
-}
-
-.h-10 {
-  height: 2.5rem;
+.w-1\/2 {
+  width: 50%;
 }
 
 .w-1\/3 {
@@ -661,28 +701,12 @@ video {
   width: 40%;
 }
 
-.w-24 {
-  width: 6rem;
-}
-
-.w-full {
-  width: 100%;
-}
-
 .w-20 {
   width: 5rem;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-1\/2 {
-  width: 50%;
-}
-
-.transform {
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -699,6 +723,18 @@ video {
 
 .justify-evenly {
   justify-content: space-evenly;
+}
+
+.gap-0 {
+  gap: 0px;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-4 {
@@ -729,6 +765,10 @@ video {
   border-radius: 0.75rem;
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
 .rounded-b-2xl {
   border-bottom-right-radius: 1rem;
   border-bottom-left-radius: 1rem;
@@ -739,13 +779,37 @@ video {
   border-top-right-radius: 1.5rem;
 }
 
+.border-2 {
+  border-width: 2px;
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
+}
+
+.border-azul-200 {
+  --tw-border-opacity: 1;
+  border-color: rgb(210 216 229 / var(--tw-border-opacity));
+}
+
+.border-azul-700 {
+  --tw-border-opacity: 1;
+  border-color: rgb(60 74 104 / var(--tw-border-opacity));
 }
 
 .border-b-dorado-300 {
   --tw-border-opacity: 1;
   border-bottom-color: rgb(205 188 130 / var(--tw-border-opacity));
+}
+
+.bg-azul-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(235 237 243 / var(--tw-bg-opacity));
+}
+
+.bg-azul-200 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(210 216 229 / var(--tw-bg-opacity));
 }
 
 .bg-azul-300 {
@@ -773,40 +837,32 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-azul-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(126 145 178 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-azul-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(74 92 128 / var(--tw-bg-opacity));
+}
+
+.bg-azul-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(94 116 153 / var(--tw-bg-opacity));
+}
+
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
 }
 
-.bg-\[url\(\'https\:\/\/blog\.saleslayer\.com\/hubfs\/mercado-libre-logo\.jpg\'\)\] {
-  background-image: url('https://blog.saleslayer.com/hubfs/mercado-libre-logo.jpg');
-}
-
-.bg-\[url\(\'https\:\/\/scontent\.fmvd3-1\.fna\.fbcdn\.net\/v\/t39\.30808-6\/322711820_1534678476996941_2070565455646099919_n\.png\?_nc_cat\=106\&ccb\=1-7\&_nc_sid\=a2f6c7\&_nc_ohc\=SZZex2Ai2ewAX_GxrGF\&_nc_ht\=scontent\.fmvd3-1\.fna\&oh\=00_AfApo6V7AO0zdksbcUXuZs8WOGBjYkKLmwT4WUv1uyuZMw\&oe\=65297DF5\'\)\] {
-  background-image: url('https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/322711820_1534678476996941_2070565455646099919_n.png?_nc_cat=106&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=SZZex2Ai2ewAX_GxrGF&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfApo6V7AO0zdksbcUXuZs8WOGBjYkKLmwT4WUv1uyuZMw&oe=65297DF5');
-}
-
-.bg-\[url\(\'https\:\/\/scontent\.fmvd3-1\.fna\.fbcdn\.net\/v\/t39\.30808-6\/325400203_488631800103236_1920915686928720760_n\.jpg\?_nc_cat\=108\&ccb\=1-7\&_nc_sid\=a2f6c7\&_nc_ohc\=H7HFAvc8Gb0AX_d9Dhg\&_nc_ht\=scontent\.fmvd3-1\.fna\&oh\=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA\&oe\=652A3FCC\'\)\] {
-  background-image: url('https://scontent.fmvd3-1.fna.fbcdn.net/v/t39.30808-6/325400203_488631800103236_1920915686928720760_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=a2f6c7&_nc_ohc=H7HFAvc8Gb0AX_d9Dhg&_nc_ht=scontent.fmvd3-1.fna&oh=00_AfCg8FK69a57aEAIMFapEYGQmpDcWQc65LMU92wvwOy0EA&oe=652A3FCC');
-}
-
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-}
-
-.bg-\[url\(\'assets\/infocasas-logo\.jpg\'\)\] {
-  background-image: url('assets/infocasas-logo.jpg');
-}
-
-.bg-\[url\(\'\.\/assets\/infocasas-logo\.jpg\'\)\] {
-  background-image: url('./assets/infocasas-logo.jpg');
-}
-
-.bg-\[url\(\'\.\.\/assets\/infocasas-logo\.jpg\'\)\] {
-  background-image: url('../assets/infocasas-logo.jpg');
-}
-
-.bg-\[url\(\'src\/assets\/infocasas-logo\.jpg\'\)\] {
-  background-image: url('src/assets/infocasas-logo.jpg');
 }
 
 .from-azul-600 {
@@ -819,19 +875,6 @@ video {
   --tw-gradient-to: #fff var(--tw-gradient-to-position);
 }
 
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-center {
-  background-position: center;
-}
-
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
@@ -842,14 +885,14 @@ video {
      object-fit: fill;
 }
 
-.object-center {
-  -o-object-position: center;
-     object-position: center;
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-.object-top {
-  -o-object-position: top;
-     object-position: top;
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .text-center {
@@ -892,6 +935,20 @@ video {
   font-weight: 100;
 }
 
+.font-bold {
+  font-weight: 700;
+}
+
+.text-azul-600 {
+  --tw-text-opacity: 1;
+  color: rgb(74 92 128 / var(--tw-text-opacity));
+}
+
+.text-azul-700 {
+  --tw-text-opacity: 1;
+  color: rgb(60 74 104 / var(--tw-text-opacity));
+}
+
 .text-dorado-300 {
   --tw-text-opacity: 1;
   color: rgb(205 188 130 / var(--tw-text-opacity));
@@ -913,6 +970,14 @@ video {
 
 .opacity-60 {
   opacity: 0.6;
+}
+
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-100 {
+  opacity: 1;
 }
 
 .bg-blend-multiply {
@@ -944,8 +1009,36 @@ video {
   transition-duration: 150ms;
 }
 
+.hover\:scale-125:hover {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:scale-110:hover {
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.hover\:bg-blue-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-azul-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(60 74 104 / var(--tw-bg-opacity));
+}
+
 .hover\:opacity-100:hover {
   opacity: 1;
+}
+
+.focus\:scale-125:focus {
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 @media (min-width: 1024px) {
