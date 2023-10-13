@@ -24,6 +24,7 @@ def get_db():
 
 # Use LocalProxy to read the global db instance with just `db`
 db = LocalProxy(get_db)
+propertys = "collected_data"
 
 def build_query_sort_project(filters, conv):
     """
@@ -49,7 +50,7 @@ def build_query_sort_project(filters, conv):
     if filters["zones"] is not None: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
         escaped_zones = [re.escape(zone) for zone in filters["zones"]]
         regex_pattern = "|".join(escaped_zones)
-        filters_list.append({"city_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+        filters_list.append({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
     
     if filters["bedrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
         list_b = [element for element in filters["bedrooms"] if element != None and element <= more_bedrooms]
@@ -172,13 +173,13 @@ def get_rents(filters, page, rents_per_page):
     query, sort, project = build_query_sort_project(filters, conv)
 
     if project:
-        cursor = db.propertys.find(query, project)
+        cursor = db[propertys].find(query, project)
     else:
-        cursor = db.propertys.find(query)
+        cursor = db[propertys].find(query)
     
     
     total_num_rents = 0
-    total_num_rents = db.propertys.count_documents(query)
+    total_num_rents = db[propertys].count_documents(query)
     skip = (page - 1) * rents_per_page
 
     rents = sort_apply(cursor, sort, conv)
@@ -205,7 +206,7 @@ def get_rent(id):
     try:
         query = {"id": {"$in": id}}
 
-        rents = db.propertys.find(query)
+        rents = db[propertys].find(query)
 
         return (list(rents))
     except StopIteration:
@@ -219,10 +220,10 @@ def get_all_type(page, rents_per_page):
     """
     List all type of rents
     """
-    cursor = db.propertys.find()
+    cursor = db[propertys].find()
 
     total_num_rents = 0
-    total_num_rents = db.propertys.count_documents({})
+    total_num_rents = db[propertys].count_documents({})
     skip = (page - 1) * rents_per_page
  
     rents = cursor.skip(skip).limit(rents_per_page)
