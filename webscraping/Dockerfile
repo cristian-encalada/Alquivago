@@ -9,9 +9,9 @@ RUN sudo pip3 install selenium
 RUN sudo pip install selenium
 
 ENV SE_VNC_NO_PASSWORD=1
-ENV SE_VNC_VIEW_ONLY=1
-ENV SE_NODE_MAX_SESSIONS=5
-ENV SE_NODE_SESSION_TIMEOUT=30
+# ENV SE_VNC_VIEW_ONLY=1
+ENV SE_NODE_MAX_SESSIONS=2
+ENV SE_NODE_SESSION_TIMEOUT=10
 ENV SE_VNC_NO_PASSWORD=1
 
 EXPOSE 4444
@@ -41,7 +41,7 @@ RUN mkdir -p /root/airflow/dags && \
     cd /root/airflow/dags && \
     git clone -b dev https://github.com/cristian-encalada/Alquivago.git /root/airflow/dags && \
     mkdir /root/airflow/tmp && \
-    cp /root/airflow/dags/webscraping/webscraping_gallito/*.py /root/airflow/tmp && \
+    cp /root/airflow/dags/webscraping/webscraping_dags/*.py /root/airflow/tmp && \
     rm -r /root/airflow/dags &&\
     mkdir /root/airflow/dags &&\
     cp /root/airflow/tmp/*.py /root/airflow/dags &&\

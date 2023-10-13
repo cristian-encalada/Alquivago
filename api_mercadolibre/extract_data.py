@@ -11,10 +11,11 @@ response = requests.get(api_url)
 # Check if the 1st API request was successful
 if response.status_code == 200:
     data = response.json()
-    
-    # Initialize a list to store the extracted data
+
+    # Initialize lists to store the extracted data
     extracted_data = []
-    
+    extracted_data_venta = []
+
     # Loop to extract the required fields
     for result in data.get("results", []):
         property_type = None
@@ -22,7 +23,7 @@ if response.status_code == 200:
         bathrooms = None
         bedrooms = None
         total_area = None
-        
+
         for attribute in result.get("attributes", []):
             if attribute.get("id") == "PROPERTY_TYPE":
                 property_type = attribute.get("value_name")
@@ -43,10 +44,10 @@ if response.status_code == 200:
         item_id = result.get("id")[3:]  # Remove the "MLU" prefix
         images_api_url = f"https://api.mercadolibre.com/items?ids=MLU{item_id}"
         images_response = requests.get(images_api_url)
-        
+
         if images_response.status_code == 200:
             images_data = images_response.json()
-            
+
             # Extract up to 5 image URLs from the response
             images = [image.get("secure_url") for image in images_data[0].get("body", {}).get("pictures", [])[:5]]
         else:
@@ -72,12 +73,19 @@ if response.status_code == 200:
             },
             "images": images
         }
-        extracted_data.append(item_data)
 
-    # Save the extracted data to a JSON file
+        if operation_type in ["Alquiler temporada", "Alquiler"]:
+            extracted_data.append(item_data)
+        elif operation_type == "Venta":
+            extracted_data_venta.append(item_data)
+
+    # Save the extracted data to JSON files
     with open("extracted_data.json", "w", encoding="utf-8") as json_file:
         json.dump(extracted_data, json_file, ensure_ascii=False, indent=4)
         
-    print("Data has been extracted and saved to 'extracted_data.json'.")
+    with open("extracted_data_venta.json", "w", encoding="utf-8") as json_file_venta:
+        json.dump(extracted_data_venta, json_file_venta, ensure_ascii=False, indent=4)
+
+    print("Data has been extracted and saved to 'extracted_data.json' and 'extracted_data_venta.json'.")
 else:
     print(f"Failed to retrieve data. Status code: {response.status_code}")

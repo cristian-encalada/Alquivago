@@ -1,4 +1,5 @@
 import subprocess
+from datetime import datetime
 from datetime import timedelta
 from airflow import DAG
 from airflow.operators.python import PythonOperator
@@ -11,28 +12,34 @@ default_args = {
     'email': ['martinleiro9@gmail.com'],
     'email_on_failure': True,
     'email_on_retry': False,
-    'retries': 1,
-    'retry_delay': timedelta(minutes=2),
+    'retries': 0,
+    'catchup': False
 }
 
-def scraping_gallito():
-    logging.info('performing scraping')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d00.py'])
-
 def scraping_infocasas():
-    logging.info('performing scraping')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_d03.py'])
+    logging.info('performing infocasas')
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_d04.py'])
+
+def scraping_gallito():
+    logging.info('performing gallito')
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d02.py'])
 
 with DAG(
-    'Scraping',
+    'dag_infocasas',
     default_args=default_args,
-    description='DAG_scraping',
-    schedule_interval=timedelta(hours=1),  # hora
-    # schedule_interval=timedelta(minutes=60),  # minutos
-    start_date=days_ago(2),
-    tags=['scraping']
+    description='Scraping infocasas',
+    schedule_interval = '0 */6 * * *',
+    start_date=datetime(2023, 10, 13),
+    tags=['infocasas']
 ) as dag:
-    scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
     scraping_infocasas_task = PythonOperator(task_id="S_infocasas", python_callable=scraping_infocasas)
 
-    scraping_gallito_task >> scraping_infocasas_task
+with DAG(
+    'dag_gallito',
+    default_args=default_args,
+    description='Scraping gallito',
+    schedule_interval = '0 */8 * * *',
+    start_date=datetime(2023, 10, 13),
+    tags=['gallito']
+) as dag:
+    scraping_gallito_task = PythonOperator(task_id="S_gallito", python_callable=scraping_gallito)
