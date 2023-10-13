@@ -14,12 +14,12 @@ https://hub.docker.com/u/hentype:
 docker pull hentype/custom:latest
 ```
 
-start Airflow:
-```
-airflow standalone
-```
-
-in other tab start webserver:
+open new tab start webserver:
 ```
 airflow webserver
+```
+
+in other tab start airflow:
+```
+airflow standalone
 ```
