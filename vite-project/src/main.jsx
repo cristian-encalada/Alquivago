@@ -12,7 +12,7 @@ const MyComponent = () => {
 
     useEffect(() => {
         // Realizar la solicitud a la API
-        fetch('http://127.0.0.1:5000/api/v1/rent/filtro?&page=14')
+        fetch('http://127.0.0.1:5000/api/v1/rent/filtro?&page=10')
         .then((response) => {
             if (!response.ok) {
             throw new Error('La solicitud no fue exitosa');
@@ -49,4 +49,7 @@ const MyComponent = () => {
     };
 
 const renderizado = ReactDOM.createRoot(document.getElementById('renderizado'));
-renderizado.render(<Header />);
+renderizado.render(<>
+<Header/>
+<MyComponent/>
+</>);
