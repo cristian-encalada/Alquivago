@@ -49,4 +49,6 @@ RUN mkdir -p /root/airflow/dags && \
  
 WORKDIR /root
 
+# CMD airflow scheduler
+# CMD airflow webserver
 # CMD airflow standalone
