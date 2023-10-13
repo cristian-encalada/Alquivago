@@ -3,7 +3,7 @@ import pymongo
 import requests
 
 # Connect to the MongoDB Atlas database
-atlas_uri = "mongodb+srv://alquivago:alquivago123@cluster0.e4fyf7c.mongodb.net/?retryWrites=true&w=majority"
+atlas_uri = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc.mongodb.net/?retryWrites=true&w=majority"
 client = pymongo.MongoClient(atlas_uri)
 db = client["alquivago"]
 # Create a collection for collected data
