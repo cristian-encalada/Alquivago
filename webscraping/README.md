@@ -18,3 +18,8 @@ start Airflow:
 ```
 airflow standalone
 ```
+
+in other tab start webserver:
+```
+airflow webserver
+```
