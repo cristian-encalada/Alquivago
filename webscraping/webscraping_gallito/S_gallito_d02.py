@@ -1,5 +1,3 @@
-#!/usr/bin/python3
-
 # scraping gallito
 
 import platform
@@ -12,13 +10,18 @@ from selenium.webdriver.common.action_chains import ActionChains
 # Obtener el nombre del sistema operativo
 sistema_operativo = platform.system()
 
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument("--disable-notifications")
+
 if sistema_operativo == "Linux":
-    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=webdriver.ChromeOptions())
+    driver = webdriver.Remote(command_executor='http://127.0.0.1:4444', options=chrome_options)
 elif sistema_operativo == 'Windows':
     driver = webdriver.Chrome()
 
 # website en alquiler de inmuebles
 website = "https://www.gallito.com.uy"
+
+time.sleep(4)
 
 driver.get(website)
 driver.maximize_window()
@@ -49,7 +52,7 @@ time.sleep(1)
 lst_data = []
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
-for i in range(1):
+for i in range(2):
 
     if i > 0:
         # avanzo a la siguiente pagina
@@ -85,6 +88,11 @@ for i in range(1):
             elif moneda == 'U$S':
                 moneda = 'USD'
         except Exception:
+            pass
+        try:
+            title = driver.find_element(By.XPATH, '//div[@id="div_datosBasicos"]/h1').text
+        except Exception:
+            title = ""
             pass
         try:
             departamento = driver.find_element(By.XPATH, '//*[@id="ol_breadcrumb"]/li[5]/a').text
@@ -137,6 +145,7 @@ for i in range(1):
         try:
             dic_alquiler = {
                 "id": id,
+                "title": str(title),
                 "url_link": url_alquiler,
                 "origin": "gallito",
                 "operation_type": "Alquiler",
@@ -165,10 +174,12 @@ for i in range(1):
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
+# directorio de guardado
+jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
 
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
-with open('gallito.json', 'w', encoding='utf-8') as json_file:
+with open(jsonPath, 'w', encoding='utf-8') as json_file:
     json_file.write(json_data)
 
 # input("Enter para salir..")

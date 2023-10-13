@@ -1,7 +1,7 @@
 version: '3'
 services:
   frontend:
-    image: gab020/vite-react
+    image: gab020/vite-react:latest
 # Using network_mode to fix Connection reset by peer: https://stackoverflow.com/a/57774458
 # Verify the port where vite is running with the command: sudo docker logs vite-react
 # Local:   http://localhost:3000/

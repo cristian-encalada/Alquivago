@@ -9,6 +9,7 @@ config = configparser.ConfigParser()
 if __name__ == "__main__":
     app = create_app()
     app.config['DEBUG'] = True
-    app.config['MONGO_URI'] = "mongodb+srv://REDACTED@prueba.emolc4y.mongodb.net/alquivago?retryWrites=true&w=majority"
+    # app.config['MONGO_URI'] = "mongodb+srv://REDACTED@prueba.emolc4y.mongodb.net/alquivago?retryWrites=true&w=majority"
+    app.config['MONGO_URI'] = "MONGODB_URI_REDACTED"
 
     app.run(host='0.0.0.0', port=5000)
