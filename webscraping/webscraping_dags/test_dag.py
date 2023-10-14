@@ -1,3 +1,5 @@
+# Airflow script
+
 import subprocess
 from datetime import datetime
 from datetime import timedelta
@@ -18,11 +20,11 @@ default_args = {
 
 def scraping_infocasas():
     logging.info('performing infocasas')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_d04.py'])
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_infocasas/S_infocasas_v00.py'])
 
 def scraping_gallito():
     logging.info('performing gallito')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d03.py'])
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_v00.py'])
 
 
 # cada scraping debe ejecutarse como tarea independiente
@@ -32,8 +34,8 @@ with DAG(
     'dag_infocasas',
     default_args=default_args,
     description='Scraping infocasas',
-    schedule_interval = '@daily',
-    start_date=datetime(2023, 10, 14),
+    schedule_interval = '0 */8 * * *',
+    start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['infocasas']
 ) as dag:
@@ -43,8 +45,8 @@ with DAG(
     'dag_gallito',
     default_args=default_args,
     description='Scraping gallito',
-    schedule_interval = '@daily',
-    start_date=datetime(2023, 10, 14),
+    schedule_interval = '0 */6 * * *',
+    start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['gallito']
 ) as dag:
