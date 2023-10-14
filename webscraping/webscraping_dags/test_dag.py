@@ -32,8 +32,7 @@ with DAG(
     'dag_infocasas',
     default_args=default_args,
     description='Scraping infocasas',
-    # schedule_interval = '@daily',
-     schedule_interval = '0 */6 * * *',
+    schedule_interval = '@daily',
     start_date=datetime(2023, 10, 14),
     catchup=False,
     tags=['infocasas']
@@ -44,8 +43,7 @@ with DAG(
     'dag_gallito',
     default_args=default_args,
     description='Scraping gallito',
-    # schedule_interval = '@daily',
-    schedule_interval = '0 */8 * * *',
+    schedule_interval = '@daily',
     start_date=datetime(2023, 10, 14),
     catchup=False,
     tags=['gallito']
