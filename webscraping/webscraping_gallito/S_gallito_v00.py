@@ -57,22 +57,24 @@ driver.get(selecDepart)
 
 time.sleep(2)
 
+# boton avanzar de pagina con zona filtrada
+avanzar_pag = driver.find_element(By.XPATH, '//*[@id="paginador"]/ul/li[6]/a')
+custom_avanzar = avanzar_pag.get_attribute("href")
+
 # lista en la que se van a guardar los datos de cada publicacion
 lst_data = []
-
-# boton avanzar pagina
-avanzar_pag = driver.find_element(By.XPATH, '//*[@id="paginador"]/ul/li[6]/a')
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
 for i in range(2):
 
-    if i > 0:
-        # avanzo a la siguiente pagina
-        time.sleep(2)
-        driver.get(avanzar_pag.get_attribute("href"))
-        time.sleep(2)
+    if i == 0:
+        # pagina 0 de alquileres
+        driver.get(selecDepart)
+    else:
+        # se crea url cambiando el ultimo char de la url
+        custom_url_avanzando = f"{custom_avanzar[:-1]}{i + 1}"
+        driver.get(custom_url_avanzando)
 
-    time.sleep(2)
     # captura la lista de elementos de alquiler
     lst_alquiler = driver.find_elements(By.XPATH, '//div[3]/div[1]/div/div[1]/a')
 
@@ -179,24 +181,23 @@ for i in range(2):
         except Exception:
             pass
 
-        # volver a la pagina de alquileres
-        if i > 0:
-            # se crea url cambiando el ultimo char de la url
-            custom_url = avanzar_pag.get_attribute("href")[:-1]
-            custom_url_avanzando = f"{custom_url}{i}"
-            driver.get(custom_url_avanzando)
-        elif i == 0:
+        # back() volver
+        if i == 0:
             # pagina 0 de alquileres
-            driver.get(urlalquileres)
-        
-        time.sleep(3)
+            driver.get(selecDepart)
+        else:
+            # se crea url cambiando el ultimo char de la url
+            custom_url_avanzando = f"{custom_avanzar[:-1]}{i + 1}"
+            driver.get(custom_url_avanzando)
+       
+        time.sleep(2)
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'gallito.json'
+    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
 else:
     jsonPath = 'gallito.json'
 
