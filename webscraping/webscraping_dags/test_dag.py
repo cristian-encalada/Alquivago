@@ -22,7 +22,7 @@ def scraping_infocasas():
 
 def scraping_gallito():
     logging.info('performing gallito')
-    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d02.py'])
+    subprocess.run(['python3', 'root/Alquivago/webscraping/webscraping_gallito/S_gallito_d03.py'])
 
 with DAG(
     'dag_infocasas',

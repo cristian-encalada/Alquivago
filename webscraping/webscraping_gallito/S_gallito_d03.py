@@ -7,6 +7,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.action_chains import ActionChains
 
+
 # Obtener el nombre del sistema operativo
 sistema_operativo = platform.system()
 
@@ -20,34 +21,39 @@ elif sistema_operativo == 'Windows':
 
 # website en alquiler de inmuebles
 website = "https://www.gallito.com.uy"
-
-time.sleep(4)
+time.sleep(2)
 
 driver.get(website)
 driver.maximize_window()
 
-time.sleep(2)
+time.sleep(4)
 
 # elemento del menu
 elemento = driver.find_element(By.XPATH, '//*[@id="cat_inmuebles_li"]/a')
-
 # Mueve el mouse sobre el elemento para desplegar menu
 action = ActionChains(driver)
 action.move_to_element(elemento).perform()
 
-time.sleep(3)
+time.sleep(2)
 
 # click en el menu de alquileres
 menu_alquileres = driver.find_element(By.XPATH, '//div[@id="cat_inmuebles"]/div[2]/ul/li[2]/h3/a')
 menu_alquileres.click()
 
-time.sleep(1)
+time.sleep(2)
 
+# un clic en las coordenadas x y para quitar el anuncio
+action.move_to_element_with_offset(driver.find_element(By.TAG_NAME, 'body'), 300, 200)
+action.click()
+action.perform()
+
+time.sleep(2)
+
+# seleccionar zona
 seleccionarDep = driver.find_element(By.XPATH, '//*[@id="Div_Departamentos"]/li[1]/a')
 seleccionarDep.click()
 
-time.sleep(1)
-
+time.sleep(2)
 # lista en la que se van a guardar los datos de cada publicacion
 lst_data = []
 
@@ -56,11 +62,12 @@ for i in range(2):
 
     if i > 0:
         # avanzo a la siguiente pagina
-        avanzar_pag = driver.find_element(By.XPATH, '//div[@id="paginador"]/ul/li[6]/a')
-        avanzar_pag.click()
-        time.sleep(4)
+        time.sleep(2)
+        avanzar_pag = driver.find_element(By.XPATH, '//*[@id="paginador"]/ul/li[6]/a')
+        driver.get(avanzar_pag.get_attribute("href"))
+        time.sleep(2)
 
-    time.sleep(4)
+    time.sleep(2)
     # captura la lista de elementos de alquiler
     lst_alquiler = driver.find_elements(By.XPATH, '//div[3]/div[1]/div/div[1]/a')
 
@@ -175,7 +182,10 @@ for i in range(2):
 #---------------------------------------------------------------
 
 # directorio de guardado
-jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+if sistema_operativo == "Linux":
+    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+else:
+    jsonPath = 'gallito.json'
 
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
