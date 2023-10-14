@@ -38,7 +38,8 @@ time.sleep(2)
 
 # click en el menu de alquileres
 menu_alquileres = driver.find_element(By.XPATH, '//div[@id="cat_inmuebles"]/div[2]/ul/li[2]/h3/a')
-menu_alquileres.click()
+urlalquileres = menu_alquileres.get_attribute("href")
+driver.get(urlalquileres)
 
 time.sleep(2)
 
@@ -51,11 +52,16 @@ time.sleep(2)
 
 # seleccionar zona
 seleccionarDep = driver.find_element(By.XPATH, '//*[@id="Div_Departamentos"]/li[1]/a')
-seleccionarDep.click()
+selecDepart = seleccionarDep.get_attribute("href")
+driver.get(selecDepart)
 
 time.sleep(2)
+
 # lista en la que se van a guardar los datos de cada publicacion
 lst_data = []
+
+# boton avanzar pagina
+avanzar_pag = driver.find_element(By.XPATH, '//*[@id="paginador"]/ul/li[6]/a')
 
 # capturar en rango desde la pagina 0 hasta la que determine range()
 for i in range(2):
@@ -63,7 +69,6 @@ for i in range(2):
     if i > 0:
         # avanzo a la siguiente pagina
         time.sleep(2)
-        avanzar_pag = driver.find_element(By.XPATH, '//*[@id="paginador"]/ul/li[6]/a')
         driver.get(avanzar_pag.get_attribute("href"))
         time.sleep(2)
 
@@ -78,7 +83,7 @@ for i in range(2):
         urls_alquiler.append(url_alquiler)
 
     # abre cada uno de los url de alquileres
-    for url_alquiler in urls_alquiler:
+    for j, url_alquiler in enumerate(urls_alquiler):
 
         # abrir enlace
         driver.get(url_alquiler)
@@ -174,16 +179,24 @@ for i in range(2):
         except Exception:
             pass
 
-        # volver a la pagina anterior
-        driver.back()
-        time.sleep(2)
+        # volver a la pagina de alquileres
+        if i > 0:
+            # se crea url cambiando el ultimo char de la url
+            custom_url = avanzar_pag.get_attribute("href")[:-1]
+            custom_url_avanzando = f"{custom_url}{i}"
+            driver.get(custom_url_avanzando)
+        elif i == 0:
+            # pagina 0 de alquileres
+            driver.get(urlalquileres)
+        
+        time.sleep(3)
 
 #---------------------------------------------------------------
 #---------------------------------------------------------------
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+    jsonPath = 'gallito.json'
 else:
     jsonPath = 'gallito.json'
 
