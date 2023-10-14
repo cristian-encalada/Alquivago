@@ -241,7 +241,10 @@ for i in range(2):
 #---------------------------------------------------------------
 
 # directorio de guardado
-jsonPath = 'root/Alquivago/webscraping/webscraping_infocasas/infocasas.json'
+if sistema_operativo == "Linux":
+    jsonPath = 'root/Alquivago/webscraping/webscraping_infocasas/infocasas.json'
+else:
+    jsonPath = 'infocasas.json'
 
 # exportar JSON
 json_data = json.dumps(lst_data, indent=4, ensure_ascii=False)
