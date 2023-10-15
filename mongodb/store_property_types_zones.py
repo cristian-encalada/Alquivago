@@ -15,26 +15,18 @@ zonas_montevideo_url = "https://raw.githubusercontent.com/cristian-encalada/Alqu
 property_types_col = db["property_types_col"]
 zonas_mvd_col = db["zonas_mvd_col"]
 
-# Function to insert or update JSON data into a MongoDB collection
-def insert_or_update_json_into_mongo(url, collection):
+# Function to download and insert JSON data into a MongoDB collection
+def insert_json_into_mongo(url, collection):
     response = requests.get(url)
     if response.status_code == 200:
         data = response.json()
-        # Check if the document already exists based on a unique key (e.g., _id)
-        existing_doc = collection.find_one({"_id": data["_id"]})
-        if existing_doc:
-            # Document with the same _id exists, update it
-            collection.replace_one({"_id": data["_id"]}, data)
-            print(f"Data from {url} updated in MongoDB collection: {collection.name}")
-        else:
-            # Document doesn't exist, insert it
-            collection.insert_one(data)
-            print(f"Data from {url} inserted into MongoDB collection: {collection.name}")
+        collection.insert_one(data)
+        print(f"Data from {url} inserted into MongoDB collection: {collection.name}")
     else:
         print(f"Failed to retrieve data from {url}")
 
-# Insert or update property_types.json into the property_types_col collection
-insert_or_update_json_into_mongo(property_types_url, property_types_col)
+# Insert property_types.json into the property_types_col collection
+insert_json_into_mongo(property_types_url, property_types_col)
 
-# Insert or update zonas_montevideo.json into the zonas_mvd_col collection
-insert_or_update_json_into_mongo(zonas_montevideo_url, zonas_mvd_col)
+# Insert zonas_montevideo.json into the zonas_mvd_col collection
+insert_json_into_mongo(zonas_montevideo_url, zonas_mvd_col)
