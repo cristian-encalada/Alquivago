@@ -197,7 +197,7 @@ for i in range(2):
 
 # directorio de guardado
 if sistema_operativo == "Linux":
-    jsonPath = 'root/Alquivago/webscraping/webscraping_gallito/gallito.json'
+    jsonPath = 'gallito.json'
 else:
     jsonPath = 'gallito.json'
 
