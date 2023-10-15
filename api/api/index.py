@@ -1,5 +1,4 @@
 from flask import Flask, Blueprint, request, jsonify
-from flask_cors import CORS
 from api.db import get_rents
 from api.utils import is_int, tex_none, chek_int, sorting
 from datetime import datetime
@@ -7,7 +6,6 @@ from datetime import datetime
 app = Flask(__name__)
 # Set the configuration variable
 app.config['MONGO_URI'] = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc.mongodb.net/alquivago?retryWrites=true&w=majority"
-CORS(app)
 
 # Define the rents_api_v1 Blueprint
 rents_api_v1 = Blueprint('rent_api_v1', 'rent_api_v1', url_prefix='/api/v1/rent')
