@@ -1,5 +1,5 @@
 # docker build -t hentype/custom .
-# docker run -dit -p 4444:4444 -p 7900:7900 -p 8080:8080 --shm-size="2g" --cpus 1.5 hentype/custom 
+# docker run -dit -p 4444:4444 -p 7900:7900 -p 8080:8080 --shm-size="3g" --cpus=2 hentype/custom
 
 FROM selenium/standalone-chrome:latest
 
@@ -22,9 +22,7 @@ USER root
 
 RUN sudo apt-get install -y curl wget git
 
-WORKDIR /root
-
-RUN sudo git clone -b dev https://github.com/cristian-encalada/Alquivago.git
+RUN sudo git clone -b dev https://github.com/cristian-encalada/Alquivago.git /root/Alquivago
 
 # instalar Apache Airflow 
 ENV AIRFLOW_HOME=/root/airflow
@@ -45,9 +43,9 @@ RUN mkdir -p /root/airflow/dags && \
     rm -r /root/airflow/dags &&\
     mkdir /root/airflow/dags &&\
     cp /root/airflow/tmp/*.py /root/airflow/dags &&\
-    rm -r /root/airflow/tmp 
- 
-WORKDIR /root
+    rm -r /root/airflow/tmp
+
+WORKDIR /root/Alquivago/
 
 # CMD airflow scheduler
 # CMD airflow webserver
