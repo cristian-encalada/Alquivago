@@ -10,13 +10,6 @@ app.config['MONGO_URI'] = "MONGODB_URI_REDACTED"
 # Define the rents_api_v1 Blueprint
 rents_api_v1 = Blueprint('rent_api_v1', 'rent_api_v1', url_prefix='/api/v1/rent')
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
-
-@app.route('/about')
-def about():
-    return 'About'
 
 @rents_api_v1.route('/filtro', methods=['GET'])
 def api_get_rent():
