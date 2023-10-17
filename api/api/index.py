@@ -10,13 +10,6 @@ app.config['MONGO_URI'] = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc
 # Define the rents_api_v1 Blueprint
 rents_api_v1 = Blueprint('rent_api_v1', 'rent_api_v1', url_prefix='/api/v1/rent')
 
-@app.route('/')
-def home():
-    return 'Hello, World!'
-
-@app.route('/about')
-def about():
-    return 'About'
 
 @rents_api_v1.route('/filtro', methods=['GET'])
 def api_get_rent():
