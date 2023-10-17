@@ -1,10 +1,9 @@
-import reactLogo from '../assets/react.svg'
 import "../index.css"
 import gallitoLogo from '../assets/gallito-logo.png'
 import infocasasLogo from '../assets/infocasas-logo.jpg'
 import mercadoLibreLogo from '../assets/mercadolibre-logo.png'
 
-function Publish({propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
@@ -23,7 +22,7 @@ function Publish({propertyType, propertyBathrooms, propertyBedrooms, propertyZon
       backgroundSize: 'cover',
     }}></div>
   </div>
-  <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyType} en {propertyZone}</h1>
+  <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">
       <div className="my-2 flex h-2/3 flex-col justify-around rounded-2xl bg-[#414C67] py-3 pl-5 lg:pl-12">
@@ -39,10 +38,10 @@ function Publish({propertyType, propertyBathrooms, propertyBedrooms, propertyZon
       </button>
     </div>
     <div className="mt-3 flex h-full w-1/2 flex-col items-center gap-5 lg:w-3/4 lg:justify-center lg:gap-10">
-      <h1 className="hidden text-xl font-medium lg:inline">{propertyType} en {propertyZone}</h1>
+      <h1 className="hidden text-xl font-medium lg:inline lg:text-center">{propertyTitle}</h1>
       <span className="w-full rounded-3xl bg-white py-2 text-center font-medium lg:w-2/3">{propertyType}</span>
       <span className="w-full rounded-3xl bg-white py-2 text-center font-medium lg:w-2/3">{propertyZone}</span>
-      <p className="lg:b mb-2 text-2xl font-semibold lg:relative">{propertyCurrency} {propertyPrice}</p>
+      <p className="lg:b mb-10 text-2xl font-semibold lg:relative">{propertyCurrency === 'UYU'? '$ ': 'U$S '} {propertyPrice}</p>
     </div>
   </div>
 </div>
