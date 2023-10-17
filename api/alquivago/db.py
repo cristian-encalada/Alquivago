@@ -1,5 +1,5 @@
-import re
-
+from alquivago.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_typres, f_zones
+from alquivago.sort_delete import sort_apply, delete__id
 
 from flask import current_app, g
 from werkzeug.local import LocalProxy
@@ -44,76 +44,25 @@ def build_query_sort_project(filters, conv):
 
     #filtrado
     filters_list = []
-    if filters["types"] is not None: #es una lista de strigs, normalisadas ["normalisado", ...]
-        filters_list.append({"property_type": {"$in": filters["types"]}})
-
-    if filters["zones"] is not None: #es una lista de strigs, sin normalisar por completo ["no_normalisado"(none), "normalisado", ...]
-        escaped_zones = [re.escape(zone) for zone in filters["zones"]]
-        regex_pattern = "|".join(escaped_zones)
-        filters_list.append({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
+    f_filters = {
+        "currency": f_currency,
+        "types": f_typres,
+        "zones": f_zones,
+        "bedrooms": f_bedrooms,
+        "bathrooms": f_bathrooms,
+        "price": f_price,
+        "area": f_area}
+    for k, v in filters.items():
+        if v is not None and k in f_filters.keys():
+            add = f_filters[k](v)
+            if add is not None:
+                filters_list.append(add)
     
-    if filters["bedrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num, num+(none)]
-        list_b = [element for element in filters["bedrooms"] if element != None and element <= more_bedrooms]
-        if len(list_b) > 0:
-            bedrooms = {"$or": [{"bedrooms": {"$in": list_b}}]}
-            if more_bedrooms in list_b:
-                bedrooms["$or"].append({"bedrooms": {"$gt": more_bedrooms}})
-            filters_list.append(bedrooms)
-
-    if filters["bathrooms"] is not None: #es una lista con lista de numeros y un valor especial para valores supreiores [num] 
-        list_b = [element for element in filters["bathrooms"] if element != None and element <= more_bathrooms]
-        if len(list_b) > 0:
-            bathrooms = {"$or": [{"bathrooms": {"$in": list_b}}]}
-            if more_bathrooms in list_b:
-                bathrooms["$or"].append({"bathrooms": {"$gt": more_bathrooms}})
-            filters_list.append(bathrooms)
-
-    if "price" in filters: #es un diccionario con tres valores ["currency": "tipo", "min": int(none), "max": int(none)]
-        price = { "$or": [
-            {"currency": "UYU", "price": {}}, #CAMBIAR $U POR UYU Y price_UYU POR price
-            {"currency": "USD", "price": {}}
-        ]}
-        price_min = filters["price"]["min"]
-        price_max = filters["price"]["max"]
-        if filters["price"]["currency"] == "UYU":
-            if price_min is not None:
-                conversion_min = price_min / conv
-                price["$or"][0]["price"]["$gte"] = price_min
-                price["$or"][1]["price"]["$gte"] = conversion_min
-            if price_max is not None:
-                conversion_max = price_max / conv
-                price["$or"][0]["price"]["$lte"] = price_max
-                price["$or"][1]["price"]["$lte"] = conversion_max
-        elif filters["price"]["currency"] == "USD":
-            if price_min is not None:
-                conversion_min = price_min * conv
-                price["$or"][0]["price"]["$gte"] = conversion_min
-                price["$or"][1]["price"]["$gte"] = price_min
-            if price_max is not None:
-                conversion_max = price_max * conv
-                price["$or"][0]["price"]["$lte"] = conversion_max
-                price["$or"][1]["price"]["$lte"] = price_max
-        if price_min is not None or price_max is not None:
-            filters_list.append(price)
-        #if "orden" not in filters:
-        if "price" in sort:
-            sort["price"] = 1# orden base acendente
-        
-    if "area" in filters: #es un diccionario con 2 valores ["min": int(none), "max": int(none)]
-        area = {"total_area": {}}
-        area_min = filters["area"]["min"]
-        area_max = filters["area"]["max"]
-        if area_min is not None:
-            area["total_area"]["$gte"] = area_min
-        if area_max is not None:
-            area["total_area"]["$lte"] = area_max
-        if area_min is not None or area_max is not None:
-            filters_list.append(area)
-        if "area" in sort:
-            sort["area"] = -1# orden base desendente
+    if "price" not in sort and "price" in filters:
+        sort["price"] = 1# orden base acendente
     
-    if "currency" in filters:#es un string
-        filters_list.append({"currency": filters["currency"]})
+    if "area" not in sort and "area" in filters:
+        sort["area"] = -1# orden base desendente
     
     #filtro de proximidad con la latitud y longitud
     
@@ -123,40 +72,9 @@ def build_query_sort_project(filters, conv):
     return query, sort, project
 
 
-def sort_apply(rent, sort, conv):
-    """apply sort"""
-     #ordenamiento 
-    sorts = {}
-    rent = list(rent)
-    if sort is not None:
-        type = {"area": "total_area", "price": "price_conv"}
-        for o, t in sort.items():
-            if o in type:
-                sorts[type[o]] = t
-    if "price" in sort and rent:
-        for document in rent:
-            document["price_conv"] = document["price"]
-            if document["currency"] == "USD":
-                document["price_conv"] = document["price"] * conv
-    
-    print(rent)
-    if len(sorts) != 0:
-        def custom_key(document):
-            return tuple(t * document[o] for o, t in sorts.items())
-        rent = sorted(rent, key=custom_key)
-    return(rent)
-
-def delete__id(rent):
-    """delete _id and price_conv"""
-    if rent:
-        for document in rent:
-            del document["_id"] #delete the _id (ObjectID)
-            if "price_conv" in document:
-                del document["price_conv"]
-    return rent
 
 
-def get_rents(filters, page, rents_per_page):
+def get_rents(conv, filters, page, rents_per_page):
     """
     Returns a cursor to a list of rental property documents.
 
@@ -169,7 +87,6 @@ def get_rents(filters, page, rents_per_page):
 
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
-    conv = 40
     query, sort, project = build_query_sort_project(filters, conv)
 
     if project:
@@ -177,18 +94,15 @@ def get_rents(filters, page, rents_per_page):
     else:
         cursor = db[propertys].find(query)
     
-    
-    total_num_rents = 0
-    total_num_rents = db[propertys].count_documents(query)
+    rents = sort_apply(list(cursor), sort, conv)
+
+    total_num_rents = len(rents)
     skip = (page - 1) * rents_per_page
 
-    rents = sort_apply(cursor, sort, conv)
-    
-    print(rents)
 
-    if (skip + rents_per_page) <= len(rents):
+    if (skip + rents_per_page) <= total_num_rents:
         rents = rents[skip:skip + rents_per_page]
-    elif skip <= len(rents):
+    elif skip <= total_num_rents:
         rents = rents[skip:]
     else:
         rents = []
@@ -216,18 +130,24 @@ def get_rent(id):
         return {}
 
 
-def get_all_type(page, rents_per_page):
+def get_all(conv, sort, page, rents_per_page):
     """
     List all type of rents
     """
     cursor = db[propertys].find()
 
-    total_num_rents = 0
-    total_num_rents = db[propertys].count_documents({})
-    skip = (page - 1) * rents_per_page
- 
-    rents = cursor.skip(skip).limit(rents_per_page)
+    rents = sort_apply(list(cursor), sort, conv)
 
-    rents = sort_apply(list(rents))
+    total_num_rents = len(rents)
+    skip = (page - 1) * rents_per_page
+
+
+    if (skip + rents_per_page) <= total_num_rents:
+        rents = rents[skip:skip + rents_per_page]
+    elif skip <= total_num_rents:
+        rents = rents[skip:]
+    else:
+        rents = []
+    rents = delete__id(rents)
 
     return (rents, total_num_rents)
