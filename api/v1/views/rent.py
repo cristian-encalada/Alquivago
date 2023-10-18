@@ -42,7 +42,7 @@ def api_get_rent(type_operations):
         page = 1
     filters = {
         "types": chek_int(request.args.get('tipos')),
-        "zones": tex_none(request.args.get('zonas')),
+        "zones": chek_int(request.args.get('zonas')),
         "bedrooms": chek_int(request.args.get('dormitorios')),
         "bathrooms": chek_int(request.args.get('baños')),
         "sort": sorting(request.args.get('orden'))} #orden=zonas:1,types:-1
