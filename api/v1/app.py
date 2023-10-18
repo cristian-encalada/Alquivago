@@ -17,10 +17,6 @@ app.config['MONGO_URI'] = "MONGODB_URI_REDACTED"
 def home():
     return 'Hello, World!'
 
-@app.route('/about')
-def about():
-    return 'About'
-
 Swagger(app)
 
 # if __name__ == '__main__':
