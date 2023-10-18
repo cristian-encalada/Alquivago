@@ -1,4 +1,4 @@
-from api.v1.views.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_typres, f_zones
+from api.v1.views.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
 from api.v1.views.sort_delete import sort_apply, delete__id
 from flask import current_app, g
 from werkzeug.local import LocalProxy
@@ -17,9 +17,9 @@ def get_db():
 
 # Use LocalProxy to read the global db instance with just `db`
 db = LocalProxy(get_db)
-propertys = "collected_data"
 
-def build_query_sort_project(filters, conv):
+
+def build_query_sort_project(filters):
     """
     Builds the `query` predicate, `sort` and `projection` attributes for a given
     filters dictionary.
@@ -28,18 +28,11 @@ def build_query_sort_project(filters, conv):
     query = {}
     project = None # elije que datos traer, de momento traeremos todos
 
-    #constantes
-    more_bathrooms = 3
-    more_bedrooms = 4
-    conversion_min = None
-    conversion_max = None
-    conv = 40 #valor de cmabio entre UYU y USD
-
     #filtrado
     filters_list = []
     f_filters = {
         "currency": f_currency,
-        "types": f_typres,
+        "types": f_types,
         "zones": f_zones,
         "bedrooms": f_bedrooms,
         "bathrooms": f_bathrooms,
@@ -67,7 +60,7 @@ def build_query_sort_project(filters, conv):
 
 
 
-def get_rents(conv, filters, page, rents_per_page):
+def get_rents(typre_operations, conv, filters, page, rents_per_page):
     """
     Returns a cursor to a list of rental property documents.
 
@@ -80,7 +73,17 @@ def get_rents(conv, filters, page, rents_per_page):
 
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
-    query, sort, project = build_query_sort_project(filters, conv)
+    if "rent" == typre_operations:
+        propertys = "collected_data"
+    elif "buy" == typre_operations:
+        propertys = "buy_col"
+    else:
+        rents = []
+        total_num_rents = 0
+        query = {}
+        return (rents, total_num_rents, query)
+
+    query, sort, project = build_query_sort_project(filters)
 
     if project:
         cursor = db[propertys].find(query, project)
@@ -104,12 +107,22 @@ def get_rents(conv, filters, page, rents_per_page):
     return (rents, total_num_rents, query)
 
 
-def get_rent(id):
+def get_rent(type_operations, id):
     """
     Given a rental property ID, return a property with that ID, with the comments for that
     property embedded in the property document. The comments are joined from the
     comments collection using expressive $lookup.
     """
+    if "rent" == type_operations:
+        propertys = "collected_data"
+    elif "buy" == type_operations:
+        propertys = "buy_col"
+    else:
+        rents = []
+        total_num_rents = 0
+        query = {}
+        return (rents, total_num_rents, query)
+    
     try:
         query = {"id": {"$in": id}}
 
@@ -123,10 +136,20 @@ def get_rent(id):
         return {}
 
 
-def get_all(conv, sort, page, rents_per_page):
+def get_all(type_operations, conv, sort, page, rents_per_page):
     """
     List all type of rents
     """
+
+    if "rent" == type_operations:
+        propertys = "collected_data"
+    elif "buy" == type_operations:
+        propertys = "buy_col"
+    else:
+        rents = []
+        total_num_rents = 0
+        return (rents, total_num_rents)
+    
     cursor = db[propertys].find()
 
     rents = sort_apply(list(cursor), sort, conv)

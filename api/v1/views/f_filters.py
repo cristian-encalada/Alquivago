@@ -8,20 +8,22 @@ def f_currency(currency):
     return({"currency": currency})
 
 
-def f_typres(types):
+def f_types(types):
     """
     typres es una lista de int, normalisadas
     [num , ...],
     retorno un diccionario con la consulta
     """
-    from api.db import db
+    from api.v1.views.db import db
     
-    property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
+    """property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
     property_types = property_types[0]['property_types']
     print(types)
     print(property_types)
-    result = [doc['name'] for doc in property_types if doc['id'] in types]
+    result = [doc['name'] for doc in property_types if doc['id'] in types]"""
     
+    result = list(db.property_types_col.find({"id": {"$in": types}}, {"name": 1, "_id": 0}))
+
     return({"property_type": {"$in": result}})
 
 
