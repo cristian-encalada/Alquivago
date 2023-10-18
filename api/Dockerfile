@@ -13,6 +13,8 @@ EXPOSE 5000
 RUN git clone -b dev https://github.com/cristian-encalada/Alquivago.git
 WORKDIR /Alquivago
 RUN git pull
+# Set the Flask app environment variable
+ENV FLASK_APP=app.py
 # Copia tu aplicación Flask a la imagen (asegúrate de tener app.py u otro nombre adecuado)
 WORKDIR /Alquivago/api/v1
 CMD ["flask", "run", "--host", "0.0.0.0"]
