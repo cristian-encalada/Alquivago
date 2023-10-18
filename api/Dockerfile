@@ -5,8 +5,9 @@ RUN apt-get update && \
     apt-get install -y python3 python3-pip
 # Instala git
 RUN apt-get install -y git
-# Instala flassger usando pip
-RUN pip install flassger
+# Instala flassger y pymongo
+RUN pip install flasgger
+RUN pip install pymongo
 # Expon el puerto 5000 para Flask (ajusta según sea necesario)
 EXPOSE 5000
 # Clonar repositorio
