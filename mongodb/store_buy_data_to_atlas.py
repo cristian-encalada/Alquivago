@@ -8,13 +8,13 @@ atlas_uri = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc.mongodb.net/?
 client = pymongo.MongoClient(atlas_uri)
 db = client["alquivago"]
 # Create a collection for rent properties
-rent_col = db["rent_col"]
+rent_col = db["buy_col"]
 
 # URLs of the JSON files on GitHub
 github_urls = [
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/gallito.json",
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/infocasas.json",
-    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/mercadolibre.json",
+    # "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/gallito.json",
+    # "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/infocasas.json",
+    "https://raw.githubusercontent.com/cristian-encalada/Alquivago/dev/data/mercadolibre_venta.json",
 ]
 
 data = []
