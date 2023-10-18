@@ -7,9 +7,9 @@ from flasgger.utils import swag_from
 
 conv = conversion()
 
-@app_views.route('/', methods=['GET'], strict_slashes=False)
+@app_views.route('<type_operations>/', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/rent/get_all.yml', methods=['GET'])
-def api_get_all():
+def api_get_all(type_operations):
     RENTS_PER_PAGE = 10
 
     page = is_int(request.args.get('page'))
@@ -20,7 +20,7 @@ def api_get_all():
     print(page)
 
     (rents, total_num_entries) = get_all(
-        conv, sort, page, rents_per_page=RENTS_PER_PAGE)
+        type_operations, conv, sort, page, rents_per_page=RENTS_PER_PAGE)
 
     response = {
     "rents": rents,
@@ -32,9 +32,9 @@ def api_get_all():
 
     return jsonify(response)
 
-@app_views.route('/filtro', methods=['GET'], strict_slashes=False)
+@app_views.route('<type_operations>/inmuebles', methods=['GET'], strict_slashes=False)
 @swag_from('documentation/rent/filtro.yml', methods=['GET'])
-def api_get_rent():
+def api_get_rent(type_operations):
     RENTS_PER_PAGE = 10
 
     page = is_int(request.args.get('page'))
@@ -64,10 +64,8 @@ def api_get_rent():
             "min": area_min_max[0],
             "max": area_min_max[1]}
 
-    print(filters)
-
     (rents, total_num_entries, query) = get_rents(
-        conv, filters, page, rents_per_page=RENTS_PER_PAGE)
+        type_operations, conv, filters, page, rents_per_page=RENTS_PER_PAGE)
 
     response = {
         "rents": rents,
