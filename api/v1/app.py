@@ -17,10 +17,6 @@ app.config['MONGO_URI'] = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc
 def home():
     return 'Hello, World!'
 
-@app.route('/about')
-def about():
-    return 'About'
-
 Swagger(app)
 
 # if __name__ == '__main__':
