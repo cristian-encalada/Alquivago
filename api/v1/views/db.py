@@ -1,12 +1,9 @@
-from api.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_typres, f_zones
-from api.sort_delete import sort_apply, delete__id
-import re
+from api.v1.views.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_typres, f_zones
+from api.v1.views.sort_delete import sort_apply, delete__id
 from flask import current_app, g
 from werkzeug.local import LocalProxy
 from pymongo import MongoClient
-# from pymongo.errors import DuplicateKeyError, OperationFailure
-# from bson.objectid import ObjectId
-# from bson.errors import InvalidId
+
 
 
 def get_db():

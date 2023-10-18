@@ -62,5 +62,5 @@ def sorting(text):
 
 
 def conversion():
-    """return de conversion betwin two currencys"""
+    """return de conversion between two currencies"""
     return 40

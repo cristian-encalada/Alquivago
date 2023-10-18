@@ -1,19 +1,11 @@
-from flask import Flask, Blueprint, request, jsonify
-from api.db import get_rents, get_all
-from api.utils import is_int, tex_none, chek_int, sorting, conversion
-from datetime import datetime
-
-app = Flask(__name__)
-# Set the configuration variable
-app.config['MONGO_URI'] = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc.mongodb.net/alquivago?retryWrites=true&w=majority"
-
-# Define the rents_api_v1 Blueprint
-rents_api_v1 = Blueprint('rent_api_v1', 'rent_api_v1', url_prefix='/api/v1/rent')
-
+from api.v1.views import app_views
+from flask import abort, jsonify, make_response, request
+from api.v1.views.utils import is_int, chek_int, tex_none, sorting, conversion
+from api.v1.views.db import get_rents, get_all
 
 conv = conversion()
 
-@rents_api_v1.route('/', methods=['GET'])
+@app_views.route('/', methods=['GET'])
 def api_get_all():
     RENTS_PER_PAGE = 10
 
@@ -37,7 +29,7 @@ def api_get_all():
 
     return jsonify(response)
 
-@rents_api_v1.route('/filtro', methods=['GET'])
+@app_views.route('/filtro', methods=['GET'])
 def api_get_rent():
     RENTS_PER_PAGE = 10
 
@@ -82,9 +74,3 @@ def api_get_rent():
     }
 
     return jsonify(response)
-
-# Register the Blueprint with the app
-app.register_blueprint(rents_api_v1)
-
-# if __name__ == '__main__':
-#    app.run(debug=True)
