@@ -9,6 +9,14 @@ app.register_blueprint(app_views)
 app.config['MONGO_URI'] = "MONGODB_URI_REDACTED"
 
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+@app.route('/about')
+def about():
+    return 'About'
+
 @app.errorhandler(404)
 def not_found(error):
     """ 404 Error
