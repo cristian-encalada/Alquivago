@@ -1,93 +1,119 @@
-# Alquivago - 1st MVP done
+# Alquivago - Flask API v1
 
-Pasos para correr localmente el proyecto
+## Local environment
 
-## Ejecutar en el contenedor de docker
+## Pre-requisites
 
-### 1. Almacenar los datos scrapeados en Mongodb
-
-Directorio: 
-```sh
-Alquivago/mongodb
-```
-Commando: 
-
-```python
-python3 store_data.py
-```
-
-### 2. Ejecutar flask para la API interna
-
-
-Directorio: 
-```sh
-Alquivago/api/simple_get
-```
-Commando: 
-
-```python
-python3 app.py
-```
+Install [flasgger](https://pypi.org/project/flasgger/0.5.4/) python library (Ubuntu):
 
 ```
-http://127.0.0.1:5000/api/data
+pip install flasgger
 ```
 
-## Ejecutar sobre windows
-
-### 3. Levantar el Frontend (React y Vite)
-
-#### 3.0 Clonar el repositorio (dev branch)
+Execute this command fron the directory `/api/v1`:
 
 ```sh
- git clone -b dev https://github.com/cristian-encalada/Alquivago.git
+flask run
 ```
 
-#### 3.1 Instalar nvm (nvm-setup.exe)
-
-https://github.com/coreybutler/nvm-windows/releases
-
+### Output:
 
 ```sh
-nvm install latest
-nvm use 20.7.0
+[cristian@Arch v1]$ flask run
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
 ```
-output
-```sh
-Now using node v20.7.0 (64-bit)
-```
-Desde el directorio
+
+### Local URLs:
+
+__Flasgger UI__
 
 ```sh
-Alquivago\vite-project
+http://127.0.0.1:5000/apidocs/#/
 ```
 
-Ejecutar el comando
+![Flasgger UI](/api/v1/views/documentation/readme_screenshots/Flassger_URL.png)
 
-```sh
-npm install
+__Request API example:__
+
+
+![API endpoit request](/api/v1/views/documentation/readme_screenshots/Rents_get_all_request.png)
+
+
+Response sample data:
+
+```JSON
+{
+  "entries_per_page": 10,
+  "filters": {},
+  "page": 1,
+  "rents": [
+    {
+      "bathrooms": 75,
+      "bedrooms": 1,
+      "currency": "UYU",
+      "id": "gallito_24480704",
+      "images": [
+        "https://imagenes.gallito.com/1024x768/231012125348810.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125353020.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125356860.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125401440.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125407170.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125413910.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125421440.jpg",
+        "https://imagenes.gallito.com/1024x768/231012125429360.jpg"
+      ],
+      "location": {
+        "latitude": -34.8554022,
+        "longitude": -56.2212867
+      },
+      "operation_type": "Alquiler",
+      "origin": "gallito",
+      "price": 32000,
+      "property_type": "Local",
+      "state_name": "Montevideo",
+      "title": "ZONA COMERCIAL",
+      "total_area": 0,
+      "url_link": "https://www.gallito.com.uy/zona-comercial-inmuebles-24480704",
+      "zone_name": "Paso Molino"
+    },
+    {
+      "bathrooms": 1,
+      "bedrooms": 2,
+      "currency": "UYU",
+      "id": "gallito_24480929",
+      "images": [
+        "https://imagenes.gallito.com/1024x768/231012142621270.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142621550.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142621110.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142622660.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142622130.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142623170.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142622890.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142622300.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142622500.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142621770.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142621950.jpg",
+        "https://imagenes.gallito.com/1024x768/231012142623450.jpg"
+      ],
+      ...
+        "total_results": 145
+}
 ```
 
-Levantar el Frontend (Vite/React)
+__Direct API endpoints__
 
-```
-npm run dev
-```
+http://127.0.0.1:5000/api/v1/
 
-Acceder a la URL
+http://127.0.0.1:5000/api/v1/filtro
 
-```
-http://localhost:5173/
-```
 
-# Run docker compose with all containers (flask, react, mongodb, selenium)
+## Live URLs (Vercel deployment)
 
-To build and run all services defined in your docker-compose.yml file:
-```sh
-docker-compose up -d
-```
+API endpoints available in v1:
 
-To stop and remove all containers defined in your docker-compose.yml file:
-```
-docker-compose down
-```
+* https://alquivago-flask-apis.vercel.app/api/v1/
+
+* https://alquivago-flask-apis.vercel.app/api/v1/filtro

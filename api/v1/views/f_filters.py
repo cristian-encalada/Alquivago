@@ -8,20 +8,23 @@ def f_currency(currency):
     return({"currency": currency})
 
 
-def f_typres(types):
+def f_types(types):
     """
     typres es una lista de int, normalisadas
     [num , ...],
     retorno un diccionario con la consulta
     """
-    from alquivago.db import db
+    from api.v1.views.db import db
     
-    property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
+    """property_types = list(db.property_types_col.find({"property_types": {"$exists": True}}))
     property_types = property_types[0]['property_types']
     print(types)
     print(property_types)
-    result = [doc['name'] for doc in property_types if doc['id'] in types]
+    result = [doc['name'] for doc in property_types if doc['id'] in types]"""
     
+    result = [doc["name"] for doc in db.property_types_col.find({"id": {"$in": types}}, {"name": 1, "_id": 0})]
+
+
     return({"property_type": {"$in": result}})
 
 
@@ -31,7 +34,12 @@ def f_zones(zones):
     ["no_normalisado"(none), "normalisado", ...],
     retorno un diccionario con la consulta
     """
-    escaped_zones = [re.escape(zone) for zone in zones]
+    
+    from api.v1.views.db import db
+    result = [doc["zona"] for doc in db.zonas_mvd_col.find({"id": {"$in": zones}}, {"zona": 1, "_id": 0})]
+
+
+    escaped_zones = [re.escape(zone) for zone in result]
     regex_pattern = "|".join(escaped_zones)
     return({"zone_name": {"$regex": regex_pattern, "$options": "i"}})# "i" para que sea insensible a mayúsculas/minúsculas
 
