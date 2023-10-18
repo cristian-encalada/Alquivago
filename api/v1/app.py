@@ -9,6 +9,14 @@ app.register_blueprint(app_views)
 app.config['MONGO_URI'] = "mongodb+srv://alquivago:alquivago123@cluster0.hhicxbc.mongodb.net/alquivago?retryWrites=true&w=majority"
 
 
+@app.route('/')
+def home():
+    return 'Hello, World!'
+
+@app.route('/about')
+def about():
+    return 'About'
+
 @app.errorhandler(404)
 def not_found(error):
     """ 404 Error
