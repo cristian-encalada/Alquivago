@@ -2,10 +2,13 @@ from api.v1.views import app_views
 from flask import abort, jsonify, make_response, request
 from api.v1.views.utils import is_int, chek_int, tex_none, sorting, conversion
 from api.v1.views.db import get_rents, get_all
+from flasgger import Swagger
+from flasgger.utils import swag_from
 
 conv = conversion()
 
-@app_views.route('/', methods=['GET'])
+@app_views.route('/', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/rent/get_all.yml', methods=['GET'])
 def api_get_all():
     RENTS_PER_PAGE = 10
 
@@ -29,7 +32,8 @@ def api_get_all():
 
     return jsonify(response)
 
-@app_views.route('/filtro', methods=['GET'])
+@app_views.route('/filtro', methods=['GET'], strict_slashes=False)
+@swag_from('documentation/rent/filtro.yml', methods=['GET'])
 def api_get_rent():
     RENTS_PER_PAGE = 10
 
