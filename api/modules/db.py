@@ -1,9 +1,8 @@
-from api.v1.views.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
-from api.v1.views.sort_delete import sort_apply, delete__id
+from modules.f_filters import f_area, f_bathrooms, f_bedrooms, f_currency, f_price, f_types, f_zones
+from modules.sort_delete import sort_apply, delete__id
 from flask import current_app, g
 from werkzeug.local import LocalProxy
 from pymongo import MongoClient
-
 
 
 def get_db():
