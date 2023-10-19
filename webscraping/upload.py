@@ -28,18 +28,26 @@ json_files = {
 
 # leer archivo json
 for k, v in json_files.items():
-
     with open(k, 'r') as op:
         contenido = op.read()
 
-    # ver archivo de github
-    print(repo.get_contents(v, ref=branch_name))
-    # print(repo.get_contents(v, ref=branch_name).decoded_content.decode('utf-8'))
+    try:
+        # obtener el contenido del archivo en GitHub
+        file_content = repo.get_contents(v, ref=branch_name)
 
-    # subir el archivo a GitHub
-    repo.create_file(
-        path=v,
-        message="updated JSON",
-        content=contenido,
-        branch=branch_name
-    )
+        # si el archivo existe
+        repo.update_file(
+            path=v,
+            message="updated JSON",
+            content=contenido,
+            branch=branch_name,
+            sha=file_content.sha
+        )
+    except Exception as e:
+        # si el archivo no existe
+        repo.create_file(
+            path=v,
+            message="updated JSON",
+            content=contenido,
+            branch=branch_name
+        )
