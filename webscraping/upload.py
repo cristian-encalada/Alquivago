@@ -1,5 +1,3 @@
-# pip install PyGithub
-
 from github import Github
 import os
 

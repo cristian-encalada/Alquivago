@@ -7,6 +7,9 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import logging
+import os
+
+os.environ['TOKEN'] = 'colocar_token'
 
 default_args = {
     'owner': 'airflow',
@@ -37,7 +40,7 @@ with DAG(
     'dag_infocasas',
     default_args=default_args,
     description='Scraping infocasas',
-    schedule_interval = '0 */1 * * *',
+    schedule_interval = '0 */3 * * *',
     start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['infocasas']
@@ -59,7 +62,7 @@ with DAG(
     'dag_upload_data',
     default_args=default_args,
     description='upload data',
-    schedule_interval = '0 */1 * * *',
+    schedule_interval = '0 */4 * * *',
     start_date=datetime(2023, 10, 1),
     catchup=False,
     tags=['upload']
