@@ -7,9 +7,6 @@ from airflow import DAG
 from airflow.operators.python import PythonOperator
 from airflow.utils.dates import days_ago
 import logging
-import os
-
-os.environ['TOKEN'] = 'colocar_token'
 
 default_args = {
     'owner': 'airflow',

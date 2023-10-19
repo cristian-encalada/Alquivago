@@ -2,7 +2,7 @@ from github import Github
 import os
 
 # token github desde variable de entorno
-token = os.environ.get('TOKEN', None)
+token = os.environ['TOKEN'] = 'colocar un toquen aca'
 
 # chequear si no se agrega el token
 if token is None:
@@ -10,11 +10,8 @@ if token is None:
 
 g = Github(token)
 
-# repositorio
-nombre_repositorio = "cristian-encalada/Alquivago"
-
 # obtener el repositorio
-repo = g.get_repo(nombre_repositorio)
+repo = g.get_repo("cristian-encalada/Alquivago")
 # rama
 branch_name = "main"
 
