@@ -1,5 +1,18 @@
 {
-  "rewrites": [
-    { "source": "/api/v1/rent/(.*)", "destination": "/v1/app" }
+  "builds": [
+      {
+          "src": "app.py",
+          "use": "@vercel/python"
+      },
+      {
+          "src": "static/**",
+          "use": "@vercel/static"
+      }
+  ],
+  "routes": [
+      {
+          "src": "/(.*)",
+          "dest": "app.py"
+      }
   ]
 }
