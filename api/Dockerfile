@@ -6,7 +6,7 @@ RUN apt-get update && \
 # Instala git
 RUN apt-get install -y git
 # Instala flask-CORS, flassger y pymongo
-RUN pip install -U Flask-Cors
+RUN pip install -U flask-cors
 RUN pip install flasgger
 RUN pip install pymongo
 # Expon el puerto 5000 para Flask (ajusta según sea necesario)
