@@ -6,7 +6,7 @@ FROM selenium/standalone-chrome:latest
 RUN sudo apt update
 RUN sudo apt-get -y install python3-pip
 RUN sudo pip3 install selenium
-RUN sudo pip install selenium
+RUN sudo pip3 install PyGithub
 
 ENV SE_VNC_NO_PASSWORD=1
 ENV SE_NODE_MAX_SESSIONS=5
