@@ -6,13 +6,13 @@ from flask_cors import CORS
 from flasgger import Swagger
 
 app = Flask(__name__)
+CORS(app)
+Swagger(app)
 # app.register_blueprint(app_views)
 
 app.config['MONGO_URI'] = "MONGODB_URI_REDACTED"
 
 configure_routes(app)
-
-Swagger(app)
 
 if __name__ == "__main__":
     app.run(debug=True)
