@@ -52,6 +52,8 @@ with DAG(
     tags=['mercadolibre']
 ) as dag:
     api_mercadolibre_task = PythonOperator(task_id="api_mercadolibre", python_callable=api_mercadolibre)
+    upload_data_task = PythonOperator(task_id="upload", python_callable=subida_a_github)
+    api_mercadolibre_task >> upload_data_task
 
 
 with DAG(
