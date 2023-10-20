@@ -73,7 +73,7 @@ def get_rents(typre_operations, conv, filters, page, rents_per_page):
     Returns 2 elements in a tuple: (properties, total_num_properties)
     """
     if "rent" == typre_operations:
-        propertys = "collected_data"
+        propertys = "rent_col"
     elif "buy" == typre_operations:
         propertys = "buy_col"
     else:
@@ -113,7 +113,7 @@ def get_rent(type_operations, id):
     comments collection using expressive $lookup.
     """
     if "rent" == type_operations:
-        propertys = "collected_data"
+        propertys = "rent_col"
     elif "buy" == type_operations:
         propertys = "buy_col"
     else:
@@ -141,7 +141,7 @@ def get_all(type_operations, conv, sort, page, rents_per_page):
     """
 
     if "rent" == type_operations:
-        propertys = "collected_data"
+        propertys = "rent_col"
     elif "buy" == type_operations:
         propertys = "buy_col"
     else:
