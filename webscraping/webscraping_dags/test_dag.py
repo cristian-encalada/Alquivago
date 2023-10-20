@@ -40,7 +40,7 @@ with DAG(
     schedule_interval=None, # manual
     tags=['upload']
 ) as dag:
-    scraping_infocasas_task = PythonOperator(task_id="update_data", python_callable=subida_a_github)
+    PythonOperator(task_id="update_data", python_callable=subida_a_github)
 
 
 with DAG(
