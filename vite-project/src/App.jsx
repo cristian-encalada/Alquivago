@@ -1,28 +1,14 @@
 import { useState } from 'react';
 import Publish from './Components/Publish'
 import useDataRetrieval from "./hooks/useDataRetrieval";
+import PriceFilter from './Components/PriceFilter';
 
 export default function App () {
-    const [apiFilters, setApiFilters] = useState('')
-    const { data } = useDataRetrieval(apiFilters)
+    const [currencyFilter, setCurrencyFilter] = useState('')
+    const { data } = useDataRetrieval(currencyFilter)
     return (
-        <section className='flex flex-col justify-center'>
-            <div className='flex justify-center mt-2'>
-            <ul className='flex gap-2 border-2'>
-                <li>
-                    <label>
-                    <input type="radio" name="currency" value='USD' onClick={(e) => setApiFilters(e.target.value)} />
-                    USD
-                    </label>
-                </li>
-                <li>
-                    <label>
-                    <input type="radio" name="currency" value='UYU' onClick={(e) => setApiFilters(e.target.value)} />
-                    UYU
-                    </label>
-                </li>
-                </ul>
-                </div>
+        <section className='flex flex-col justify-center items-center'>
+            <PriceFilter setCurrencyFilter={setCurrencyFilter} />
             {data.map((alquiler) => (
                 <Publish
                     key={alquiler.id}

@@ -1,7 +1,7 @@
 import fetchPublish from "../services/FetchPublish";
 import { useState, useEffect } from "react";
 
-export default function useDataRetrieval(initialCurrency = null) {
+export default function useDataRetrieval(initialCurrency) {
     const [data, setData] = useState([]);
     const [page, setPage] = useState(1);
 
