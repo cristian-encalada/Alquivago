@@ -1,18 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState } from 'react';
 import Publish from './Components/Publish'
-import fetchPublish from "./services/FetchPublish";
 import useDataRetrieval from "./hooks/useDataRetrieval";
+import PriceFilter from './Components/PriceFilter';
 
-export default function MyComponent () {
-    const { data } = useDataRetrieval(fetchPublish)
-
-
-    /* Como pueden ver, el atributo ref se lo atribumos al div, ya que este va a ser la referencia siempre para ver si se ha
-    llegado al final de las publis */
+export default function App () {
+    const [currencyFilter, setCurrencyFilter] = useState('')
+    const { data } = useDataRetrieval(currencyFilter)
     return (
-        <div>
+        <section className='flex flex-col justify-center items-center'>
+            <PriceFilter setCurrencyFilter={setCurrencyFilter} />
             {data.map((alquiler) => (
                 <Publish
+                    key={alquiler.id}
                     propertyTitle={alquiler.title || 'Titulo no disponible'}
                     propertyArea={alquiler.total_area}
                     propertyImage={alquiler.images && alquiler.images[0]}
@@ -22,11 +21,10 @@ export default function MyComponent () {
                     propertyCurrency={alquiler.currency}
                     propertyZone={alquiler.zone_name}
                     propertyPrice={alquiler.price}
-                    key={alquiler.id}
                     propertyOrigin={alquiler.origin}
                     propertyLink={alquiler.url_link}
                 />
             ))}
-        </div>
+        </section>
     );
-};
+}
