@@ -1,6 +1,6 @@
-export default async function fetchPublish(pageNumber) {
+export default async function fetchPublish(pageNumber, currency) {
     try {
-        const response = await fetch(`https://alquivago-flask-apis.vercel.app/api/v1/rent/inmuebles?page=${pageNumber}`);
+        const response = await fetch(`https://alquivago-flask-apis.vercel.app/api/v1/rent/inmuebles?page=${pageNumber}${currency? `&moneda=${currency}`: ''}`);
         
         if (!response.ok) {
             throw new Error('La solicitud no fue exitosa');
