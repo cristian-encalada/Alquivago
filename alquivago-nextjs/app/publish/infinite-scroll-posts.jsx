@@ -4,9 +4,10 @@ import { useInView } from "react-intersection-observer"
 import getData from "./actions"
 import Publish from "../components/Publish"
 
-export default function InfiniteScroll (firstPage) {
-  const [posts, setposts] = useState([])
-  const [page, setPage] = useState(0)
+export default function InfiniteScroll ({firstPage}) {
+  const [isLoading, setIsLoading] = useState(true)
+  const [posts, setposts] = useState(firstPage)
+  const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
   async function loadMorePosts() {
     const nextPage = page + 1
@@ -14,12 +15,15 @@ export default function InfiniteScroll (firstPage) {
     if (nextRents?.length) {
       setPage(nextPage)
       setposts((prev) => [...prev, ...nextRents])
+    } else {
+      setIsLoading(false)
     }
     }
   useEffect(() => {
     if (inView) {
       loadMorePosts()
     }
+    /* eslint-disable */
   }, [inView])
   return (
     <>
@@ -39,7 +43,7 @@ export default function InfiniteScroll (firstPage) {
         propertyLink={alquiler.url_link}
       />
     ))}
-    <p ref={ref}>Loading...</p>
+    {isLoading? <p ref={ref}>Loading...</p>: <p>No hay mas publicaciones :|</p>}
       </>
   )
     }
