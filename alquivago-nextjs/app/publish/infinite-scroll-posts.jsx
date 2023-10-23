@@ -4,14 +4,15 @@ import { useInView } from "react-intersection-observer"
 import getData from "./actions"
 import Publish from "../components/Publish"
 
-export default function InfiniteScroll ({firstPage}) {
+export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [isLoading, setIsLoading] = useState(true)
   const [posts, setposts] = useState(firstPage)
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
+  console.log(firstPage)
   async function loadMorePosts() {
     const nextPage = page + 1
-    const nextRents = await getData(nextPage);
+    const nextRents = await getData(nextPage, currencyFilter);
     if (nextRents?.length) {
       setPage(nextPage)
       setposts((prev) => [...prev, ...nextRents])
@@ -25,6 +26,7 @@ export default function InfiniteScroll ({firstPage}) {
     }
     /* eslint-disable */
   }, [inView])
+  /* eslint-enable */
   return (
     <>
     {posts.map((alquiler) => (
