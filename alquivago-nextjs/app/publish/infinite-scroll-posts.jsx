@@ -9,7 +9,8 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [posts, setposts] = useState(firstPage)
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
-  console.log(firstPage)
+
+
   async function loadMorePosts() {
     const nextPage = page + 1
     const nextRents = await getData(nextPage, currencyFilter);
