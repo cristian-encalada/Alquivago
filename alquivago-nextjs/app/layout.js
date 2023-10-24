@@ -18,8 +18,8 @@ const pages = [
 ]
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <html lang="es">
+      <body className='md:bg-slate-300 bg-gradient-to-b from-white to-azul-600'>
         <Header/>
         {children}
       </body>
