@@ -1,4 +1,3 @@
-import Publish from '../components/Publish';
 import InfiniteScroll from './infinite-scroll-posts';
 import getData from './actions'
 export default async function Page () {
