@@ -1,6 +1,7 @@
 import gallitoLogo from '../../public/gallito-logo.png'
 import infocasasLogo from '../../public/infocasas-logo.jpg'
 import mercadoLibreLogo from '../../public/mercadolibre-logo.png'
+import Image from 'next/image'
 
 function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
@@ -16,10 +17,8 @@ function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedroo
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}>
-    <div className="relative mb-3 mr-5 h-8 w-8 rounded-lg lg:h-12 lg:w-12" style={{
-      background: `url(${Background})`,
-      backgroundSize: 'cover',
-    }}></div>
+    <div className="relative mb-3 mr-5 h-8 w-8 rounded-lg lg:h-12 lg:w-12">
+      <Image className='rounded-lg' src={Background} alt={`Logo de ${Background}`}/></div>
   </div>
   <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
