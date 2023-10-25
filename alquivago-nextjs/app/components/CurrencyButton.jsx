@@ -6,9 +6,9 @@ export default function CurrencyButton() {
   const router = useRouter()
   const pathName = usePathname()
   return (
-    <div className="flex flex-col">
-    <button className="border-2 font-medium text-lg">Moneda</button>
-    <ul className="flex gap-1 border-2">
+    <div className="flex flex-col gap-1">
+    <button className="border-2 font-medium text-lg bg-white rounded-md shadow">Moneda</button>
+    <ul className="flex gap-1 border-2 bg-white py-2 px-1 rounded-md shadow-xl">
   <li>
     <input
       type="radio"
