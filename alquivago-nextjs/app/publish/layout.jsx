@@ -2,7 +2,8 @@
 import { useRouter } from "next/navigation"
 import CurrencyButton from "../components/CurrencyButton"
 import TypeButton from "../components/TypeButton"
-import RangeInput from "../components/RangeInput"
+import Bathbutton from "../components/BathFilter"
+import BedroomButton from "../components/BedroomFilter"
 export default function PublishLayout({ children }) {
   const router = useRouter()
   return (
@@ -10,7 +11,8 @@ export default function PublishLayout({ children }) {
     <section className="flex justify-center items-start gap-5">
       <CurrencyButton />
       <TypeButton />
-      <RangeInput />
+      <Bathbutton />
+      <BedroomButton/>
     </section>
     {children}
     </>
