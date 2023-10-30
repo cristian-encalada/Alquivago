@@ -14,23 +14,12 @@ export default function Bathbutton({ filters, setFilters }) {
 
   const handleClick = (e) => {
     const value = e.target.value;
-  
     if (filters.includes(value)) {
       setFilters(filters.filter((filter) => filter !== value));
     } else {
-      const hasVivienda = filters.find((filter) => filter.startsWith('baños='));
-  
-      if (hasVivienda) {
-        const existingValues = hasVivienda.split('=')[1].split(',');
-        if (!existingValues.includes(value.split('=')[1])) {
-          const updatedFilter = `baños=${existingValues.join(',')},${value.split('=')[1]}`;
-          setFilters(filters.map((filter) => (filter.startsWith('baños=') ? updatedFilter : filter)));
-        }
-      } else {
         setFilters([...filters, value]);
       }
     }
-  };
   function applyFilters() {
     if (filters.length === 0) {
       if (pathName.includes("moneda=UYU")) {
@@ -58,19 +47,18 @@ export default function Bathbutton({ filters, setFilters }) {
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=1" onClick={handleClick} />
+            <input className="mx-2 w-8" type="checkbox" value="baños=1" onChange={handleClick} checked={filters.includes('baños=1')}/>
             1 Baño
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=2" onClick={handleClick}/>
+            <input className="mx-2 w-8" type="checkbox" value="baños=2" onChange={handleClick} checked={filters.includes('baños=2')}/>
             2 baños
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=3" onClick={handleClick} />
+            <input className="mx-2 w-8" type="checkbox" value="baños=3" onChange={handleClick} checked={filters.includes('baños=3')} />
             2+baños
           </li>
         </ul>
-        <button className="bg-[#CDBC82] rounded-xl hover:scale-110 transition py-3 text-white text-lg font-medium" onClick={applyFilters}>Aplicar filtros</button>
       </div>
     </div>
   );
