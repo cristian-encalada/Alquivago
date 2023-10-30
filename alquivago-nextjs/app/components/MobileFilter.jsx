@@ -13,6 +13,25 @@ export default function MobileFilter() {
     } else setVisible('hidden')
   }
 
+  function formatearArrayComoString(array) {
+    const agrupado = {};
+  
+    for (const item of array) {
+      const [clave, valor] = item.split('=');
+      if (!agrupado[clave]) {
+        agrupado[clave] = [valor];
+      } else {
+        agrupado[clave].push(valor);
+      }
+    }
+  
+    const resultado = Object.entries(agrupado)
+      .map(([clave, valores]) => `${clave}=${valores.join(',')}`)
+      .join('&');
+  
+    return resultado;
+  }
+
   // Funciones para manejar los cambios en los filtros
   const handleMonedaChange = (e) => {
     if (e.target.checked) {
@@ -28,19 +47,9 @@ export default function MobileFilter() {
     if (filters.includes(value)) {
       setFilters(filters.filter((filter) => filter !== value));
     } else {
-      const hasVivienda = filters.find((filter) => filter.startsWith('tipos='));
-  
-      if (hasVivienda) {
-        const existingValues = hasVivienda.split('=')[1].split(',');
-        if (!existingValues.includes(value.split('=')[1])) {
-          const updatedFilter = `tipos=${existingValues.join(',')},${value.split('=')[1]}`;
-          setFilters(filters.map((filter) => (filter.startsWith('tipos=') ? updatedFilter : filter)));
-        }
-      } else {
         setFilters([...filters, value]);
       }
     }
-  };
   
 
   const handleDormitoriosChange = (e) => {
@@ -49,26 +58,10 @@ export default function MobileFilter() {
     if (filters.includes(value)) {
       setFilters(filters.filter((filter) => filter !== value));
     } else {
-      // Comprobamos si el valor actual contiene 'dormitorios='
-      const hasDormitorios = filters.find((filter) => filter.startsWith('dormitorios='));
-  
-      // Si ya hay un filtro de dormitorios presente
-      if (hasDormitorios) {
-        // Obtenemos los valores actuales
-        const existingValues = hasDormitorios.split('=')[1].split(',');
-  
-        // Comprobamos si el valor ya existe en los valores actuales
-        if (!existingValues.includes(value.split('=')[1])) {
-          // Actualizamos la entrada en filters con el valor nuevo
-          const updatedFilter = `dormitorios=${existingValues.join(',')},${value.split('=')[1]}`;
-          setFilters(filters.map((filter) => (filter.startsWith('dormitorios=') ? updatedFilter : filter)));
-        }
-      } else {
         // Si no hay filtro de dormitorios presente, simplemente agregamos el nuevo filtro
         setFilters([...filters, value]);
       }
     }
-  };
 
   const handleBaniosChange = (e) => {
     const value = e.target.value;
@@ -76,26 +69,17 @@ export default function MobileFilter() {
     if (filters.includes(value)) {
       setFilters(filters.filter((filter) => filter !== value));
     } else {
-      const hasBanios = filters.find((filter) => filter.startsWith('baños='));
-  
-      if (hasBanios) {
-        const existingValues = hasBanios.split('=')[1].split(',');
-        if (!existingValues.includes(value.split('=')[1])) {
-          const updatedFilter = `baños=${existingValues.join(',')},${value.split('=')[1]}`;
-          setFilters(filters.map((filter) => (filter.startsWith('baños=') ? updatedFilter : filter)));
-        }
-      } else {
         setFilters([...filters, value]);
       }
     }
-  };
   
   
 
   const handleApplyFilters = () => {
     // Aquí puedes usar el estado actualizado filters para realizar acciones con los filtros seleccionados
-    console.log(filters.join('&'))
-    return router.push(`/publish/${filters.join('&')}`)
+    const routeParsed = formatearArrayComoString(filters)
+    console.log(routeParsed)
+    return router.push(`/publish/${routeParsed}`)
   };
 
   return (
@@ -126,17 +110,17 @@ export default function MobileFilter() {
     <div className="flex h-0.5 w-full bg-slate-500"></div>
     <h1>Dormitorios</h1>
     <ul className="flex gap-4">
-      <li><input type="checkbox" value="dormitorios=1" className="mr-2" onClick={handleDormitoriosChange} checked={filters.includes('dormitorios=1')} />1 Dormitorio</li>
-      <li><input type="checkbox" value="dormitorios=2" className="mr-2" onClick={handleDormitoriosChange  } checked={filters.includes('dormitorios=2')} />2 Dormitorios</li>
-      <li><input type="checkbox" value="dormitorios=3" className="mr-2" onClick={handleDormitoriosChange} />3 Dormitorios</li>
-      <li><input type="checkbox" value="dormitorios=4" className="mr-2" onClick={handleDormitoriosChange} />3+ Dormitorios</li>
+      <li><input type="checkbox" value="dormitorios=1" className="mr-2" onChange={handleDormitoriosChange} checked={filters.includes('dormitorios=1')} />1 Dormitorio</li>
+      <li><input type="checkbox" value="dormitorios=2" className="mr-2" onChange={handleDormitoriosChange} checked={filters.includes('dormitorios=2')} />2 Dormitorios</li>
+      <li><input type="checkbox" value="dormitorios=3" className="mr-2" onChange={handleDormitoriosChange} checked={filters.includes('dormitorios=3')}/>3 Dormitorios</li>
+      <li><input type="checkbox" value="dormitorios=4" className="mr-2" onChange={handleDormitoriosChange} checked={filters.includes('dormitorios=4')}/>3+ Dormitorios</li>
     </ul>
     <div className="flex h-0.5 w-full bg-slate-500"></div>
     <h1>Baños</h1>
     <ul className="flex gap-4">
-      <li><input type="checkbox" value="baños=1" className="mr-2" onClick={handleBaniosChange}/>1 Baño</li>
-      <li><input type="checkbox" value="baños=2" className="mr-2" onClick={handleBaniosChange}/>2 Baños</li>
-      <li><input type="checkbox" value="baños=3" className="mr-2" onClick={handleBaniosChange}/>2+ Baños</li>
+      <li><input type="checkbox" value="baños=1" className="mr-2" onChange={handleBaniosChange} checked={filters.includes('baños=1')}/>1 Baño</li>
+      <li><input type="checkbox" value="baños=2" className="mr-2" onChange={handleBaniosChange} checked={filters.includes('baños=2')}/>2 Baños</li>
+      <li><input type="checkbox" value="baños=3" className="mr-2" onChange={handleBaniosChange} checked={filters.includes('baños=3')}/>2+ Baños</li>
     </ul>
     <div className="h-0.5 w-full bg-slate-500"></div>
   <button type="button" className="mt-5 py-3 w-1/3 flex-grow rounded-full ring-blue-500 focus:outline-none focus:ring-2 bg-blue-300 text-center hover:scale-125 transition" onClick={handleApplyFilters}>Aplicar filtros</button>
