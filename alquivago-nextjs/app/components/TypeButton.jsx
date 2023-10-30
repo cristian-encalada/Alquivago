@@ -23,24 +23,14 @@ export default function TypeButton({ filters, setFilters }) {
     } else setVisible('hidden')
   }
   const handleClick = (e) => {
-    const tempFilters = []
     const value = e.target.value;
+    console.log(filters.includes(value))
     if (filters.includes(value)) {
       setFilters(filters.filter((filter) => filter !== value));
     } else {
-      const hasVivienda = filters.find((filter) => filter.startsWith('tipos='));
-  
-      if (hasVivienda) {
-        const existingValues = hasVivienda.split('=')[1].split(',');
-        if (!existingValues.includes(value.split('=')[1])) {
-          const updatedFilter = `tipos=${existingValues.join(',')},${value.split('=')[1]}`;
-          setFilters(filters.map((filter) => (filter.startsWith('tipos=') ? updatedFilter : filter)));
-        }
-      } else {
         setFilters([...filters, value]);
       }
     }
-  };
   
   function applyFilters() {
     if (filters.length === 0) {
@@ -71,19 +61,18 @@ export default function TypeButton({ filters, setFilters }) {
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="tipos=4" onClick={handleClick}/>
+            <input className="mx-2 w-8" type="checkbox" value="tipos=4" onChange={handleClick} checked={filters.includes('tipos=4')}/>
             Casa
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input  className="mx-2 w-8"  type="checkbox" value="tipos=0" onClick={handleClick}/>
+            <input  className="mx-2 w-8"  type="checkbox" value="tipos=0" onChange={handleClick} checked={filters.includes('tipos=0')}/>
             Apartamento
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input   className="mx-2 w-8" type="checkbox" value="tipos=2" onClick={handleClick}/>
+            <input   className="mx-2 w-8" type="checkbox" value="tipos=2" onChange={handleClick} checked={filters.includes('tipos=2')}/>
             Local
           </li>
         </ul>
-        <button className="bg-[#CDBC82] rounded-xl py-3 hover:scale-110 transition text-white text-lg font-medium" onClick={applyFilters}>Aplicar filtros</button>
       </div>
     </div>
   );

@@ -9,8 +9,32 @@ import { useRouter } from "next/navigation";
 export default function ApplyFilters() {
   const router = useRouter()
   const [filters, setFilters] = useState([])
+  function formatearArrayComoString(array) {
+    const agrupado = {};
+  
+    for (const item of array) {
+      const [clave, valor] = item.split('=');
+      if (!agrupado[clave]) {
+        agrupado[clave] = [valor];
+      } else {
+        agrupado[clave].push(valor);
+      }
+    }
+  
+    const resultado = Object.entries(agrupado)
+      .map(([clave, valores]) => `${clave}=${valores.join(',')}`)
+      .join('&');
+  
+    return resultado;
+  }
   function handleFilters() {
-    return router.push(`/publish/${filters.join('&')}`)
+    const routeParsed = formatearArrayComoString(filters)
+    return router.push(`/publish/${routeParsed}`)
+  }
+
+  function removeFilters() {
+    setFilters([])
+    return router.push('/publish')
   }
   return (
     <>
