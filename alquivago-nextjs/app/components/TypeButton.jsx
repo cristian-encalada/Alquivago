@@ -1,26 +1,47 @@
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-export default function TypeButton() {
-  const [filters, setFilters] = useState([]);
+export default function TypeButton({ filters, setFilters }) {
   const [visible, setVisible] = useState('hidden')
   const router = useRouter();
   const pathName = usePathname();
+
+  function checkingValue(filterType, valueToCheck) {
+    for (const element of filters) {
+      if (element.startsWith(filterType)) {
+        if (element.includes(valueToCheck)) {
+          return true
+        }
+        return false
+      }
+    }
+  }
+
   function handleVisibility() {
     if (visible === 'hidden') {
       setVisible('flex')
     } else setVisible('hidden')
   }
-  function handleClick(e) {
+  const handleClick = (e) => {
+    const tempFilters = []
     const value = e.target.value;
     if (filters.includes(value)) {
-      // Si el valor ya está en los filtros, lo eliminamos
-      setFilters(filters.filter(item => item !== value));
+      setFilters(filters.filter((filter) => filter !== value));
     } else {
-      // Si el valor no está en los filtros, lo añadimos
-      setFilters([...filters, value]);
+      const hasVivienda = filters.find((filter) => filter.startsWith('tipos='));
+  
+      if (hasVivienda) {
+        const existingValues = hasVivienda.split('=')[1].split(',');
+        if (!existingValues.includes(value.split('=')[1])) {
+          const updatedFilter = `tipos=${existingValues.join(',')},${value.split('=')[1]}`;
+          setFilters(filters.map((filter) => (filter.startsWith('tipos=') ? updatedFilter : filter)));
+        }
+      } else {
+        setFilters([...filters, value]);
+      }
     }
-  }
+  };
+  
   function applyFilters() {
     if (filters.length === 0) {
       if (pathName.includes("moneda=UYU")) {
@@ -46,19 +67,19 @@ export default function TypeButton() {
 
   return (
     <div className="flex flex-col w-1/6 gap-1">
-      <button className="rounded-md font-medium text-lg w-full bg-white shadow-xl py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Tipo</button>
+      <button className="rounded-md font-medium text-lg w-full bg-white shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Tipo</button>
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="4" onChange={handleClick} checked={filters.includes('4')}/>
+            <input className="mx-2 w-8" type="checkbox" value="tipos=4" onClick={handleClick}/>
             Casa
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input  className="mx-2 w-8"  type="checkbox" value="0" onChange={handleClick} checked={filters.includes('0')}/>
+            <input  className="mx-2 w-8"  type="checkbox" value="tipos=0" onClick={handleClick}/>
             Apartamento
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input   className="mx-2 w-8" type="checkbox" value="2" onChange={handleClick} checked={filters.includes('2')}/>
+            <input   className="mx-2 w-8" type="checkbox" value="tipos=2" onClick={handleClick}/>
             Local
           </li>
         </ul>

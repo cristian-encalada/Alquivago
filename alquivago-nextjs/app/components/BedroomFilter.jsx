@@ -1,9 +1,8 @@
 import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-export default function Bathbutton() {
+export default function Bedroombutton({ filters, setFilters }) {
   const [visible, setVisible] = useState('hidden')
-  const [filters, setFilters] = useState([]);
   const router = useRouter();
   const pathName = usePathname();
 
@@ -12,17 +11,25 @@ export default function Bathbutton() {
       setVisible('flex')
     } else setVisible('hidden')
   }
-
-  function handleClick(e) {
+  const handleClick = (e) => {
     const value = e.target.value;
+  
     if (filters.includes(value)) {
-      // Si el valor ya está en los filtros, lo eliminamos
-      setFilters(filters.filter(item => item !== value));
+      setFilters(filters.filter((filter) => filter !== value));
     } else {
-      // Si el valor no está en los filtros, lo añadimos
-      setFilters([...filters, value]);
+      const hasVivienda = filters.find((filter) => filter.startsWith('dormitorios='));
+  
+      if (hasVivienda) {
+        const existingValues = hasVivienda.split('=')[1].split(',');
+        if (!existingValues.includes(value.split('=')[1])) {
+          const updatedFilter = `dormitorios=${existingValues.join(',')},${value.split('=')[1]}`;
+          setFilters(filters.map((filter) => (filter.startsWith('dormitorios=') ? updatedFilter : filter)));
+        }
+      } else {
+        setFilters([...filters, value]);
+      }
     }
-  }
+  };
 
   function applyFilters() {
     if (filters.length === 0) {
@@ -51,19 +58,19 @@ export default function Bathbutton() {
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="1" onClick={handleClick} />
+            <input className="mx-2 w-8" type="checkbox" value="dormitorios=1" onClick={handleClick} />
             1 Dormitorio
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="2" onClick={handleClick}/>
+            <input className="mx-2 w-8" type="checkbox" value="dormitorios=2" onClick={handleClick}/>
             2 Dormitorios 
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="3" onClick={handleClick} />
+            <input className="mx-2 w-8" type="checkbox" value="dormitorios=3" onClick={handleClick} />
             3 Dormitorios
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="4" onClick={handleClick} />
+            <input className="mx-2 w-8" type="checkbox" value="dormitorios=4" onClick={handleClick} />
             3+ Dormitorios
           </li>
         </ul>
