@@ -14,6 +14,14 @@ export default function CurrencyButton({ filters, setFilters }) {
       setVisible('flex')
     } else setVisible('hidden')
   }
+  const handleClick = (e) => {
+    const value = e.target.value;
+    if (filters.includes(value)) {
+      setFilters(filters.filter((filter) => filter !== value));
+    } else {
+        setFilters([...filters, value]);
+      }
+    }
   return (
     <div className="flex flex-col gap-1 w-1/6">
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Moneda</button>
@@ -22,8 +30,8 @@ export default function CurrencyButton({ filters, setFilters }) {
           <input
             type="radio"
             name="moneda"
-            value="USD"
-            onClick={() => setFilters([...filters, 'moneda=USD'])}
+            value="moneda=USD"
+            onClick={handleClick}
           />
           USD
         </li>
@@ -31,8 +39,8 @@ export default function CurrencyButton({ filters, setFilters }) {
           <input
             type="radio"
             name="moneda"
-            value="UYU"
-            onClick={() => setFilters([...filters, 'moneda=UYU'])}
+            value="moneda=UYU"
+            onClick={handleClick}
           />
           UYU
         </li>
