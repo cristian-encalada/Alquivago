@@ -43,7 +43,8 @@ export default function ApplyFilters() {
     <Bedroombutton filters={filters} setFilters={setFilters} />
     <Bathbutton  filters={filters} setFilters={setFilters}/>
     <button className="h-1/6 border-2 py-2 px-2 rounded-lg text-white text-lg font-medium bg-azul-500 hover:scale-110 transition" onClick={handleFilters}>Aplicar filtros</button>
-    <button className="border-2 py-2 px-2 rounded-lg text-lg font-medium bg-red-500 hover:scale-110 transition text-red-100" onClick={() => router.push('/publish')}>Eliminar filtros</button>
+    <button className="h-1/6 border-2 py-2 px-2 rounded-lg text-white text-lg font-medium bg-red-500 hover:scale-110 transition" onClick={removeFilters}>Eliminar filtros</button>
+
     </>
   )
 }
