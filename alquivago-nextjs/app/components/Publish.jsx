@@ -8,8 +8,7 @@ import Bookmark from '../../public/Bookmark.svg'
 import BookmarkSlash from '../../public/BookmarkSlash.svg'
 
 
-function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
-  const [saved, setSaved] = useState(false)
+function Publish({saved, setSaved, actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
@@ -17,8 +16,8 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
   }
   const Background = originBackground[propertyOrigin];
   return (
-    <div className="m-auto mt-10 flex h-80 w-5/6 flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
-  <div className="flex h-3/4 max-w-full flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
+    <div className="m-auto mt-10 flex h-96 container flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
+  <div className="flex h-full w-full flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
     background: `url(${propertyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
