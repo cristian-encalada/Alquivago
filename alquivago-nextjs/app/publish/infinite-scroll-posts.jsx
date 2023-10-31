@@ -10,6 +10,19 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
 
+// InfiniteScroll component
+const guardarEnLocalStorage = (objeto) => {
+  // Generar una clave única para el objeto (usando el ID como ejemplo)
+  console.log(objeto)
+  const uniqueKey = `comparison_${objeto.actualObject.id}`;
+
+  // Convertir el objeto a una cadena JSON y guardarlo en localStorage con la clave única
+  const objetoString = JSON.stringify(objeto);
+  localStorage.setItem(uniqueKey, objetoString);
+};
+
+// ... Resto del código
+
 
   async function loadMorePosts() {
     const nextPage = page + 1
@@ -44,6 +57,8 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
         propertyPrice={alquiler.price}
         propertyOrigin={alquiler.origin}
         propertyLink={alquiler.url_link}
+        saveLocalStorage={guardarEnLocalStorage}
+        actualObject={alquiler}
       />
     ))}
     {isLoading? <p ref={ref}>Loading...</p>: <p>No hay mas publicaciones :|</p>}

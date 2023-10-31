@@ -3,7 +3,7 @@ import infocasasLogo from '../../public/infocasas-logo.jpg'
 import mercadoLibreLogo from '../../public/mercadolibre-logo.png'
 import Image from 'next/image'
 
-function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
@@ -42,6 +42,15 @@ function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedroo
       <p className="lg:b mb-10 text-2xl font-semibold lg:relative">{propertyCurrency === 'UYU'? '$ ': 'U$S '} {propertyPrice}</p>
     </div>
   </div>
+  <button
+  className="mx-1 mb-1 flex flex-row-reverse items-center justify-center rounded-3xl bg-[#CCBC82] px-4 py-2 font-bold text-white hover:bg-[#AF9A4B] lg:h-1/3"
+  onClick={() => {
+    // Llamar a la función guardarEnLocalStorage con el objeto completo
+    saveLocalStorage({actualObject});
+  }}
+>
+  Guardar
+</button>
 </div>
   );
 };
