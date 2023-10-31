@@ -32,6 +32,7 @@ export default function CurrencyButton({ filters, setFilters }) {
             name="moneda"
             value="moneda=USD"
             onClick={handleClick}
+            checked={filters.includes('moneda=USD')}
           />
           USD
         </li>
@@ -41,6 +42,7 @@ export default function CurrencyButton({ filters, setFilters }) {
             name="moneda"
             value="moneda=UYU"
             onClick={handleClick}
+            checked={filters.includes('moneda=UYU')}
           />
           UYU
         </li>
