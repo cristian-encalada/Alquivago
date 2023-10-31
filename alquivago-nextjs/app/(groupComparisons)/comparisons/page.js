@@ -70,23 +70,20 @@ export default function Cards() {
         {dataLocalStorage.map((data) => (
             <SwiperSlide key={data.id}>
               <div class="bg-white border border-gray-200 rounded-lg shadow m-auto dark:bg-blue-800">
-                <img class="rounded-t-lg" src={data.images[0]} alt="" />
-                <div class="p-3">
-                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{data.currency} {data.price}</h5>
+                <Image class="rounded-t-lg" src={data.images[0]} alt="" width={700} height={500} />
+                <div class="p-3 flex justify-center items-center flex-col">
+                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{data.currency === 'UYU' ? '$' : 'U$S'} {data.price}</h5>
                       <div class="mb-1 flex justify-center">
-                              <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                                {data.total_area}
-                              </span>
                               <span class="bg-blue-100 text-blue-800 text-center text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
                                 {data.property_type}
                               </span>
                        </div>
                        <div class="mb-2 flex justify-center">
                             <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                              Mts {data.total_area}
+                              {data.total_area} Mts
                             </span>
                             <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                              Baños {data.bathrooms}
+                              {data.bathrooms} baño{data.bathrooms > 1? 's' : ''}
                             </span>
                         </div>
                     <p class="font-normal dark:text-gray-200">{data.state_name}</p>

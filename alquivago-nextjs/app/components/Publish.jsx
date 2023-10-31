@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import gallitoLogo from '../../public/gallito-logo.png'
 import infocasasLogo from '../../public/infocasas-logo.jpg'
 import mercadoLibreLogo from '../../public/mercadolibre-logo.png'
@@ -8,7 +8,24 @@ import Bookmark from '../../public/Bookmark.svg'
 import BookmarkSlash from '../../public/BookmarkSlash.svg'
 
 
-function Publish({saved, setSaved, actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+  const [saved, setSaved] = useState(false)
+
+  useEffect(() => {
+    // Recuperar el estado "saved" del localStorage al cargar el componente
+    const savedStatus = localStorage.getItem(`saved_${actualObject.id}`);
+    if (savedStatus) {
+      setSaved(savedStatus === 'true');
+    }
+  }, [actualObject.id]);
+
+  const handleSave = () => {
+    // Actualizar el estado "saved" y guardar en el localStorage
+    setSaved(!saved);
+    localStorage.setItem(`saved_${actualObject.id}`, !saved);
+    saveLocalStorage(actualObject);
+  };
+
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
@@ -26,10 +43,7 @@ function Publish({saved, setSaved, actualObject , saveLocalStorage ,propertyTitl
       <Image className='rounded-lg' src={Background} alt={`Logo de ${Background}`}/>
     </div>
   </div>
-  <Image className='rounded-lg relative top-0' src={saved ? BookmarkSlash : Bookmark} alt={`Icono de guardado`} onClick={() => {
-    setSaved(!saved);
-    saveLocalStorage(actualObject)
-  }}/>
+  <Image className='rounded-lg relative top-0' src={saved ? BookmarkSlash : Bookmark} alt={`Icono de guardado`} onClick={handleSave}/>
   <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">

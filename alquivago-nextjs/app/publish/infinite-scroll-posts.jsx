@@ -10,24 +10,26 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
   const [arrData, setArrData] = useState([])
-  const [saved, setSaved] = useState(false)
 
   const guardarEnLocalStorage = (objeto) => {
-    // Generar una clave única para el objeto (usando el ID como ejemplo)
-    console.log(objeto);
-    console.log(arrData.includes(objeto));  
- 
     setArrData((prevData) => {
-      if (prevData.includes(objeto)) {
-        return prevData.filter((rent) => rent != objeto)
+      const foundIndex = prevData.findIndex((rent) => rent.id === objeto.id);
+      const updatedData = [...prevData];
+  
+      if (foundIndex !== -1) {
+        updatedData.splice(foundIndex, 1);
+      } else {
+        updatedData.push(objeto);
       }
-      return ([...prevData, objeto])
-    })
-    // Convertir el objeto a una cadena JSON y guardarlo en localStorage con la clave única
-    console.log(arrData)
-    const objectsInfo = JSON.stringify([...arrData, objeto]);
+  
+      return updatedData;
+    });
+  };
+  
+  useEffect(() => {
+    const objectsInfo = JSON.stringify(arrData);
     localStorage.setItem('arrData', objectsInfo);
-  }
+  }, [arrData]);
   
 
   async function loadMorePosts() {
@@ -65,8 +67,6 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
         propertyLink={alquiler.url_link}
         saveLocalStorage={guardarEnLocalStorage}
         actualObject={alquiler}
-        saved={saved}
-        setSaved={setSaved}
       />
     ))}
     {isLoading? <p ref={ref}>Loading...</p>: <p>No hay mas publicaciones :|</p>}
