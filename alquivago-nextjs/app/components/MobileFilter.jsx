@@ -85,8 +85,8 @@ export default function MobileFilter() {
 
   return (
     <>
-    <button className="bg-dorado-200 hover:bg-dorado-500 w-4/6 text-white font-bold py-2 px-6 rounded" onClick={handleVisibility}>Filtros</button>
-    <section className={`md:hidden ${visible} fixed z-30 inset-0 m-auto h-screen w-full flex-col justify-center items-center bg-slate-200`}>
+    <button className="bg-dorado-200 hover:bg-dorado-500 w-4/6 text-white font-bold py-2 px-6 rounded md:hidden" onClick={handleVisibility}>Filtros</button>
+    <section className={`md:hidden ${visible} fixed z-50 inset-0 m-auto h-screen w-full flex-col justify-center items-center bg-slate-200`}>
       <div className="absolute top-0 right-0" onClick={handleVisibility}>Cerrar</div>
     <div className={`flex-col items-center justify-center gap-2 text-center text-xl font-medium text-slate-600 w-full`}>
     <div className="h-0.5 w-full bg-slate-500"></div>
@@ -124,7 +124,7 @@ export default function MobileFilter() {
       <li><input type="checkbox" value="baños=3" className="mr-2" onChange={handleBaniosChange} checked={filters.includes('baños=3')}/>2+ Baños</li>
     </ul>
     <div className="h-0.5 w-full bg-slate-500"></div>
-  <button type="button" className="mt-5 py-3 w-1/3 flex-grow rounded-full ring-blue-500 focus:outline-none focus:ring-2 bg-blue-300 text-center hover:scale-125 transition" onClick={handleApplyFilters}>Aplicar filtros</button>
+  <button type="button" className="mt-5 py-1 w-1/3 flex-grow rounded-2xl ring-azul-700 focus:outline-none focus:ring-2 bg-azul-500 text-center text-white hover:scale-125 transition" onClick={handleApplyFilters}>Aplicar filtros</button>
   </div>
   <button className="mt-5 py-3 w-1/3 aspect-ratio rounded-full ring-red-500 focus:outline-none focus:ring-2 bg-red-300 text-center hover:scale-125 transition text-red-700" onClick={removeFilters}>Limpiar filtros</button>
 </section>
