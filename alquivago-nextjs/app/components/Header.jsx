@@ -7,13 +7,16 @@ import ApplyFilters from './ApplyFilters'
 function Navbar() {
   return (
     <nav className=" bg-azul-200 absolute top-0 flex h-16 w-full items-center justify-center lg:flex lg:items-center lg:h-16 lg:w-full lg:justify-around lg:bg-azul-200">
-      <div className='lg:absolute lg:left-0 lg:flex lg:items-end'>
-          <Link href='/'><Image src={AlquiLogo} alt='Alquivago Logo' width={80} height={80}></Image></Link>
-          <h1 className="text-dorado-300 hidden text-2xl font-semibold lg:mb-3 lg:block">Alquivago</h1>
+      <div className='lg:absolute lg:left-0 lg:flex lg:items-end ml-16'>
+        <Link href='/'>
+          <h1 className="text-[#1491D2] hidden text-2xl font-semibold lg:mb-3 lg:block">Alqui</h1>
+          </Link>
+          <h1 className="text-[#FB9E14] hidden text-2xl font-semibold lg:mb-3 lg:block">va</h1>
+          <h1 className="text-[#E3403D] hidden text-2xl font-semibold lg:mb-3 lg:block">go</h1>
       </div>
-    <ul className='hidden lg:flex lg:absolute lg:right-6'>
-      <li className="font-medium text-lg text-azul-800"><Link href='/publish'>Alquiler</Link></li>
-      <li className="font-medium text-lg text-azul-800"><Link href='/comparisons'><Image src={Bookmark} alt='Icono de guardado'/></Link></li>
+    <ul className='hidden lg:flex lg:absolute lg:right-10 gap-10 items-center'>
+      <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-600 transition"><Link href='/publish'>Alquiler</Link></li>
+      <li className="font-medium text-lg text-azul-800 hover:scale-150 transition"><Link href='/comparisons'><Image src={Bookmark} alt='Icono de guardado'/></Link></li>
     </ul>
   </nav>
   )
