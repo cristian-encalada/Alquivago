@@ -3,10 +3,10 @@ import getData from "../actions";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export default async function MonedaPage({ params }) {
-  const posts = await getData(1, decodeURIComponent(params.moneda))
+  const posts = await getData(1, decodeURIComponent(params.filtros.replaceAll('-', '&')))
   return (
     <>
-    <InfiniteScroll firstPage={posts} currencyFilter={decodeURIComponent(params.moneda)}/>
+    <InfiniteScroll firstPage={posts} currencyFilter={decodeURIComponent(params.filtros.replaceAll('-', '&'))}/>
     </>
   )
 }
