@@ -10,6 +10,7 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
   const [arrData, setArrData] = useState([])
+  const [saved, setSaved] = useState(false)
 
   const guardarEnLocalStorage = (objeto) => {
     setArrData((prevData) => {
@@ -25,12 +26,13 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
       return updatedData;
     });
   };
-  
+
+  // Save arrData to localStorage when it changes
   useEffect(() => {
     const objectsInfo = JSON.stringify(arrData);
     localStorage.setItem('arrData', objectsInfo);
   }, [arrData]);
-  
+
 
   async function loadMorePosts() {
     const nextPage = page + 1
