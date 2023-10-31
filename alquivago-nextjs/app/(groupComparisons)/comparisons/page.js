@@ -73,15 +73,15 @@ export default function Cards() {
                 <img class="rounded-t-lg" src={data.images[0]} alt="" />
                 <div class="p-3">
                     <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{data.currency} {data.price}</h5>
-                      <div class="mb-1">
+                      <div class="mb-1 flex justify-center">
                               <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
                                 {data.total_area}
                               </span>
-                              <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
+                              <span class="bg-blue-100 text-blue-800 text-center text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
                                 {data.property_type}
                               </span>
                        </div>
-                       <div class="mb-2">
+                       <div class="mb-2 flex justify-center">
                             <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
                               Mts {data.total_area}
                             </span>
@@ -91,7 +91,7 @@ export default function Cards() {
                         </div>
                     <p class="font-normal dark:text-gray-200">{data.state_name}</p>
                     <p class="mb-5 font-normal dark:text-gray-200">{data.zone_name}</p>
-                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    <a href={data.url_link} target='_blank' rel='noreferrer' class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                       Enlace
                         <svg class="w-10 h-4 ml-1" aria-hidden="true" fill="none" viewBox="0 0 5 10">
                             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>

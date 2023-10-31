@@ -6,9 +6,11 @@ export default function PublishLayout({ children, params }) {
   return (
     <>
     <section className="hidden md:flex justify-center items-start gap-5 bg-slate-100">
+      <section className="flex container">
       <ApplyFilters />
+      </section>
     </section>
     {children}
     </>
   )
-}
+} 
