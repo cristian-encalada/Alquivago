@@ -1,14 +1,16 @@
 'use client'
 import { useRouter } from "next/navigation"
-import CurrencyButton from "../components/CurrencyButton"
-export default function PublishLayout({ children }) {
+import ApplyFilters from "../components/ApplyFilters"
+export default function PublishLayout({ children, params }) {
   const router = useRouter()
   return (
     <>
-    <section className="flex justify-center">
-      <CurrencyButton/>
+    <section className="hidden md:flex justify-center items-start gap-5 bg-slate-100">
+      <section className="flex container">
+      <ApplyFilters />
+      </section>
     </section>
     {children}
     </>
   )
-}
+} 

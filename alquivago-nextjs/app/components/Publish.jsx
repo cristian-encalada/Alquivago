@@ -1,8 +1,14 @@
+'use client'
+import { useState } from 'react'
 import gallitoLogo from '../../public/gallito-logo.png'
 import infocasasLogo from '../../public/infocasas-logo.jpg'
 import mercadoLibreLogo from '../../public/mercadolibre-logo.png'
+import Image from 'next/image'
+import Bookmark from '../../public/Bookmark.svg'
+import BookmarkSlash from '../../public/BookmarkSlash.svg'
 
-function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
+
+function Publish({saved, setSaved, actualObject , saveLocalStorage ,propertyTitle, propertyType, propertyBathrooms, propertyBedrooms, propertyZone, propertyArea, propertyPrice, propertyCurrency, propertyLink, propertyImage, propertyOrigin}) {
   const originBackground = {
     infocasas: infocasasLogo,
     gallito: gallitoLogo,
@@ -10,17 +16,20 @@ function Publish({propertyTitle, propertyType, propertyBathrooms, propertyBedroo
   }
   const Background = originBackground[propertyOrigin];
   return (
-    <div className="m-auto mt-10 flex h-80 w-5/6 flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
-  <div className="flex h-3/4 max-w-full flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
+    <div className="m-auto mt-10 flex h-96 container flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
+  <div className="flex h-full w-full flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
     background: `url(${propertyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}>
-    <div className="relative mb-3 mr-5 h-8 w-8 rounded-lg lg:h-12 lg:w-12" style={{
-      background: `url(${Background})`,
-      backgroundSize: 'cover',
-    }}></div>
+    <div className="relative mb-3 mr-5 h-8 w-8 rounded-lg lg:h-12 lg:w-12">
+      <Image className='rounded-lg' src={Background} alt={`Logo de ${Background}`}/>
+    </div>
   </div>
+  <Image className='rounded-lg relative top-0' src={saved ? BookmarkSlash : Bookmark} alt={`Icono de guardado`} onClick={() => {
+    setSaved(!saved);
+    saveLocalStorage(actualObject)
+  }}/>
   <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">
