@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      height: {
+        'medio' : '50vh'
+      },
       colors: {
         azul: {
           50: '#f5f6fa',

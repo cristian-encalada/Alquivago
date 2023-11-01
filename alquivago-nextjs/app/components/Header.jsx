@@ -25,10 +25,10 @@ function Navbar() {
 
 function Header() {
   return (
-    <header className="from-azul-200 gap-2 to-white flex h-screen flex-col items-center justify-center bg-opacity-60 bg-gradient-to-b bg-blend-multiply lg:flex lg:h-screen lg:w-full lg:flex-col lg:items-center lg:justify-center lg:bg-cover lg:bg-center">
+    <header className="from-azul-200 gap-2 to-white flex h-medio flex-col items-center justify-center bg-opacity-60 bg-gradient-to-b bg-blend-multiply lg:flex lg:h-screen lg:w-full lg:flex-col lg:items-center lg:justify-center lg:bg-cover lg:bg-center">
       <Navbar/>
       <SearchBar/>
-      <section className='md:flex w-full absolute hidden gap-5 justify-center'>
+      <section className='md:flex w-full absolute hidden gap-5 lg:mt-44 justify-center'>
       <ApplyFilters />
       </section>
       <MobileFilter />
