@@ -8,4 +8,4 @@ docker pull gab020/flaskimg:latest
 docker-compose up -d --build
 
 # Stop Docker Compose
-# docker-compose down
+# docker-compose down ...
