@@ -9553,30 +9553,5 @@
             "https://imagenes.gallito.com/1024x768/48424731.jpg",
             "https://imagenes.gallito.com/1024x768/48424732.jpg"
         ]
-    },
-    {
-        "id": "gallito_24319299",
-        "title": "Apartamento en alquiler, 3 dormitorios, 1 baÃ±o, terraza,",
-        "url_link": "https://www.gallito.com.uy/apartamento-en-alquiler-3-dormitorios-1-ba%C3%A3%C2%B1o-terraza-inmuebles-24319299",
-        "origin": "gallito",
-        "operation_type": "Alquiler",
-        "price": 30000.0,
-        "currency": "UYU",
-        "state_name": "Montevideo",
-        "zone_name": "Bella Vista",
-        "property_type": "Apartamento",
-        "total_area": 75,
-        "bathrooms": 1,
-        "bedrooms": 3,
-        "location": {
-            "latitude": 0.0,
-            "longitude": 0.0
-        },
-        "images": [
-            "https://imagenes.gallito.com/1024x768/51607856.jpg",
-            "https://imagenes.gallito.com/1024x768/51607857.jpg",
-            "https://imagenes.gallito.com/1024x768/51607858.jpg",
-            "https://imagenes.gallito.com/1024x768/51607859.jpg"
-        ]
     }
 ]
