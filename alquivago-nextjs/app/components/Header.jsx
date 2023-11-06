@@ -25,7 +25,7 @@
 
   export function Header() {
     return (
-      <header className="from-azul-200 gap-2 to-white flex h-[30vh] flex-col items-center justify-center bg-opacity-60 bg-gradient-to-b bg-blend-multiply lg:flex lg:h-medio lg:w-full lg:flex-col lg:items-center lg:justify-center lg:bg-cover lg:bg-center">
+      <header className="from-azul-200 gap-2 to-white flex h-[30vh] flex-col items-center justify-center bg-opacity-60 bg-gradient-to-b bg-blend-multiply lg:flex lg:h-[70vh] lg:w-full lg:flex-col lg:items-center lg:justify-center lg:bg-cover lg:bg-center">
         <section className='md:flex w-full absolute hidden gap-5 lg:mt-44 justify-center text-slate-500'>
         <ApplyFilters />
         </section>
