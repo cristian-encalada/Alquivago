@@ -10,7 +10,6 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
   const [page, setPage] = useState(1)
   const [ref, inView] = useInView()
   const [arrData, setArrData] = useState([])
-  const [saved, setSaved] = useState(false)
 
   const guardarEnLocalStorage = (objeto) => {
     setArrData((prevData) => {
@@ -23,12 +22,30 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
         updatedData.push(objeto);
       }
   
+      // Guardar el array en la cookie
+      document.cookie = `arrData=${JSON.stringify(updatedData)}`;
+  
       return updatedData;
     });
   };
+  
+  // Leer la cookie al cargar el componente
+  useEffect(() => {
+    const cookieArrData = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('arrData='));
+  
+    if (cookieArrData) {
+      console.log(JSON.parse(decodeURIComponent(cookieArrData).split('=')[1]))
+      const parsedData = decodeURIComponent(cookieArrData.split('=')[1]);
+      setArrData(JSON.parse(parsedData));
+    }
+  }, []);
+  
 
   // Save arrData to localStorage when it changes
   useEffect(() => {
+
     const objectsInfo = JSON.stringify(arrData);
     localStorage.setItem('arrData', objectsInfo);
   }, [arrData]);

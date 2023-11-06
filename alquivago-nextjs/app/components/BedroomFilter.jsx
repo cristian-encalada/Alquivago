@@ -2,14 +2,14 @@ import { useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function Bedroombutton({ filters, setFilters }) {
-  const [visible, setVisible] = useState('hidden')
+  const [visible, setVisible] = useState('invisible')
   const router = useRouter();
   const pathName = usePathname();
 
   function handleVisibility() {
-    if (visible === 'hidden') {
-      setVisible('flex')
-    } else setVisible('hidden')
+    if (visible === 'invisible') {
+      setVisible('visible')
+    } else setVisible('invisible')
   }
   const handleClick = (e) => {
     const value = e.target.value;
