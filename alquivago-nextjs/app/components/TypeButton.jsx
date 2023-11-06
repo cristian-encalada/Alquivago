@@ -56,7 +56,7 @@ export default function TypeButton({ filters, setFilters }) {
   }
 
   return (
-    <div className="flex flex-col w-1/6 gap-1">
+    <div className="flex flex-col w-1/6 gap-1 h-20">
       <button className="rounded-md font-medium text-lg w-full bg-white shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Tipo</button>
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul className="overflow-auto h-32 flex flex-col items-center">

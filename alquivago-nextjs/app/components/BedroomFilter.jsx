@@ -44,23 +44,23 @@ export default function Bedroombutton({ filters, setFilters }) {
   return (
     <div className="flex flex-col gap-1 w-1/6">
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Dormitorios</button>
-      <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
+      <div className={`${visible} flex flex-col h-32 w-full border-2 overflow-auto border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" type="checkbox" value="dormitorios=1" onChange={handleClick} checked={filters.includes('dormitorios=1')}/>
-            1 Dormitorio
+            1 Dorm.
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" type="checkbox" value="dormitorios=2" onChange={handleClick} checked={filters.includes('dormitorios=2')}/>
-            2 Dormitorios 
+            2 Dorm.
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" type="checkbox" value="dormitorios=3" onChange={handleClick} checked={filters.includes('dormitorios=3')} />
-            3 Dormitorios
+            3 Dorm.
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" type="checkbox" value="dormitorios=4" onChange={handleClick} checked={filters.includes('dormitorios=4')}/>
-            3+ Dormitorios
+            3+ Dorm.
           </li>
         </ul>
       </div>
