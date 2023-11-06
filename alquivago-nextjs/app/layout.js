@@ -18,7 +18,7 @@ const pages = [
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
-      <body className=" bg-slate-100">
+      <body className=" bg-white dark:bg-white">
         <Header/>
         {children}
       </body>
