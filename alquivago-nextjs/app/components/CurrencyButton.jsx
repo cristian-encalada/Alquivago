@@ -5,14 +5,14 @@ import { useState } from "react"
 
 useRouter
 export default function CurrencyButton({ filters, setFilters }) {
-  const [visible, setVisible] = useState('hidden')
+  const [visible, setVisible] = useState('invisible')
   const router = useRouter()
   const pathName = usePathname()
 
   function handleVisibility() {
-    if (visible === 'hidden') {
-      setVisible('flex')
-    } else setVisible('hidden')
+    if (visible === 'invisible') {
+      setVisible('visible')
+    } else setVisible('invisible')
   }
   const handleClick = (e) => {
     const value = e.target.value;
@@ -25,7 +25,7 @@ export default function CurrencyButton({ filters, setFilters }) {
   return (
     <div className="flex flex-col gap-1 w-1/6">
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Moneda</button>
-      <ul className={` ${visible} gap-1 bg-white py-2 px-1 rounded-md shadow-xl justify-around`}>
+      <ul className={` ${visible} gap-1 bg-white py-2 px-1 rounded-md shadow-xl justify-around flex`}>
         <li>
           <input
             type="radio"
