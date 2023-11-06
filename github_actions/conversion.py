@@ -14,7 +14,7 @@ def conversion():
     current_directory = os.path.dirname(os.path.abspath(__file__))
 
     # Construir la ruta del archivo cambio.json
-    data_directory = os.path.abspath(os.path.join(current_directory, "../../data"))
+    data_directory = os.path.abspath(os.path.join(current_directory, "../data"))
     cambio_json_path = os.path.join(data_directory, "cambio.json")
 
     # Verificar y crear los directorios necesarios si no existen
