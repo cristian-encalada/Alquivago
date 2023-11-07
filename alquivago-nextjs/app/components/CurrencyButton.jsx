@@ -23,9 +23,9 @@ export default function CurrencyButton({ filters, setFilters }) {
       }
     }
   return (
-    <div className="flex flex-col gap-1 w-1/6">
+    <div className="flex flex-col gap-1 w-1/6 h-20">
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Moneda</button>
-      <ul className={` ${visible} gap-1 bg-white py-2 px-1 rounded-md shadow-xl justify-around flex`}>
+      <ul className={`${visible} gap-1 bg-white py-2 px-1 rounded-md shadow-xl justify-around flex`}>
         <li>
           <input
             type="radio"

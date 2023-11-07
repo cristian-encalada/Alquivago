@@ -1,5 +1,8 @@
+'use client'
 export default function MapPage() {
   return (
-    <iframe src="https://google-maps-alpha.vercel.app/" title="Mapa de zonas" width={800} height={800}/>
+    <section className="container flex justify-center items-center">
+    <iframe src="https://google-maps-alpha.vercel.app/" title="Mapa de zonas" width={900} height={550}/>
+    </section>
   )
 }
