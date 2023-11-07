@@ -47,7 +47,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
     </div>
   </div>
   <Image className='rounded-lg relative top-0' src={saved ? BookmarkSlash : Bookmark} alt={`Icono de guardado`} onClick={handleSave}/>
-  <h1 className="w-full py-1 text-center text-xl font-medium lg:hidden">{propertyTitle}</h1>
+  <h1 className="w-full py-1 text-center text-xl h-32 font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">
       <div className="my-2 flex h-2/3 flex-col justify-around rounded-2xl bg-[#414C67] py-3 lg:pl-2">
