@@ -56,21 +56,41 @@ export default function TypeButton({ filters, setFilters }) {
   }
 
   return (
-    <div className="flex flex-col w-1/6 gap-1">
+    <div className="flex flex-col w-1/6 gap-1 h-20">
       <button className="rounded-md font-medium text-lg w-full bg-white shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Tipo</button>
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
-        <ul>
-          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="tipos=4" onChange={handleClick} checked={filters.includes('tipos=4')}/>
-            Casa
-          </li>
-          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input  className="mx-2 w-8"  type="checkbox" value="tipos=0" onChange={handleClick} checked={filters.includes('tipos=0')}/>
+        <ul className="overflow-auto h-32 flex flex-col items-center">
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=0" onChange={handleClick} checked={filters.includes('tipos=0')}/>
             Apartamento
           </li>
-          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input   className="mx-2 w-8" type="checkbox" value="tipos=2" onChange={handleClick} checked={filters.includes('tipos=2')}/>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=4" onChange={handleClick} checked={filters.includes('tipos=4')}/>
+            Casa
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=2" onChange={handleClick} checked={filters.includes('tipos=2')}/>
             Local
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=3" onChange={handleClick} checked={filters.includes('tipos=3')}/>
+            Oficina
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=5" onChange={handleClick} checked={filters.includes('tipos=5')}/>
+            Terreno
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=7" onChange={handleClick} checked={filters.includes('tipos=7')}/>
+            Garage
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=6" onChange={handleClick} checked={filters.includes('tipos=6')}/>
+            Campo
+          </li>
+          <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition w-full">
+            <input  className="w-5"  type="checkbox" value="tipos=9" onChange={handleClick} checked={filters.includes('tipos=9')}/>
+            Otro
           </li>
         </ul>
       </div>
