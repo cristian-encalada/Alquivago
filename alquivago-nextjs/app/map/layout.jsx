@@ -4,7 +4,7 @@ import listIcon from '../../public/listIcon.svg'
 import mapIcon from '../../public/mapIcon.svg'
 export default function MapLayout({ children }) {
   return (
-    <main>
+    <main className="w-full h-screen">
     <section className="hidden w-full h-24 gap-2 bg-white md:first-letter md:flex justify-start">
       <ul className="flex gap-2 items-start absolute right-2">
         <li><Link href='/map'><Image src={mapIcon} className="w-10 h-10 hover:scale-125 transition" alt="map icon"/></Link> </li>
