@@ -18,6 +18,9 @@ export default function PriceOrder({ children, orders, setOrders }) {
       if (pathName === '/publish') {
         return router.push(`${pathName}/-orden=${updatedOrders.join(',')}`);
       }
+      else if (pathName === '/') {
+        return router.push(`/publish/-orden=${updatedOrders.join(',')}`);
+      }
       router.push(`${pathName.split('-')[0]}-orden=${updatedOrders.join(',')}`);
       return updatedOrders
     });
