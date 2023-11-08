@@ -5,12 +5,6 @@ export default function Bedroombutton({ filters, setFilters }) {
   const [visible, setVisible] = useState('invisible')
   const router = useRouter();
   const pathName = usePathname();
-
-  function handleVisibility() {
-    if (visible === 'invisible') {
-      setVisible('visible')
-    } else setVisible('invisible')
-  }
   const handleClick = (e) => {
     const value = e.target.value;
     if (filters.includes(value)) {
@@ -42,8 +36,8 @@ export default function Bedroombutton({ filters, setFilters }) {
   }
 
   return (
-    <div className="flex flex-col gap-1 w-1/6">
-      <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition" onClick={handleVisibility}>Dormitorios</button>
+    <div className="flex flex-col gap-1 w-1/6" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
+      <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition">Dormitorios</button>
       <div className={`${visible} flex flex-col h-32 w-full border-2 overflow-auto border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">

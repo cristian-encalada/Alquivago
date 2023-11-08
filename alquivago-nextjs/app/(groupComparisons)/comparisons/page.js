@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { data } from 'autoprefixer';
 
 
 if (typeof localStorage !== 'undefined') {
@@ -61,7 +62,13 @@ export default function Cards() {
       window.removeEventListener('resize', updateSlidesPerView);
     };
   }, []);
-
+  if (dataLocalStorage.length === 0) {
+    return (
+      <main className='w-full h-screen flex justify-center items-center'>
+          <h1 className='text-slate-600 text-lg font-bold'>No has agregado ninguna propiedad, selecciona algunas para comparar</h1>
+      </main>
+    )
+  }
   return (
       <Swiper
         spaceBetween={1}
