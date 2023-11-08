@@ -36,7 +36,7 @@ export default function Bathbutton({ filters, setFilters }) {
   }
 
   return (
-    <div className="flex flex-col gap-1 w-1/6" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
+    <div className="flex flex-col gap-1 w-1/6 h-20" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition">Baños</button>
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
