@@ -1,6 +1,12 @@
-
-export default function Home() {
+import InfiniteScroll from './publish/infinite-scroll-posts';
+import getData from './publish/actions'
+export default async function Page () {
+  const posts = await getData(1);
   return (
-    <h1>Esta es la pagina principal</h1>
-  )
+    <>
+    <section className='flex flex-col justify-center items-center bg-white'>
+      <InfiniteScroll firstPage={posts}/>
+    </section>
+    </>
+  );
 }
