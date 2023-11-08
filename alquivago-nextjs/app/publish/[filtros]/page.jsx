@@ -3,11 +3,11 @@ import getData from "../actions";
 import { usePathname, useSearchParams } from "next/navigation";
 
 export default async function MonedaPage({ params }) {
-  const posts = await getData(1, decodeURIComponent(params.filtros.replaceAll('-', '&')))
-  console.log(decodeURIComponent(params.filtros.replaceAll('-', '&')))
+  const posts = await getData(1, decodeURIComponent(params.filtros.replace('-', '&')))
+  console.log(decodeURIComponent(params.filtros).replace('-', '&'))
   return (
     <section className='flex flex-col justify-center items-center bg-white'>
-    <InfiniteScroll firstPage={posts} currencyFilter={decodeURIComponent(params.filtros.replaceAll('-', '&'))}/>
+    <InfiniteScroll firstPage={posts} currencyFilter={decodeURIComponent(params.filtros.replace('-', '&'))}/>
     </ section>
   )
 }

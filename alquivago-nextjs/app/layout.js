@@ -1,9 +1,10 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
-import { Header, Navbar } from './components/Header'
+import { Header} from './components/Header'
 import Link from 'next/navigation'
 import Image from 'next/image'
 import Bookmark from '../public/Bookmark.svg'
+import Navbar from './components/Nav'
 
 export const metadata = {
   title: 'Alquivago',
