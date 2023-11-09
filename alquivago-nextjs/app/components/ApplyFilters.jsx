@@ -38,7 +38,7 @@ export default function ApplyFilters() {
     return router.push('/publish')
   }
   return (
-    <div className="flex justify-center items-center gap-2">
+    <div className="flex justify-center items-start gap-2">
     <CurrencyButton filters={filters} setFilters={setFilters}/>
     <TypeButton filters={filters} setFilters={setFilters} />
     <Bedroombutton filters={filters} setFilters={setFilters} />
