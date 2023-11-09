@@ -1,27 +1,8 @@
 import { useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function TypeButton({ filters, setFilters }) {
   const [visible, setVisible] = useState('invisible')
-  const router = useRouter();
-  const pathName = usePathname();
-
-  function checkingValue(filterType, valueToCheck) {
-    for (const element of filters) {
-      if (element.startsWith(filterType)) {
-        if (element.includes(valueToCheck)) {
-          return true
-        }
-        return false
-      }
-    }
-  }
-
-  function handleVisibility() {
-    if (visible === 'invisible') {
-      setVisible('visible')
-    } else setVisible('invisible')
-  }
+  
   const handleClick = (e) => {
     const value = e.target.value;
     console.log(filters.includes(value))
@@ -31,29 +12,6 @@ export default function TypeButton({ filters, setFilters }) {
         setFilters([...filters, value]);
       }
     }
-  
-  function applyFilters() {
-    if (filters.length === 0) {
-      if (pathName.includes("moneda=UYU")) {
-        return router.push('moneda=UYU')
-      }
-      else if (pathName.includes("moneda=USD")) {
-        return router.push('moneda=USD')
-      }
-      else {
-        return router.push('/publish')
-    }
-  }
-    if (pathName.includes('moneda=UYU')) {
-      return router.push(`/publish/moneda=UYU&tipos=${filters.join(',')}`)
-    }
-    else if (pathName.includes('moneda=USD')) {
-      return router.push(`/publish/moneda=USD&tipos=${filters.join(',')}`)
-    }
-    if (pathName.includes('tipos') && !pathName.includes('moneda')) {
-      return router.push(`tipos=${filters.join(',')}`)
-    }
-  }
 
   return (
     <div className="flex flex-col w-1/6 gap-1 h-20" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>

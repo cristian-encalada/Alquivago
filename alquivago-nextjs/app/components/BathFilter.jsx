@@ -1,11 +1,8 @@
 import { useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 export default function Bathbutton({ filters, setFilters }) {
   const [visible, setVisible] = useState('invisible')
-  const router = useRouter();
-  const pathName = usePathname();
-
+  
   const handleClick = (e) => {
     const value = e.target.value;
     if (filters.includes(value)) {
@@ -14,26 +11,6 @@ export default function Bathbutton({ filters, setFilters }) {
         setFilters([...filters, value]);
       }
     }
-  function applyFilters() {
-    if (filters.length === 0) {
-      if (pathName.includes("moneda=UYU")) {
-        return router.push('moneda=UYU')
-      }
-      else if (pathName.includes("moneda=USD")) {
-        return router.push('moneda=USD')
-      }
-      else {
-        return router.push('/publish')
-    }
-  }
-    if (pathName.includes('moneda=UYU')) {
-      return router.push(`/publish/moneda=UYU&baños=${filters.join(',')}`)
-    }
-    else if (pathName.includes('moneda=USD')) {
-      return router.push(`/publish/moneda=USD&baños=${filters.join(',')}`)
-    }
-    return router.push(`baños=${filters.join(',')}`)
-  }
 
   return (
     <div className="flex flex-col gap-1 w-1/6 h-20" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
