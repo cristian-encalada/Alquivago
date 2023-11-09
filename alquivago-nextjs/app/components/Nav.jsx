@@ -15,10 +15,9 @@ export default function Navbar() {
     <ul className='hidden lg:flex lg:absolute lg:right-10 gap-10 items-center'>
       <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition"><Link href='/publish'>Alquiler</Link></li>
       <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition"><Link href='/map'>Mapa</Link></li>
-      <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition" onClick={() => {
+      <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition cursor-pointer" onClick={() => {
         if (localStorage.arrData.length === 2) {
           alert('No has seleccionado propiedades')
-          return router.push('/publish')
         } else {
           return router.push('/comparisons')
         }

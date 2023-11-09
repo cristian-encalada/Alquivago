@@ -88,7 +88,7 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
         actualObject={alquiler}
       />
     ))}
-    {isLoading? <p ref={ref}>Loading...</p>: <p>No hay mas publicaciones :|</p>}
+    {isLoading? <p className="text-slate-500" ref={ref}>Cargando...</p>: <p className="text-slate-500">No hay mas publicaciones :|</p>}
       </>
   )
     }
