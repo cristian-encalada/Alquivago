@@ -87,7 +87,7 @@ export default function MobileFilter() {
 
   return (
     <main className="md:hidden flex flex-col gap-5 justify-center items-center">
-    <ZoneBar/>
+    <ZoneBar filters={filters} setFilters={setFilters}/>
     <button className="bg-dorado-200 hover:bg-dorado-500 container text-white font-bold h-20 rounded-2xl shadow-2xl md:hidden" onClick={handleVisibility}>Filtros</button>
     <section className={`md:hidden ${visible} gap-5 fixed z-50 inset-0 m-auto h-screen w-full flex-col justify-center items-center bg-slate-200`}>
       <div className="absolute top-10 right-10" onClick={handleVisibility}>

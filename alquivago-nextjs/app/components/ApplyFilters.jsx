@@ -10,7 +10,8 @@ import ZoneBar from "./ZoneBar";
 export default function ApplyFilters() {
   const router = useRouter()
   const [filters, setFilters] = useState([])
-  function formatearArrayComoString(array) {
+
+  function formatingArray(array) {
     const agrupado = {};
   
     for (const item of array) {
@@ -29,7 +30,7 @@ export default function ApplyFilters() {
     return resultado;
   }
   function handleFilters() {
-    const routeParsed = formatearArrayComoString(filters)
+    const routeParsed = formatingArray(filters)
     return router.push(`/publish/${routeParsed}`)
   }
 
@@ -38,6 +39,8 @@ export default function ApplyFilters() {
     return router.push('/publish')
   }
   return (
+    <>
+     <ZoneBar filters={filters} setFilters={setFilters} formatingArray={formatingArray} handleFilters={handleFilters}/>
     <div className="flex justify-center items-start gap-2">
     <CurrencyButton filters={filters} setFilters={setFilters}/>
     <TypeButton filters={filters} setFilters={setFilters} />
@@ -45,7 +48,7 @@ export default function ApplyFilters() {
     <Bathbutton  filters={filters} setFilters={setFilters}/>
     <button className="mt-0 py-2 px-2 rounded-lg text-white text-lg font-medium bg-azul-500 hover:scale-110 transition" onClick={handleFilters}>Aplicar filtros</button>
     <button className="py-2 px-2 rounded-lg text-white text-lg font-medium bg-red-500 hover:scale-110 transition" onClick={removeFilters}>Eliminar filtros</button>
-
     </div>
+    </>
   )
 }
