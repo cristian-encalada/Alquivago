@@ -36,25 +36,25 @@ export default function Bedroombutton({ filters, setFilters }) {
   }
 
   return (
-    <div className="flex flex-col gap-1 w-1/6" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
+    <div className="flex flex-col gap-1 w-1/6 h-20" onMouseEnter={() => setVisible('visible')} onMouseLeave={() => setVisible('invisible')}>
       <button className="font-medium text-lg bg-white rounded-md shadow py-2 hover:bg-slate-200 transition">Dormitorios</button>
-      <div className={`${visible} flex flex-col h-32 w-full border-2 overflow-auto border-slate-300 rounded-lg bg-white shadow-lg`}>
+      <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="dormitorios=1" onChange={handleClick} checked={filters.includes('dormitorios=1')}/>
-            1 Dorm.
+            <input className="mx-2 w-8" id="1dorm" type="checkbox" value="dormitorios=1" onChange={handleClick} checked={filters.includes('dormitorios=1')}/>
+            <label htmlFor="1dorm">1 Dorm.</label>
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="dormitorios=2" onChange={handleClick} checked={filters.includes('dormitorios=2')}/>
-            2 Dorm.
+            <input className="mx-2 w-8" id="2dorm" type="checkbox" value="dormitorios=2" onChange={handleClick} checked={filters.includes('dormitorios=2')}/>
+            <label htmlFor="2dorm">2 Dorm.</label>
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="dormitorios=3" onChange={handleClick} checked={filters.includes('dormitorios=3')} />
-            3 Dorm.
+            <input className="mx-2 w-8" id="3dorm" type="checkbox" value="dormitorios=3" onChange={handleClick} checked={filters.includes('dormitorios=3')} />
+            <label htmlFor="3dorm">3 Dorm.</label>
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="dormitorios=4" onChange={handleClick} checked={filters.includes('dormitorios=4')}/>
-            3+ Dorm.
+            <input className="mx-2 w-8" id="4dorm" type="checkbox" value="dormitorios=4" onChange={handleClick} checked={filters.includes('dormitorios=4')}/>
+            <label htmlFor="4dorm">3+ Dorms.</label>
           </li>
         </ul>
       </div>

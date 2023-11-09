@@ -23,7 +23,7 @@ const pages = [
 ]
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className='text-azul-500 bg-azul-50'>
       <head>
         <link rel='icon' href='../public/alquico.ico'></link>
       </head>
