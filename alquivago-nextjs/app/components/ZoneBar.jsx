@@ -1,20 +1,27 @@
 'use client'
 import { useState } from "react"
 import { data } from "./data"
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
-export default function ZoneBar() {
-  const [selectedZones, setSelectedZones] = useState([])
+export default function ZoneBar({ filters, setFilters}) {
+  const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [visible, setVisible] = useState('hidden')
-  const router = useRouter()
-  const pathName = usePathname()
   function handleVisibility() {
     if (visible === 'hidden') {
       setVisible('flex')
     } else setVisible('hidden')
   }
+  const handleClick = (e) => {
+    handleVisibility()
+    const value = e.target.value;
+    if (filters.includes(value)) {
+      setFilters(filters.filter((filter) => filter !== value));
+    } else {
+        setFilters([...filters, value]);
+      }
+    }
   
   const handleSearch = (event) => {
     const value = event.target.value.toLowerCase();
@@ -27,34 +34,7 @@ export default function ZoneBar() {
     setSearchResults(results);
   };
 
-  const handleSelect = (e) => {
-    handleVisibility()
-    const value = e.target.value
 
-    if (selectedZones.includes(value)) {
-      // Si ya está seleccionada, quítala del array
-      const updatedZones = selectedZones.filter((zone) => zone !== value);
-      setSelectedZones(updatedZones);
-    } else {
-      // Si no está seleccionada, agrégala al array de zonas seleccionadas
-      const updatedZones = [...selectedZones, value];
-      setSelectedZones(updatedZones);
-    }
-    setSelectedZones((prevData) => {
-      if (pathName === '/') {
-        router.push(`/publish/zonas=${prevData.join(',')}`)
-      }
-      else if (pathName === '/publish') {
-        router.push(`${pathName}/zonas=${prevData.join(',')}`)
-      } else {
-          if (pathName.includes('zonas=')) {
-            router.push(`${pathName.split('zonas=')[0]}zonas=${prevData.join(',')}`)
-          } else
-          router.push(`${pathName.split('_')[0]}_zonas=${prevData.join(',')}`)
-      }
-      return prevData
-    })
-  }
   return (
     <>
     <button className='lg:w-2/6 lg:h-12 m-auto rounded-2xl lg:rounded-lg bg-azul-500 shadow-2xl hover:scale-110 transition font-medium container h-20 text-azul-50' onClick={handleVisibility}>Buscar por zona</button>
@@ -64,8 +44,10 @@ export default function ZoneBar() {
        className="w-2/3 h-[10%] rounded-md text-center text-slate-500"/>
       <ul className="w-2/6 h-[90%] items-center flex flex-wrap">
         {searchResults.map((zona) => (
-          <li key={zona.id} className="border-2 h-[8%] flex items-center bg-azul-50 text-azul-500 font-medium w-full text-center rounded-md hover:scale-110 transition hover:bg-azul-50"><button className="focus:ring-2 w-full rounded-md"
-           value={zona.id} onClick={handleSelect}>{zona.zona}  </button></li>
+          <>
+          <li key={zona.id} className="flex border-2 h-[8%] items-center bg-azul-50 text-azul-500 font-medium w-full text-center rounded-md hover:scale-110 transition hover:bg-azul-50"><button className="focus:ring-2 w-full rounded-md"
+           value={`zonas=${zona.id}`} onClick={handleClick}>{zona.zona}</button></li>
+           </>
         ))}
       </ul>
     </section>

@@ -18,16 +18,16 @@ export default function Bathbutton({ filters, setFilters }) {
       <div className={`${visible} flex flex-col w-full border-2 border-slate-300 rounded-lg bg-white shadow-lg`}>
         <ul>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=1" onChange={handleClick} checked={filters.includes('baños=1')}/>
-            1 Baño
+            <input className="mx-2 w-8" id='1baño' type="checkbox" value="baños=1" onChange={handleClick} checked={filters.includes('baños=1')}/>
+            <label htmlFor="1baño">1 Baño</label>
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=2" onChange={handleClick} checked={filters.includes('baños=2')}/>
-            2 baños
+            <input className="mx-2 w-8" id="2baños" type="checkbox" value="baños=2" onChange={handleClick} checked={filters.includes('baños=2')}/>
+            <label htmlFor="2baños">2 Baños</label>
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
-            <input className="mx-2 w-8" type="checkbox" value="baños=3" onChange={handleClick} checked={filters.includes('baños=3')} />
-            2+baños
+            <input className="mx-2 w-8" id="3baños" type="checkbox" value="baños=3" onChange={handleClick} checked={filters.includes('baños=3')} />
+            <label htmlFor="3baños">2+ Baños</label>
           </li>
         </ul>
       </div>
