@@ -87,6 +87,8 @@ export default function Cards() {
               comparisonOrigin={data.origin}
               comparisonType={data.property_type}
               comparisonZone={data.zone_name}
+              comparisonCurrency={data.currency}
+              comparisonPrice={data.price}
               />
             </SwiperSlide>
                   ))}
