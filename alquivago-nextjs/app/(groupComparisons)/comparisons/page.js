@@ -9,6 +9,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { data } from 'autoprefixer';
+import ComparisonCard from '@/app/components/ComparisonCard';
 
 
 if (typeof localStorage !== 'undefined') {
@@ -27,6 +28,7 @@ if (typeof localStorage !== 'undefined') {
 /* componente Cards */
 
 export default function Cards() {
+
 
   const [dataLocalStorage, setDataLocalStorage] = useState([]);
 
@@ -64,8 +66,8 @@ export default function Cards() {
   }, []);
   if (dataLocalStorage.length === 0) {
     return (
-      <main className='w-full h-screen flex justify-center items-center'>
-          <h1 className='text-slate-600 text-lg font-bold'>No has agregado ninguna propiedad, selecciona algunas para comparar</h1>
+      <main classNameName='w-full h-screen flex justify-center items-center'>
+          <h1 classNameName='text-slate-600 text-lg font-bold'>No has agregado ninguna propiedad, selecciona algunas para comparar</h1>
       </main>
     )
   }
@@ -76,37 +78,19 @@ export default function Cards() {
       >
         {dataLocalStorage.map((data) => (
             <SwiperSlide key={data.id}>
-              <div class="bg-white border border-gray-200 rounded-lg shadow m-auto dark:bg-blue-800">
-                <Image class="rounded-t-lg" src={data.images[0]} alt="" width={700} height={500} />
-                <div class="p-3 flex justify-center items-center flex-col">
-                    <h5 class="mb-2 text-3xl font-bold tracking-tight text-gray-900 dark:text-white text-center">{data.currency === 'UYU' ? '$' : 'U$S'} {data.price}</h5>
-                      <div class="mb-1 flex justify-center">
-                              <span class="bg-blue-100 text-blue-800 text-center text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                                {data.property_type}
-                              </span>
-                       </div>
-                       <div class="mb-2 flex justify-center">
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                              {data.total_area} Mts
-                            </span>
-                            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-1 py-0.2 rounded dark:bg-amber-300 dark:text-blue-800 ml-1">
-                              {data.bathrooms} baño{data.bathrooms > 1? 's' : ''}
-                            </span>
-                        </div>
-                    <p class="font-normal dark:text-gray-200">{data.state_name}</p>
-                    <p class="mb-5 font-normal dark:text-gray-200">{data.zone_name}</p>
-                    <a href={data.url_link} target='_blank' rel='noreferrer' class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                      Enlace
-                        <svg class="w-10 h-4 ml-1" aria-hidden="true" fill="none" viewBox="0 0 5 10">
-                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-
+              <ComparisonCard 
+              comparisonArea={data.total_area}
+              comparisonBathrooms={data.bathrooms}
+              comparisonBedrooms={data.bedrooms}
+              comparisonImage={data.images[0]}
+              comparisonLink={data.url_link}
+              comparisonOrigin={data.origin}
+              comparisonType={data.property_type}
+              comparisonZone={data.zone_name}
+              />
             </SwiperSlide>
-        ))}
+                  ))}
 
-      </Swiper>
+                </Swiper>
   );
 }

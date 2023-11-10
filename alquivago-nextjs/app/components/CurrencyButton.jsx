@@ -31,7 +31,7 @@ export default function CurrencyButton({ filters, setFilters }) {
             type="radio"
             name="moneda"
             value="moneda=USD"
-            onClick={handleClick}
+            onChange={handleClick}
             checked={filters.includes('moneda=USD')}
           />
           USD
@@ -41,7 +41,7 @@ export default function CurrencyButton({ filters, setFilters }) {
             type="radio"
             name="moneda"
             value="moneda=UYU"
-            onClick={handleClick}
+            onChange={handleClick}
             checked={filters.includes('moneda=UYU')}
           />
           UYU
