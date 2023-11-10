@@ -38,7 +38,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
   const Background = originBackground[propertyOrigin];
   return (
     <div className="m-auto text-slate-700 mt-10 flex h-96 container flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
-  <div className="flex h-1/2 w-full flex-row-reverse items-end justify-between rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
+  <div className="flex h-2/3 w-full flex-row-reverse items-end justify-between rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
     background: `url(${propertyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
@@ -54,7 +54,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
     </input>
     </div>
   </div>
-  <h1 className="w-full py-1 text-center text-xl h-32 font-medium lg:hidden">{propertyTitle}</h1>
+  <h1 className="w-full flex items-center justify-center py-1 text-center text-md h-32 font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">
       <div className="my-2 flex h-4/5 flex-col justify-around rounded-2xl bg-[#414C67] py-3 lg:pl-2">
@@ -71,7 +71,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
         <p className="font-medium text-white">{propertyArea > 0? `${propertyArea} mt2`: 'No info'}</p>
         </div>
       </div>
-      <a target='_blank' href={propertyLink} className="animate-bounce-chiquito hover:scale-110 transition mx-1 mb-1 flex flex-row-reverse items-center hover:text-white justify-center rounded-3xl bg-emerald-300 px-4 py-2 font-bold text-emerald-500 lg:h-1/5">
+      <a target='_blank' href={propertyLink} className="animate-bounce-chiquito hover:scale-110 transition mx-1 mb-1 flex flex-row-reverse items-center hover:text-cyan-50 text-lg justify-center rounded-3xl bg-cyan-300 px-4 py-2 font-bold text-cyan-500 lg:h-1/5">
         <svg className="h-10 w-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>

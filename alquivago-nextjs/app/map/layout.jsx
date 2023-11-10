@@ -1,16 +1,13 @@
+'use client'
+import goBack from '../../public/goBack.svg'
 import Image from "next/image"
-import Link from "next/link"
-import listIcon from '../../public/listIcon.svg'
-import mapIcon from '../../public/mapIcon.svg'
+import { useRouter } from "next/navigation"
 export default function MapLayout({ children }) {
+  const router = useRouter()
   return (
-    <main className="w-full h-screen">
-    <section className="hidden w-full h-24 gap-2 bg-white md:first-letter md:flex justify-start">
-      <ul className="flex gap-2 items-start absolute right-2">
-        <li><Link href='/publish'><Image src={listIcon} className="w-8 h-8 hover:scale-125 transition" alt="map icon"/></Link> </li>
-      </ul>
-  </section>
-  {children}
-  </main>
+    <>
+    <div className='md:hidden sticky inset-y-0 bg-white border-2 z-50 w-10 rounded aspect-square flex justify-center items-center' onClick={() => router.back()}><Image src={goBack} alt='save icon'/></div>
+    {children}
+    </>
   )
 }
