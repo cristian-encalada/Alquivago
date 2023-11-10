@@ -16,7 +16,7 @@ export default function Navbar() {
       <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition"><Link href='/publish'>Alquiler</Link></li>
       <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition"><Link href='/map'>Mapa</Link></li>
       <li className="font-medium text-lg text-azul-800 hover:scale-110 hover:text-dorado-200 transition cursor-pointer" onClick={() => {
-        if (localStorage.arrData.length === 2) {
+        if (!localStorage.arrData) {
           alert('No has seleccionado propiedades')
         } else {
           return router.push('/comparisons')

@@ -21,35 +21,10 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
       } else {
         updatedData.push(objeto);
       }
-  
-      // Guardar el array en la cookie
-      document.cookie = `arrData=${JSON.stringify(updatedData)}`;
-  
+      localStorage.setItem('arrData', JSON.stringify(updatedData))
       return updatedData;
-    });
+    })
   };
-  
-  // Leer la cookie al cargar el componente
-  useEffect(() => {
-    const cookieArrData = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('arrData='));
-  
-    if (cookieArrData) {
-      console.log(JSON.parse(decodeURIComponent(cookieArrData).split('=')[1]))
-      const parsedData = decodeURIComponent(cookieArrData.split('=')[1]);
-      setArrData(JSON.parse(parsedData));
-    }
-  }, []);
-  
-
-  // Save arrData to localStorage when it changes
-  useEffect(() => {
-
-    const objectsInfo = JSON.stringify(arrData);
-    localStorage.setItem('arrData', objectsInfo);
-  }, [arrData]);
-
 
   async function loadMorePosts() {
     const nextPage = page + 1
@@ -88,7 +63,7 @@ export default function InfiniteScroll ({firstPage, currencyFilter}) {
         actualObject={alquiler}
       />
     ))}
-    {isLoading? <p className="text-slate-500" ref={ref}>Cargando...</p>: <p className="text-slate-500">No hay mas publicaciones :|</p>}
+    {isLoading? <span className="text-slate-500 animate-pulse text-3xl" ref={ref}>...</span>: <p className="text-azul-500 animate-pulse">No hay mas publicaciones</p>}
       </>
   )
     }
