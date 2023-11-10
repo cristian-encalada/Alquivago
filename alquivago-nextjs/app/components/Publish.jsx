@@ -15,6 +15,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
   const [saved, setSaved] = useState(false)
 
   useEffect(() => {
+    localStorage.clear()
     // Recuperar el estado "saved" del localStorage al cargar el componente
     const savedStatus = localStorage.getItem(`saved_${actualObject.id}`);
     if (savedStatus) {
@@ -37,20 +38,26 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
   const Background = originBackground[propertyOrigin];
   return (
     <div className="m-auto text-slate-700 mt-10 flex h-96 container flex-col rounded-2xl bg-slate-200 shadow-2xl lg:flex-row">
-  <div className="flex h-full w-full flex-col items-end justify-end rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
+  <div className="flex h-1/2 w-full flex-row-reverse items-end justify-between rounded-tl-2xl rounded-tr-2xl bg-center lg:h-full lg:w-1/3 lg:rounded-none lg:rounded-bl-2xl lg:rounded-tl-2xl" style={{
     background: `url(${propertyImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
   }}>
-    <div className="relative mb-3 mr-5 h-8 w-8 rounded-lg lg:h-12 lg:w-12">
+    <div className="relative mb-2 mr-5 h-10 w-10 rounded-lg lg:h-12 lg:w-12">
       <Image className='rounded-lg' src={Background} alt={`Logo de ${Background}`}/>
     </div>
+    <div className="relative ml-2 mb-2 h-10 w-10 rounded-lg lg:h-12 lg:w-12 lg:mt-60">
+    <input type='checkbox'
+     className='w-full h-full animate-bounce focus:animate-none relative hover:scale-125 transition accent-emerald-300/25 border-0 rounded-lg'
+     onChange={handleSave}
+     checked={saved}>
+    </input>
+    </div>
   </div>
-  <Image className='rounded-lg relative top-0' src={saved ? BookmarkSlash : Bookmark} alt={`Icono de guardado`} onClick={handleSave}/>
   <h1 className="w-full py-1 text-center text-xl h-32 font-medium lg:hidden">{propertyTitle}</h1>
   <div className="flex h-full lg:w-full lg:flex-row-reverse gap-2">
     <div className="bg-red flex h-full w-1/2 flex-col lg:w-1/4">
-      <div className="my-2 flex h-2/3 flex-col justify-around rounded-2xl bg-[#414C67] py-3 lg:pl-2">
+      <div className="my-2 flex h-4/5 flex-col justify-around rounded-2xl bg-[#414C67] py-3 lg:pl-2">
         <div className='flex gap-2 items-center justify-around lg:flex-row-reverse'>
         <Image src={bedroomIcon}  width={40} height={40} alt='bedroom icon'/>
         <p className="font-medium text-white">{propertyBedrooms >= 1? `${propertyBedrooms} Dorm.`: 'No info'}</p>
@@ -64,18 +71,18 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
         <p className="font-medium text-white">{propertyArea > 0? `${propertyArea} mt2`: 'No info'}</p>
         </div>
       </div>
-      <a target='_blank' href={propertyLink} className="mx-1 mb-1 flex flex-row-reverse items-center justify-center rounded-3xl bg-[#CCBC82] px-4 py-2 font-bold text-white hover:bg-[#AF9A4B] lg:h-1/3">
+      <a target='_blank' href={propertyLink} className="animate-bounce-chiquito hover:scale-110 transition mx-1 mb-1 flex flex-row-reverse items-center hover:text-white justify-center rounded-3xl bg-emerald-300 px-4 py-2 font-bold text-emerald-500 lg:h-1/5">
         <svg className="h-10 w-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
         Consultar
       </a>
     </div>
-    <div className="mt-3 flex h-full w-1/2 flex-col items-center gap-5 lg:w-3/4 lg:justify-center lg:gap-10">
+    <div className="mt-3 flex h-full w-1/2 flex-col justify-evenly items-center gap-5 lg:w-3/4 lg:justify-center lg:gap-10">
       <h1 className="hidden text-xl font-medium lg:inline lg:text-center">{propertyTitle}</h1>
       <span className="w-full rounded-3xl bg-white py-2 text-center font-medium lg:w-2/3">{propertyType}</span>
       <span className="w-full rounded-3xl bg-white py-2 text-center font-medium lg:w-2/3">{propertyZone}</span>
-      <p className="lg:b mb-10 text-2xl font-semibold lg:relative">{propertyCurrency === 'UYU'? '$ ': 'U$S '} {propertyPrice}</p>
+      <p className=" text-2xl mb-5 font-semibold lg:relative">{propertyCurrency === 'UYU'? '$ ': 'U$S '} {propertyPrice}</p>
     </div>
   </div>
 </div>
