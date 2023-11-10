@@ -4,8 +4,8 @@ import mapIcon from '../../public/mapIcon.svg'
 import listIcon from '../../public/listIcon.svg'
 import Link from "next/link"
 import Image from "next/image"
-import PriceOrder from "./priceOrder"
-import AreaOrder from "./AreaOrder"
+import PriceOrder from "./PriceSort"
+import AreaOrder from "./AreaSort"
 import { usePathname } from "next/navigation"
 import { useRouter } from "next/navigation"
 

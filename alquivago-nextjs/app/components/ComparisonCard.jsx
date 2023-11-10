@@ -6,16 +6,16 @@ import bathIcon from '../../public/bathIcon.svg'
 import bedroomIcon from '../../public/bedroomIcon.svg'
 import propertyIcon from '../../public/propertyIcon.svg'
 import zoneIcon from '../../public/zoneIcon.svg'
+import priceIcon from '../../public/priceIcon.svg'
 import Image from 'next/image'
 
-export default function ComparisonCard({ comparisonImage, comparisonBedrooms, comparisonBathrooms, comparisonArea, comparisonType, comparisonZone, comparisonOrigin, comparisonLink }) {
+export default function ComparisonCard({ comparisonImage, comparisonBedrooms, comparisonBathrooms, comparisonArea, comparisonType, comparisonZone, comparisonOrigin, comparisonLink, comparisonCurrency, comparisonPrice }) {
 
   const originBackground = {
     'infocasas': infocasasLogo,
     'gallito': gallitoLogo,
     'mercado_libre': mercadoLibreLogo
   }
-  console.log(originBackground[comparisonOrigin])
   const bg = originBackground[comparisonOrigin]
   return (
     <div className="bg-white border container h-[90vh] flex flex-col justify-around items-center border-gray-200 rounded-lg shadow m-auto">
@@ -53,8 +53,12 @@ export default function ComparisonCard({ comparisonImage, comparisonBedrooms, co
   <Image src={zoneIcon} width={20} height={20} alt=''></Image>
     {comparisonZone}
   </span>
+  <span className="flex items-center justify-start gap-5 text-2xl font-medium text-azul-50 ">
+  <Image src={priceIcon} width={20} height={20} alt=''></Image>
+  {comparisonCurrency == 'UYU'? '$' : 'U$S'} {comparisonPrice}
+  </span>
 </div>
-<a href={comparisonLink} target='_blank' rel='noreferrer' className="w-52 h-20 rounded-lg bg-azul-500 shadow-xl animate-bounce flex justify-center items-center text-azul-100 font-medium text-lg">Consultar</a>
+<a href={comparisonLink} target='_blank' rel='noreferrer' className="w-52 h-20 rounded-lg bg-azul-500 shadow-xl animate-bounce-chiquito hover:scale-125 transition flex justify-center items-center text-azul-100 font-medium text-lg">Consultar</a>
           </div>
   )
 }
