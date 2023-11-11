@@ -1,21 +1,20 @@
-# alquivago
+# Alquivago
 
 ![Alquivago - Logo](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/logo/alquivago_logo_v1-enhanced.png?raw=true)
 
-__alquivago__ is a website that compares `long-term` house/apartment `rental prices` from multiple rent websites in Montevideo - Uruguay.
+__Alquivago__ is a web application that compares `long-term` house/apartment `rental prices` from three different sources (websites) in Montevideo - Uruguay.
 
 ## Table of contents
 
-- [Scope](#project-scope)
+- [Scope](#scope)
     - [Problem to solve](#problem-to-solve)
     - [Out of the scope](#out-of-the-scope)
+- [Project planning](#project-planning)
 - [Features](#features)
     - [Rentals List View](#rentals-list-view)
-    - [Rentals Map View](#rentals-list-view)
     - [Rentals Comparison](#data-comparison)
-    - [Rentals Filtering](#data-filtering)
-    - [Rentals Sorting](#data-sorting)
-- [Live Demo](#live-demo)
+    - [Rentals Geolocalization](#rentals-geolocalization)
+- [Live Application](#live-application)
     - [Frontend - User Interface](#frontend---user-interface)
     - [Backend - Internal API](#backend--internal--api)
     - [Map View](#map-view)
@@ -40,44 +39,38 @@ __alquivago__ is a website that compares `long-term` house/apartment `rental pri
 
 ### Problem to solve
 
-__Finding a house or apartment for rent for long-term periods of time__ is a very tedious task. This is because there are many possible sources from which to extract information, with each of them containing a large number of properties. Additionally, each website presents the data in different formats making it difficult to compare the different options.
-
-Nowadays, if a user wants to search for a property, they must navigate through each of the pages where the property information is detailed, which can sometimes lead to user frustration in what should be an intuitive search and comparison process.
+__Finding a house or apartment for rent for long-term periods of time__ is a very tedious task. This is because there are many possible sources from which to extract information, with each of them containing a large number of properties. Each website presents the data in different formats making it difficult to compare the different options.
 
 ### Out of the scope
 
-The technical term to refer to the project is like a __meta-search engine focussed on house/apartment rents__, this kind of software is specialized in helping users search for and compare options across different providers but __doesn't handle the renting process directly__.
+The technical term to refer to the project is like a `meta-search engine focussed on house/apartment rents`, this kind of software is specialized in helping users search for and compare options across different providers but `doesn't handle the renting process directly`.
 
-AlquiVago is only in charge of __listing and filtering all the available rental options__ (houses or apartments), and then proportionate a link and redirect the user to the original site, the data will be extracted from different websites (data sources) in Montevideo, Uruguay.
+AlquiVago is in charge of `listing and filtering all the available rental options` (houses or apartments), and then proportionate a link and redirect the user to the original site.
+
+## Project planning
 
 ## Features
 
 ### Rentals List View
 
-### Rentals Map View
+![Rentals List View](/landing_page/assets/funcionalidades/filtro.gif)
 
 ### Rentals Comparison
 
-### Rentals Filtering
+![Rentals Comparison](/landing_page/assets/funcionalidades/comparar.gif)
 
-### Rentals Sorting
 
-## Live Demo
+### Rentals Geolocalization
+
+![Rentals Geolocalization](/landing_page/assets/funcionalidades/mapa.gif)
+
+## Live Application
 
 ### Frontend - User Interface
 
 [Frontend - User Interface](https://alquivago.vercel.app/)
 
-
 ![Frontend - User Interface](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/frontend_demo.png?raw=true)
-
-### Backend - Internal API
-
-[Backend - Internal API](https://alquivago-flask-apis.vercel.app/apidocs)
-
-
-![Backend - Internal API](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/backend_demo.png?raw=true)
-
 
 ### Map View
 
@@ -155,10 +148,26 @@ In this project, on the Flask application, the Flask routes (API endpoints) and 
 
 ## Future Improvements
 
+Some of the possible future improvements are:
+
+- Scale the system outside of Montevideo, to other Uruguay Departments.
+- Additionally to rentals, manage house/apartments to buy.
+- Automate the control of duplicated data.
+
 ## Authors
 
-- [Cristian Encalada](https://github.com/cristian-encalada)
-- [Gabriel Delgado](https://github.com/Gabr1el20)
+- [Cristian Encalada](https://github.com/cristian-encalada) 
+    - Project Manager
+        - Full-stack developer 
 - [Martin Leiro](https://github.com/hentype85)
+    - Web Scraper
+        - Back-end developer
 - [Emiliano Garin](https://github.com/EmilianoGarin)
-- [Alejandro Martinez](https://github.com/alemao51092)
+    - API Manager
+        - Back-end developer
+- [Gabriel Delgado](https://github.com/Gabr1el20)
+    - UX/UI Designer
+        - Full-stack developer 
+- [Alejandro Martinez](https://github.com/Gabr1el20)
+    - UX/UI Designer
+        - Front-end developer 
