@@ -10,28 +10,18 @@ __Alquivago__ is a web application that compares `long-term` house/apartment `re
     - [Problem to solve](#problem-to-solve)
     - [Out of the scope](#out-of-the-scope)
 - [Project planning](#project-planning)
+- [Technology and Tools](#technology-and-tools)
 - [Features](#features)
     - [Rentals List View](#rentals-list-view)
     - [Rentals Comparison](#data-comparison)
     - [Rentals Geolocalization](#rentals-geolocalization)
 - [Live Application](#live-application)
-    - [Frontend - User Interface](#frontend---user-interface)
-    - [Backend - Internal API](#backend--internal--api)
-    - [Map View](#map-view)
+    - [Alquivago - Live URL](#alquivago---live-url)
+    - [Landing page - Live URL](#landing-page---live-url)
 - [Run in local environment](#run-in-local-environment)
     - [Prerequisites](#prerequisites)
     - [Run docker compose](#run-docker-compose)
 - [Architecture](#architecture)
-    - [Model](#model)
-    - [View](#view)
-    - [Controller](#controller)
-- [Technologies and Tools](#technologies)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-    - [Database](#database)
-    - [Web Scraping](#web-scraping)
-    - [Deployment](#deployment)
-    - [Other tools](#other-tools)
 - [Future Improvements](#future-improvements)
 - [Authors](#authors)
 
@@ -48,6 +38,20 @@ The technical term to refer to the project is like a `meta-search engine focusse
 AlquiVago is in charge of `listing and filtering all the available rental options` (houses or apartments), and then proportionate a link and redirect the user to the original site.
 
 ## Project planning
+
+The implemetation of the project can be summarized with the following diagram:
+
+![Project planning](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/planning/planning_diagram.png?raw=true)
+
+
+1. We started the defining the MVP (Minimum Viable Product), in our case was to display a list of all rental properties after the initial data retrieved.
+2. The second priority was to have working the filter and sorting algorithms as a main feature.
+3. Once the previous step was completed, it was really important to have a feature to compare few favorite properties and check easily these properties details.
+4. Finally, having a Geolocalization feature was a nice feature in order to help the users to have an overview of the total number and all the available properties by zone.
+
+## Technology and Tools
+
+![Technology and Tools](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/technology/tech_tools.png?raw=true)
 
 ## Features
 
@@ -66,18 +70,18 @@ AlquiVago is in charge of `listing and filtering all the available rental option
 
 ## Live Application
 
-### Frontend - User Interface
+### Alquivago - Live URL
 
-[Frontend - User Interface](https://alquivago.vercel.app/)
+https://alquivago.vercel.app/
 
-![Frontend - User Interface](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/frontend_demo.png?raw=true)
+![Alquivago - Live URL](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/live_page_alquivago.png?raw=true)
 
-### Map View
+### Landing page - Live URL
 
-[Map View](https://cristian-encalada.github.io/Alquivago/)
+https://alquivago-landing.vercel.app/
 
 
-![Map View](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/map_view_demo.png?raw=true)
+![Landing page - Live URL](https://github.com/cristian-encalada/Alquivago/blob/demo-utils/live-demo/landing_page.png?raw=true)
 
 
 ## Run in local environment
@@ -92,59 +96,11 @@ AlquiVago is in charge of `listing and filtering all the available rental option
 
 This project uses a MVC (Model-View-Controller) Architecture.
 
-### Model:
+* `__Model:__` This represents the application's data and the `__business logic for manipulating that data__`. In this case we have python scripts that interact with the  NoSQL MongoDB database. It handles tasks such as data retrieval, storage, validation, and manipulation. 
 
-This represents the application's data and the __business logic for manipulating that data__. 
+* `__View:__` This layer is responsible for `__presenting data to the user__`. In our project, the React components belong to the View layer.
 
-In the actual project context, the Model layer would include the code responsible for interacting with your NoSQL MongoDB database. It handles tasks such as data retrieval, storage, validation, and manipulation. It's where we define the structure of the data, such as schemas for the MongoDB collections.
-
-### View
-
-The View layer is responsible for __presenting data to the user__. In a web application, this typically includes HTML templates or components that render the user interface. 
-
-In our case, as we use React on the frontend, the React components belong to the View category.
-
-### Controller
-
-The Controller acts as an __intermediary between the Model and the View__. It receives requests from the client, processes them, interacts with the Model to retrieve or modify data, and then sends the appropriate response back to the client. 
-
-In this project, on the Flask application, the Flask routes (API endpoints) and associated functions would act as controllers. They handle incoming HTTP requests, call the necessary Model methods to perform operations on the data, and return responses,  in the form of JSON for a RESTful API.
-
-## Technologies and Tools
-
-### Frontend
-
-- __Figma__ - Design tool 
-- __Vite__ - Frontend tool 
-- __React__ - Front-end JavaScript library
-- __Tailwind CSS__ - CSS framework
-
-### Backend
-
-- __Flask__ - Python Framework
-
-### Database
-
-- __MongoDB__ - No SQL database
-
-### Web Scraping
-
-- __Selenium__ - Browser automation tool
-- __BeautifulSoup__ - Python library
-
-### Deployment
-
-- __Vercel__ - Vite/React app and Flask API
-- __Github Pages__ - Map View
-- __Atlas__ - Mongo DB
-
-### Other tools
-
-- __Trello__ - Tasks tracking and project management
-    - ([Trello Board URL](https://trello.com/b/9ktgFcQo/holberton-final-project-alquivago))
-- __Apache Airflow__ - Automate scraping process
-- __Github Actions__ - Automate Dockerhub upload process
-- __Docker__ - Local Environment
+* `__Controller:__` It acts as an `__intermediary between the Model and the View__`. It receives requests from the client, processes them, interacts with the Model to retrieve or modify data, and then sends the appropriate response back to the client. In this project, on the Flask application, the Flask routes (API endpoints) and associated functions interact as controllers. 
 
 ## Future Improvements
 
