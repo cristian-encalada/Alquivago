@@ -46,9 +46,9 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
     <div className="relative mb-2 mr-5 h-10 w-10 rounded-lg lg:h-12 lg:w-12">
       <Image className='rounded-lg' src={Background} alt={`Logo de ${Background}`}/>
     </div>
-    <div className="relative ml-2 mb-2 h-10 w-10 rounded-lg lg:h-12 lg:w-12 lg:mt-60">
+    <div className="relative ml-2 mb-2 h-10 w-10 rounded-2xl lg:h-12 lg:w-12 lg:mt-60">
     <input type='checkbox'
-     className='w-full h-full animate-bounce focus:animate-none relative hover:scale-125 transition accent-emerald-300/25 border-0 rounded-lg'
+     className='w-full h-full animate-bounce relative hover:scale-125 transition accent-emerald-300/25 border-0 rounded-lg'
      onChange={handleSave}
      checked={saved}>
     </input>
@@ -71,7 +71,7 @@ function Publish({actualObject , saveLocalStorage ,propertyTitle, propertyType, 
         <p className="font-medium text-white">{propertyArea > 0? `${propertyArea} mt2`: 'No info'}</p>
         </div>
       </div>
-      <a target='_blank' href={propertyLink} className="animate-bounce-chiquito hover:scale-110 transition mx-1 mb-1 flex flex-row-reverse items-center hover:text-cyan-50 text-lg justify-center rounded-3xl bg-cyan-300 px-4 py-2 font-bold text-cyan-500 lg:h-1/5">
+      <a target='_blank' href={propertyLink} className="animate-bounce-chiquito hover:scale-110 transition mx-1 mb-1 flex flex-row-reverse items-center hover:text-dorado-50 text-lg justify-center rounded-3xl bg-dorado-300 px-4 py-2 font-bold text-slate-500 lg:h-1/5">
         <svg className="h-10 w-7" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"></path>
         </svg>
