@@ -8,7 +8,7 @@ import Image from "next/image";
 export default function ZoneBar({ filters, setFilters}) {
   const router = useRouter()
   const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
+  const [searchResults, setSearchResults] = useState(data.zonas);
   const [visible, setVisible] = useState('hidden')
   function handleVisibility() {
     if (visible === 'hidden') {
