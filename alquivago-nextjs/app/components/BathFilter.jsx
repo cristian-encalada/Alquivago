@@ -23,8 +23,8 @@ export default function Bathbutton({ filters, setFilters }) {
           </li>
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" id="2baños" type="checkbox" value="baños=2" onChange={handleClick} checked={filters.includes('baños=2')}/>
-            <label htmlFor="2baños">2 Baños</label>
-          </li>
+            <label htmlFor="2baños" className="w-full">2 Baños</label>
+          </li> 
           <li className="py-2 text-lg font-medium hover:bg-slate-200 rounded-lg transition">
             <input className="mx-2 w-8" id="3baños" type="checkbox" value="baños=3" onChange={handleClick} checked={filters.includes('baños=3')} />
             <label htmlFor="3baños">2+ Baños</label>
