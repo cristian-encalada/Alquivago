@@ -47,7 +47,7 @@ export default function ZoneBar({ filters, setFilters}) {
       <ul className="w-full h-[90%] items-center flex flex-wrap">
         {searchResults.map((zona) => (
           <>
-          <li key={zona.id} className="flex border-2 h-[8%] items-center bg-azul-50 text-azul-500 font-medium w-full text-center rounded-md hover:scale-110 transition hover:bg-azul-50"><button className="focus:ring-2 w-full rounded-md"
+          <li key={zona.id} className="flex border-2 h-[8%] items-center bg-azul-50 text-azul-500 font-medium w-full text-center rounded-md hover:scale-110 transition hover:bg-azul-50"><button className="focus:ring-2 h-full w-full rounded-md"
            value={`zonas=${zona.id}`} onClick={handleClick}>{zona.zona}</button></li>
            </>
         ))}

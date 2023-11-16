@@ -4,8 +4,8 @@ export default function PriceOrder({ children, handleOrder }) {
     const [visibleState, setVisibleState] = useState('invisible')
 
     return (
-      <div className="w-1/6 flex justify-center flex-col gap-1 text-azul-600" onMouseEnter={() => setVisibleState('visible')} onMouseLeave={() => setVisibleState('invisible')}>
-      <button className="border-2 font-medium w-full rounded-lg h-1/3 hover:bg-azul-300 hover:scale-105 transition hover:text-white">
+      <div className="w-1/3 md:w-1/4 flex justify-center flex-col gap-1 text-azul-600" onMouseEnter={() => setVisibleState('visible')} onMouseLeave={() => setVisibleState('invisible')}>
+      <button className="border-2 font-medium w-full rounded-lg h-20 md:h-1/3 hover:bg-azul-300 hover:scale-105 transition hover:text-white">
         {children}
       </button>
       <div className={`h-2/3 w-full rounded-2xl shadow-2xl ${visibleState}`}>

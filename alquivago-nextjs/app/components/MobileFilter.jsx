@@ -4,6 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import closeIcon from '../../public/closeIcon.svg'
 import ZoneBar from "./ZoneBar"
+import OrderingSection from "./SortingSection"
 
 export default function MobileFilter() {
   const router = useRouter()
@@ -75,11 +76,13 @@ export default function MobileFilter() {
       }
     }
   const removeFilters = () => {
+    handleVisibility()
     setFilters([])
     return router.push('/publish')
   }
   const handleApplyFilters = () => {
     // Aquí puedes usar el estado actualizado filters para realizar acciones con los filtros seleccionados
+    handleVisibility()
     const routeParsed = formatearArrayComoString(filters)
     return router.push(`/publish/${routeParsed}`)
   };

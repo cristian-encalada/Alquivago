@@ -34,10 +34,10 @@ export default function OrderingSection() {
   });
   }
   return (
-    <section className="hidden w-full h-24 gap-5 bg-white md:first-letter md:flex justify-center">
+    <section className="w-full h-24 gap-5 bg-white md:first-letter flex justify-around md:justify-center relative">
       <PriceOrder orders={orders} setOrders={setOrders} handleOrder={handleOrder}>Ordenar Precio</PriceOrder>
       <AreaOrder orders={orders} setOrders={setOrders} handleOrder={handleOrder}>Ordenar Área</AreaOrder>
-        <ul className="flex gap-2 items-start">
+        <ul className="hidden md:flex gap-2 items-start">
           <li><Link href='/map'><Image src={mapIcon} className="w-8 h-8 hover:scale-125 transition" alt="map icon"/></Link> </li>
         </ul>
     </section>
