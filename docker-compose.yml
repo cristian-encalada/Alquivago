@@ -5,10 +5,10 @@ services:
 # Using network_mode to fix Connection reset by peer: https://stackoverflow.com/a/57774458
 # Verify the port where vite is running with the command: sudo docker logs vite-react
 # Local:   http://localhost:3000/
-    container_name: vite-react
+    container_name: next-react
 #    network_mode: host
     ports:
-      - "5173:5173"
+      - "3000:3000"
     depends_on:
       - backend
 
