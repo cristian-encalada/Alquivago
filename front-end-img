@@ -14,4 +14,4 @@ RUN git pull
 # Establecer el directorio de trabajo
 WORKDIR /Alquivago/alquivago-nextjs/
 # Instalar dependencias y ejecutar vite
-CMD npm install && npm run dev -H 0.0.0.0
+# CMD npm install && npm run dev -H 0.0.0.0
