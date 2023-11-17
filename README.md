@@ -86,9 +86,33 @@ https://alquivago-landing.vercel.app/
 
 ## Run in local environment
 
-### Prerequisites
+### Pre-requisites
+
+* __On Windows:__
+
+    - Install Docker Desktop [Oficial documentation](https://docs.docker.com/desktop/install/windows-install/)
+
+* __On Linux:__
+    - Install Docker Desktop [Oficial documentation](https://docs.docker.com/desktop/install/linux-install/)
+
 
 ### Run docker compose
+
+1. docker pull gab020/vite-react:latest
+2. docker pull gab020/flaskimg:latest
+3. docker-compose up -d --build
+
+- The Flask API should be running on:
+
+```sh
+localhost:5000/apidocs/
+```
+
+- The nextJS app should be running on:
+
+```sh
+localhost:3000
+```
 
 ## Architecture
 
@@ -96,11 +120,11 @@ https://alquivago-landing.vercel.app/
 
 This project uses a MVC (Model-View-Controller) Architecture.
 
-* `__Model:__` This represents the application's data and the `__business logic for manipulating that data__`. In this case we have python scripts that interact with the  NoSQL MongoDB database. It handles tasks such as data retrieval, storage, validation, and manipulation. 
+* __Model:__ This represents the application's data and the `business logic for manipulating that data`. In this case we have python scripts that interact with the  NoSQL MongoDB database. It handles tasks such as data retrieval, storage, validation, and manipulation. 
 
-* `__View:__` This layer is responsible for `__presenting data to the user__`. In our project, the React components belong to the View layer.
+* __View:__ This layer is responsible for `presenting data to the user`. In our project, the React components belong to the View layer.
 
-* `__Controller:__` It acts as an `__intermediary between the Model and the View__`. It receives requests from the client, processes them, interacts with the Model to retrieve or modify data, and then sends the appropriate response back to the client. In this project, on the Flask application, the Flask routes (API endpoints) and associated functions interact as controllers. 
+* __Controller:__ It acts as an `intermediary between the Model and the View`. It receives requests from the client, processes them, interacts with the Model to retrieve or modify data, and then sends the appropriate response back to the client. In this project, on the Flask application, the Flask routes (API endpoints) and associated functions interact as controllers. 
 
 ## Future Improvements
 
