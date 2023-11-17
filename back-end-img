@@ -14,7 +14,7 @@ RUN pip install pymongo
 # Expon el puerto 5000 para Flask (ajusta según sea necesario)
 EXPOSE 5000
 # Clonar repositorio
-RUN git clone -b dev https://github.com/cristian-encalada/Alquivago.git
+RUN git clone -b main https://github.com/cristian-encalada/Alquivago.git
 WORKDIR /Alquivago
 RUN git pull
 # Set the Flask app environment variable

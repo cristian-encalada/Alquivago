@@ -7,7 +7,7 @@ RUN apt-get install -y git
 # Habilitar puertos para el front-end
 EXPOSE 3000:3000
 # Clona el repositorio y ejecuta los comandos
-RUN git clone -b dev https://github.com/cristian-encalada/Alquivago.git
+RUN git clone -b main https://github.com/cristian-encalada/Alquivago.git
 # hacer git pull
 WORKDIR /Alquivago
 RUN git pull
