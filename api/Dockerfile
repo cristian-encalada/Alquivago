@@ -1,5 +1,5 @@
 # Utiliza la imagen oficial de Ubuntu
-FROM ubuntu:latest
+FROM ubuntu:20.04
 # Actualiza los paquetes e instala Python 3 y pip
 RUN apt-get update && \
     apt-get install -y python3 python3-pip
@@ -12,7 +12,7 @@ RUN pip install -U flask-cors
 RUN pip install flasgger
 RUN pip install pymongo
 # Agrega las dependencias adicionales
-RUN pip install json
+# RUN pip install json
 RUN pip install gitpython
 # Expon el puerto 5000 para Flask (ajusta según sea necesario)
 EXPOSE 5000
